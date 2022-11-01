@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/bandListFragment">
+
+    <fragment
+        android:id="@+id/bandListFragment"
+        android:name="com.example.vinilosgrupo4.view.fragments.BandListFragment"
+        android:label="fragment_band_list"
+        tools:layout="@layout/fragment_band_list" >
+        <action
+            android:id="@+id/action_bandListFragment_to_bandDetailFragment"
+            app:destination="@id/bandDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bandDetailFragment"
+        android:name="com.example.vinilosgrupo4.view.fragments.BandDetailFragment"
+        android:label="BandDetailFragment" />
+</navigation>
