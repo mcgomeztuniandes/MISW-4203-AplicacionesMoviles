@@ -76,11 +76,14 @@ class MusicianListFragment : Fragment(), ClickMusicianListener {
     override fun itemSelect(data: MusiciansResponseDataModel) {
         viewMusicianModel.setItemSelection(data)
 
+        /*
         activity?.supportFragmentManager
             ?.beginTransaction()
             ?.replace(android.R.id.content, MusicianDetailFragment.newInstance())
             ?.addToBackStack(null)
             ?.commit()
+
+         */
     }
 
     companion object {

@@ -74,11 +74,14 @@ class BandListFragment : Fragment(), ClickBandListener {
     override fun itemSelect(data: BandReponseDataModel) {
         viewBandModel.setItemSelection(data)
 
+        /*
         activity?.supportFragmentManager
             ?.beginTransaction()
             ?.replace(android.R.id.content, BandDetailFragment.newInstance())
             ?.addToBackStack(null)
             ?.commit()
+
+         */
     }
 
     companion object {
