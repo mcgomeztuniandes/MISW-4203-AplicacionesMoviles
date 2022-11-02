@@ -87,6 +87,10 @@ class BandListFragment : Fragment(), ClickBandListener {
     companion object {
         fun newInstance() = BandListFragment()
     }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+    }
 }
 
 interface ClickBandListener {

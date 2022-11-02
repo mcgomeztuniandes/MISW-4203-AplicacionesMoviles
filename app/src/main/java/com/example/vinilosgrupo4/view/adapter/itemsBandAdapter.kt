@@ -27,7 +27,6 @@ class itemsBandAdapter(private var listener: ClickBandListener): RecyclerView.Ad
         return itemBandViewHolder(binding)
     }
 
-
     override fun onBindViewHolder(holder: itemBandViewHolder, position: Int) {
         holder.setItem(itemList[position])
 

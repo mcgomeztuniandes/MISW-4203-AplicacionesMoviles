@@ -42,15 +42,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="gone"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="44dp"
             android:fontFamily="sans-serif-black"
             android:text="Performers"
             android:textAlignment="viewStart"
@@ -58,9 +58,10 @@
             android:textStyle="italic"
             android:visibility="visible"
             app:layout_constraintEnd_toStartOf="@+id/btnBand"
+            app:layout_constraintHorizontal_bias="0.485"
             app:layout_constraintStart_toStartOf="parent"
             tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteY="8dp"
+            tools:layout_editor_absoluteY="16dp"
             tools:text="Performers" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

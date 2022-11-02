@@ -89,6 +89,10 @@ class MusicianListFragment : Fragment(), ClickMusicianListener {
     companion object {
         fun newInstance() = MusicianListFragment()
     }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+    }
 }
 
 interface ClickMusicianListener {
