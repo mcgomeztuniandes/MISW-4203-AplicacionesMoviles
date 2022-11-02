@@ -11,7 +11,7 @@ import kotlinx.coroutines.launch
 import java.util.*
 import kotlin.coroutines.CoroutineContext
 
-class RecyclerBandViewModel(app: Application): AndroidViewModel(app),CoroutineScope {
+class BandViewModel(app: Application): AndroidViewModel(app),CoroutineScope {
     private val _itemSelected = MutableLiveData<BandReponseDataModel>()
     var itemDataSelected: BandReponseDataModel? = null
 

@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.core.view.isInvisible
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
@@ -13,10 +14,10 @@ import com.example.vinilosgrupo4.R
 import com.example.vinilosgrupo4.databinding.FragmentBandListBinding
 import com.example.vinilosgrupo4.model.BandReponseDataModel
 import com.example.vinilosgrupo4.view.adapter.itemsBandAdapter
-import com.example.vinilosgrupo4.viewmodels.RecyclerBandViewModel
+import com.example.vinilosgrupo4.viewmodels.BandViewModel
 
 class BandListFragment : Fragment(), ClickBandListener {
-    lateinit var viewBandModel: RecyclerBandViewModel
+    lateinit var viewBandModel: BandViewModel
     lateinit var binding: FragmentBandListBinding
     private var myBandAdapter: itemsBandAdapter?= null
 
@@ -24,7 +25,7 @@ class BandListFragment : Fragment(), ClickBandListener {
         super.onCreate(savedInstanceState)
         viewBandModel =
             activity?.let {
-                ViewModelProvider(it).get(RecyclerBandViewModel::class.java)
+                ViewModelProvider(it).get(BandViewModel::class.java)
             }!!
     }
 
@@ -34,6 +35,13 @@ class BandListFragment : Fragment(), ClickBandListener {
     ): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_band_list, container, false)
         binding.viewModel = viewBandModel
+
+        var btnBands: Button = binding.btnBandas
+
+        btnBands.setOnClickListener {
+
+        }
+
         return binding.root
     }
 

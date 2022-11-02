@@ -6,13 +6,24 @@
     <data>
         <variable
             name="viewModel"
-            type="com.example.vinilosgrupo4.viewmodels.RecyclerBandViewModel" />
+            type="com.example.vinilosgrupo4.viewmodels.BandViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".BandListFragment">
+
+        <Button
+            android:id="@+id/btnBandas"
+            android:layout_width="150dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="8dp"
+            android:text="Bands"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            tools:ignore="MissingConstraints"
+            tools:text="Band" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerview"

@@ -8,20 +8,20 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.example.vinilosgrupo4.databinding.FragmentBandDetailBinding
-import com.example.vinilosgrupo4.viewmodels.RecyclerBandViewModel
+import com.example.vinilosgrupo4.viewmodels.BandViewModel
 
 class BandDetailFragment : Fragment() {
     private var _binding: FragmentBandDetailBinding? = null
     private val binding get() = _binding
 
-    lateinit var viewModel: RecyclerBandViewModel
+    lateinit var viewModel: BandViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         viewModel =
             activity?.let {
-                ViewModelProvider(it).get(RecyclerBandViewModel::class.java)
+                ViewModelProvider(it).get(BandViewModel::class.java)
             }!!
     }
 
