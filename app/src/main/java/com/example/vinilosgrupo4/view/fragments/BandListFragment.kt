@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.core.view.isInvisible
+import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -36,10 +37,16 @@ class BandListFragment : Fragment(), ClickBandListener {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_band_list, container, false)
         binding.viewModel = viewBandModel
 
-        var btnBands: Button = binding.btnBandas
+        var btnbtnMusicians: Button = binding.btnMusician
 
-        btnBands.setOnClickListener {
+        btnbtnMusicians.setOnClickListener {
+            activity?.supportFragmentManager
+                ?.beginTransaction()
+                ?.replace(android.R.id.content, MusicianListFragment.newInstance())
+                ?.addToBackStack(null)
+                ?.commit()
 
+            binding.recyclerview.isVisible = false
         }
 
         return binding.root
@@ -72,6 +79,10 @@ class BandListFragment : Fragment(), ClickBandListener {
             ?.replace(android.R.id.content, BandDetailFragment.newInstance())
             ?.addToBackStack(null)
             ?.commit()
+    }
+
+    companion object {
+        fun newInstance() = BandListFragment()
     }
 }
 

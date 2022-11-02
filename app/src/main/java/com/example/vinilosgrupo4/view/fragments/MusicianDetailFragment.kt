@@ -7,21 +7,22 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
-import com.example.vinilosgrupo4.databinding.FragmentBandDetailBinding
-import com.example.vinilosgrupo4.viewmodels.BandViewModel
+import com.example.vinilosgrupo4.R
+import com.example.vinilosgrupo4.databinding.FragmentMusicianDetailBinding
+import com.example.vinilosgrupo4.viewmodels.MusicianViewModel
 
-class BandDetailFragment : Fragment() {
-    private var _binding: FragmentBandDetailBinding? = null
+class MusicianDetailFragment : Fragment() {
+    private var _binding: FragmentMusicianDetailBinding? = null
     private val binding get() = _binding
 
-    lateinit var viewModel: BandViewModel
+    lateinit var viewModel: MusicianViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         viewModel =
             activity?.let {
-                ViewModelProvider(it).get(BandViewModel::class.java)
+                ViewModelProvider(it).get(MusicianViewModel::class.java)
             }!!
     }
 
@@ -29,7 +30,7 @@ class BandDetailFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentBandDetailBinding.inflate(inflater, container, false)
+        _binding = FragmentMusicianDetailBinding.inflate(inflater, container, false)
         return binding?.root
     }
 
@@ -48,6 +49,6 @@ class BandDetailFragment : Fragment() {
     }
 
     companion object {
-        fun newInstance() = BandDetailFragment()
+        fun newInstance() = MusicianDetailFragment()
     }
 }

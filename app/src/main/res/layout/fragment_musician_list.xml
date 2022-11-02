@@ -6,24 +6,24 @@
     <data>
         <variable
             name="viewModel"
-            type="com.example.vinilosgrupo4.viewmodels.BandViewModel" />
+            type="com.example.vinilosgrupo4.viewmodels.MusicianViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".BandListFragment">
+        tools:context=".MusicianListFragment">
 
         <Button
-            android:id="@+id/btnMusician"
+            android:id="@+id/btnBand"
             android:layout_width="150dp"
             android:layout_height="0dp"
             android:layout_marginEnd="8dp"
-            android:text="Musicians"
+            android:text="Bands"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             tools:ignore="MissingConstraints"
-            tools:text="Band" />
+            tools:text="Bands" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerview"
@@ -35,7 +35,7 @@
             app:layout_constraintHorizontal_bias="0.6"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:listitem="@layout/band_row" />
+            tools:listitem="@layout/musician_row" />
 
         <ProgressBar
             android:id="@+id/progress"
