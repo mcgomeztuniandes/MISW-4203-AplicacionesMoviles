@@ -14,9 +14,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.VinilosGrupo4"
         android:usesCleartextTraffic="true"
+
         tools:targetApi="31">
         <activity
             android:name=".view.MainActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
