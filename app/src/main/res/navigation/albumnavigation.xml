@@ -8,12 +8,5 @@
         android:id="@+id/albumListFragment"
         android:name="com.example.vinilosgrupo4.view.fragments.AlbumListFragment"
         android:label="AlbumListFragment" >
-        <action
-            android:id="@+id/action_albumListFragment_to_albumDetailFragment"
-            app:destination="@id/albumDetailFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/albumDetailFragment"
-        android:name="com.example.vinilosgrupo4.view.fragments.AlbumDetailFragment"
-        android:label="AlbumDetailFragment" />
 </navigation>
