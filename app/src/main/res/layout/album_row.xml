@@ -48,7 +48,7 @@
             tools:text="Character" />
 
         <TextView
-            android:id="@+id/txt_name2"
+            android:id="@+id/txt_genre_record_label"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
@@ -60,7 +60,7 @@
             tools:text="Character" />
 
         <TextView
-            android:id="@+id/txt_name3"
+            android:id="@+id/txt_release_date"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
