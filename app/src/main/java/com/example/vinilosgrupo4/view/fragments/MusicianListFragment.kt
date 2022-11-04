@@ -13,13 +13,13 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.vinilosgrupo4.R
 import com.example.vinilosgrupo4.databinding.FragmentMusicianListBinding
-import com.example.vinilosgrupo4.view.adapter.itemsMusicianAdapter
+import com.example.vinilosgrupo4.view.adapter.ItemsMusicianAdapter
 import com.example.vinilosgrupo4.viewmodels.MusicianViewModel
 
 class MusicianListFragment : Fragment() {
     private var viewMusicianModel: MusicianViewModel? = null
     private var binding: FragmentMusicianListBinding? = null
-    private var myMusicianAdapter: itemsMusicianAdapter? = null
+    private var myMusicianAdapter: ItemsMusicianAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,7 +54,7 @@ class MusicianListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        myMusicianAdapter = itemsMusicianAdapter()
+        myMusicianAdapter = ItemsMusicianAdapter()
         binding!!.recyclerview.layoutManager = LinearLayoutManager(context)
         binding!!.recyclerview.adapter = myMusicianAdapter
 

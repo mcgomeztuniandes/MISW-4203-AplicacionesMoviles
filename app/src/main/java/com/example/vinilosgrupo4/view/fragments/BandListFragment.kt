@@ -13,13 +13,13 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.vinilosgrupo4.R
 import com.example.vinilosgrupo4.databinding.FragmentBandListBinding
-import com.example.vinilosgrupo4.view.adapter.itemsBandAdapter
+import com.example.vinilosgrupo4.view.adapter.ItemsBandAdapter
 import com.example.vinilosgrupo4.viewmodels.BandViewModel
 
 class BandListFragment : Fragment() {
     private var viewBandModel: BandViewModel ? = null
     private var binding: FragmentBandListBinding? = null
-    private var myBandAdapter: itemsBandAdapter? = null
+    private var myBandAdapter: ItemsBandAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,7 +54,7 @@ class BandListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        myBandAdapter = itemsBandAdapter()
+        myBandAdapter = ItemsBandAdapter()
         binding!!.recyclerview.layoutManager = LinearLayoutManager(context)
         binding!!.recyclerview.adapter = myBandAdapter
 

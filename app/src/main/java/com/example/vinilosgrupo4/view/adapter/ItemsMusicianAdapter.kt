@@ -8,26 +8,26 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.vinilosgrupo4.R
 import com.example.vinilosgrupo4.databinding.MusicianRowBinding
 import com.example.vinilosgrupo4.model.MusiciansResponseDataModel
-import com.example.vinilosgrupo4.view.viewholder.itemMusicianViewHolder
+import com.example.vinilosgrupo4.view.viewholder.ItemMusicianViewHolder
 
-class itemsMusicianAdapter(): RecyclerView.Adapter<itemMusicianViewHolder>() {
+class ItemsMusicianAdapter(): RecyclerView.Adapter<ItemMusicianViewHolder>() {
     private val resource = R.layout.musician_row
     lateinit var context: Context
 
     private val itemList = mutableListOf<MusiciansResponseDataModel>()
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): itemMusicianViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemMusicianViewHolder {
         context = parent.context
 
         val layoutInflater: LayoutInflater = LayoutInflater.from(parent.context)
         val binding: MusicianRowBinding =
             DataBindingUtil.inflate(layoutInflater, resource, parent, false)
 
-        return itemMusicianViewHolder(binding)
+        return ItemMusicianViewHolder(binding)
     }
 
 
-    override fun onBindViewHolder(holder: itemMusicianViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ItemMusicianViewHolder, position: Int) {
         holder.setItem(itemList[position])
     }
 
