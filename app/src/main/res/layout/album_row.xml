@@ -19,12 +19,22 @@
         <variable
             name="goToDetail"
             type="String" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="70dp"
         android:layout_marginTop="5dp">
+
+        <ImageView
+            android:id="@+id/img_album"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:contentDescription="@null"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@mipmap/ic_launcher" />
 
         <TextView
             android:id="@+id/txt_name"
@@ -33,7 +43,7 @@
             android:text="@{name}"
             android:textSize="20sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/img_album"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Character" />
 
@@ -41,11 +51,11 @@
             android:id="@+id/txt_name2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="32dp"
             android:text="@{genreAndRecordLabel}"
             android:textSize="11sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/img_album"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Character" />
 
