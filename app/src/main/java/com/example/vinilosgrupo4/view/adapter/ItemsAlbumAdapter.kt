@@ -7,31 +7,26 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.vinilosgrupo4.R
 import com.example.vinilosgrupo4.databinding.AlbumRowBinding
 import com.example.vinilosgrupo4.model.AlbumResponseDataModel
-import com.example.vinilosgrupo4.view.fragments.ClickAlbumListener
-import com.example.vinilosgrupo4.view.viewholder.itemAlbumViewHolder
+import com.example.vinilosgrupo4.view.viewholder.ItemAlbumViewHolder
 
-class itemsAlbumAdapter(private var listener: ClickAlbumListener): RecyclerView.Adapter<itemAlbumViewHolder>() {
+class ItemsAlbumAdapter(): RecyclerView.Adapter<ItemAlbumViewHolder>() {
     private val resource = R.layout.album_row
     lateinit var context: Context
 
     private val itemList = mutableListOf<AlbumResponseDataModel>()
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): itemAlbumViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemAlbumViewHolder {
         context = parent.context
 
         val layoutInflater: LayoutInflater = LayoutInflater.from(parent.context)
         val binding: AlbumRowBinding =
             DataBindingUtil.inflate(layoutInflater, resource, parent, false)
 
-        return itemAlbumViewHolder(binding)
+        return ItemAlbumViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: itemAlbumViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ItemAlbumViewHolder, position: Int) {
         holder.setItem(itemList[position])
-
-        holder.itemView.setOnClickListener {
-            listener.itemSelect(itemList[position])
-        }
     }
 
     fun setItems(list: MutableList<AlbumResponseDataModel>) {

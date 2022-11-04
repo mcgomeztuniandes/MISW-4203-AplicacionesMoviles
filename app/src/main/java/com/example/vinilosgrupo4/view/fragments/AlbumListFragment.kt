@@ -11,15 +11,14 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.vinilosgrupo4.R
 import com.example.vinilosgrupo4.databinding.FragmentAlbumListBinding
-import com.example.vinilosgrupo4.model.AlbumResponseDataModel
-import com.example.vinilosgrupo4.view.adapter.itemsAlbumAdapter
+import com.example.vinilosgrupo4.view.adapter.ItemsAlbumAdapter
 import com.example.vinilosgrupo4.viewmodels.AlbumViewModel
 
 
-class AlbumListFragment: Fragment(), ClickAlbumListener {
+class AlbumListFragment: Fragment() {
     lateinit var viewAlbumModel: AlbumViewModel
     lateinit var binding: FragmentAlbumListBinding
-    private var myAlbumAdapter: itemsAlbumAdapter?= null
+    private var myAlbumAdapter: ItemsAlbumAdapter?= null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,14 +35,13 @@ class AlbumListFragment: Fragment(), ClickAlbumListener {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_album_list, container, false)
         binding.viewModel = viewAlbumModel
 
-
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        myAlbumAdapter = itemsAlbumAdapter(this)
+        myAlbumAdapter = ItemsAlbumAdapter()
         binding.recyclerview.layoutManager = LinearLayoutManager(context)
         binding.recyclerview.adapter = myAlbumAdapter
 
@@ -59,25 +57,10 @@ class AlbumListFragment: Fragment(), ClickAlbumListener {
         viewAlbumModel.fetchAlbumData()
     }
 
-    override fun itemSelect(data: AlbumResponseDataModel) {
-        viewAlbumModel.setItemSelection(data)
 
-        /*
-        activity?.supportFragmentManager
-            ?.beginTransaction()
-            ?.replace(android.R.id.content, AlbumDetailFragment.newInstance())
-            ?.addToBackStack(null)
-            ?.commit()
-
-         */
-    }
 
     companion object {
         fun newInstance() = AlbumListFragment()
     }
 
-}
-
-interface ClickAlbumListener {
-    fun itemSelect(data: AlbumResponseDataModel)
 }

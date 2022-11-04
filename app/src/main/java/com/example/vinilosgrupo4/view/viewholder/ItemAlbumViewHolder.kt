@@ -4,7 +4,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.vinilosgrupo4.databinding.AlbumRowBinding
 import com.example.vinilosgrupo4.model.AlbumResponseDataModel
 
-class itemAlbumViewHolder(binding: AlbumRowBinding): RecyclerView.ViewHolder(binding.root) {
+class ItemAlbumViewHolder(binding: AlbumRowBinding): RecyclerView.ViewHolder(binding.root) {
     private var binding: AlbumRowBinding? = null
 
     init {
