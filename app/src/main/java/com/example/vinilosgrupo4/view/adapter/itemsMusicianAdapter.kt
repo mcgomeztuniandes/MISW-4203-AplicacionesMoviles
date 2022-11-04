@@ -8,10 +8,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.vinilosgrupo4.R
 import com.example.vinilosgrupo4.databinding.MusicianRowBinding
 import com.example.vinilosgrupo4.model.MusiciansResponseDataModel
-import com.example.vinilosgrupo4.view.fragments.ClickMusicianListener
 import com.example.vinilosgrupo4.view.viewholder.itemMusicianViewHolder
 
-class itemsMusicianAdapter(private var listener: ClickMusicianListener): RecyclerView.Adapter<itemMusicianViewHolder>() {
+class itemsMusicianAdapter(): RecyclerView.Adapter<itemMusicianViewHolder>() {
     private val resource = R.layout.musician_row
     lateinit var context: Context
 
@@ -30,10 +29,6 @@ class itemsMusicianAdapter(private var listener: ClickMusicianListener): Recycle
 
     override fun onBindViewHolder(holder: itemMusicianViewHolder, position: Int) {
         holder.setItem(itemList[position])
-
-        holder.itemView.setOnClickListener {
-            listener.itemSelect(itemList[position])
-        }
     }
 
     fun setItems(list: MutableList<MusiciansResponseDataModel>) {
