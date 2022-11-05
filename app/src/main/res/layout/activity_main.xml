@@ -12,18 +12,156 @@
         android:layout_height="match_parent"
         tools:context=".view.MainActivity">
 
-        <fragment
-            android:id="@+id/nav_host_fragment"
-            android:name="androidx.navigation.fragment.NavHostFragment"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:defaultNavHost="true"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.4" />
+
+        <ImageView
+            android:contentDescription="@+id/viewLogo"
+            android:layout_width="400dp"
+            android:layout_height="260dp"
+            android:src="@drawable/logo_home_2"
+            app:layout_constraintBottom_toTopOf="@id/guideline2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:navGraph="@navigation/musiciannavigation"
-            tools:ignore="FragmentTagUsage" />
+            app:layout_constraintVertical_bias="0.5" />
+
+        <TextView
+            android:id="@+id/buttonPerformers"
+            android:layout_width="160dp"
+            android:layout_height="150dp"
+            android:layout_margin="10dp"
+            app:drawableTopCompat="@drawable/logo_musician"
+            android:gravity="center|bottom"
+            android:text="@string/btnPerformersText"
+            android:textAllCaps="false"
+            android:textColor="#2E40A5"
+            android:textSize="22sp"
+            android:textStyle="italic|bold"
+            app:layout_constraintBottom_toTopOf="@+id/buttonCollectors"
+            app:layout_constraintEnd_toStartOf="@+id/buttonAlbums"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/guideline2" />
+
+        <TextView
+            android:id="@+id/buttonAlbums"
+            android:layout_width="160dp"
+            android:layout_height="150dp"
+            android:layout_margin="10dp"
+            app:drawableTopCompat="@drawable/logo_albums"
+            android:gravity="bottom|center_horizontal"
+            android:text="@string/btnAlbumsText"
+            android:textAllCaps="false"
+            android:textColor="#2E40A5"
+            android:textSize="22sp"
+            android:textStyle="italic|bold"
+            app:layout_constraintBottom_toTopOf="@+id/button1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/buttonPerformers"
+            app:layout_constraintTop_toBottomOf="@+id/guideline2" />
+
+        <TextView
+            android:id="@+id/buttonCollectors"
+            android:layout_width="160dp"
+            android:layout_height="150dp"
+            android:layout_margin="10dp"
+            app:drawableTopCompat="@drawable/logo_collectors"
+            android:gravity="bottom|center_horizontal"
+            android:text="@string/btnCollectorsText"
+            android:textAllCaps="false"
+            android:textColor="#2E40A5"
+            android:textSize="22sp"
+            android:textStyle="italic|bold"
+            app:layout_constraintBottom_toTopOf="@+id/guidelineMenu"
+            app:layout_constraintEnd_toStartOf="@id/button1"
+            app:layout_constraintHorizontal_bias="0.504"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonPerformers" />
+
+        <TextView
+            android:id="@+id/button1"
+            android:layout_width="160dp"
+            android:layout_height="150dp"
+            android:layout_margin="10dp"
+            app:drawableTopCompat="@drawable/logo_tracks"
+            android:gravity="bottom|center_horizontal"
+            android:text="@string/btnTracksText"
+            android:textAllCaps="false"
+            android:textColor="#2E40A5"
+            android:textSize="22sp"
+            android:textStyle="italic|bold"
+            app:layout_constraintBottom_toTopOf="@+id/guidelineMenu"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/buttonCollectors"
+            app:layout_constraintTop_toBottomOf="@+id/buttonAlbums" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.94" />
+
+        <Button
+            android:id="@+id/homeBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            app:icon="@drawable/home_icon"
+            app:iconGravity="textStart"
+            app:iconSize="30dp"
+            app:iconPadding="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/albumsBtn"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guidelineMenu" />
+
+        <Button
+            android:id="@+id/albumsBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            app:icon="@drawable/albums_icon"
+            app:iconGravity="textStart"
+            app:iconPadding="5dp"
+            app:iconSize="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/collectorsBtn"
+            app:layout_constraintStart_toEndOf="@+id/homeBtn"
+            app:layout_constraintTop_toTopOf="@+id/guidelineMenu" />
+
+        <Button
+            android:id="@+id/collectorsBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            app:icon="@drawable/band_icon"
+            app:iconGravity="textStart"
+            app:iconPadding="5dp"
+            app:iconSize="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/lastBtn"
+            app:layout_constraintStart_toEndOf="@+id/albumsBtn"
+            app:layout_constraintTop_toTopOf="@+id/guidelineMenu" />
+
+        <Button
+            android:id="@+id/lastBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            app:icon="@drawable/disc_icon"
+            app:iconGravity="textStart"
+            app:iconPadding="5dp"
+            app:iconSize="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/collectorsBtn"
+            app:layout_constraintTop_toTopOf="@+id/guidelineMenu" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
