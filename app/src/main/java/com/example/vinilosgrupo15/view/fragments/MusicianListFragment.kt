@@ -1,4 +1,4 @@
-package com.example.vinilosgrupo4.view.fragments
+package com.example.vinilosgrupo15.view.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -13,8 +13,8 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.vinilosgrupo4.R
 import com.example.vinilosgrupo4.databinding.FragmentMusicianListBinding
-import com.example.vinilosgrupo4.view.adapter.ItemsMusicianAdapter
-import com.example.vinilosgrupo4.viewmodels.MusicianViewModel
+import com.example.vinilosgrupo15.view.adapter.ItemsMusicianAdapter
+import com.example.vinilosgrupo15.viewmodels.MusicianViewModel
 
 class MusicianListFragment : Fragment() {
     private var viewMusicianModel: MusicianViewModel? = null

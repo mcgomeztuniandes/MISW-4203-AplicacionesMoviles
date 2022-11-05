@@ -1,4 +1,4 @@
-package com.example.vinilosgrupo4.model
+package com.example.vinilosgrupo15.model
 
 data class MusiciansResponseDataModel (
     val id: Long,

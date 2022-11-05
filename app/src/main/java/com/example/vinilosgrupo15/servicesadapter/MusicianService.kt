@@ -1,6 +1,6 @@
-package com.example.vinilosgrupo4.servicesadapter
+package com.example.vinilosgrupo15.servicesadapter
 
-import com.example.vinilosgrupo4.model.MusiciansResponseDataModel
+import com.example.vinilosgrupo15.model.MusiciansResponseDataModel
 import retrofit2.Response
 import retrofit2.http.GET
 

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/bandListFragment"
-        android:name="com.example.vinilosgrupo4.view.fragments.BandListFragment"
+        android:name="com.example.vinilosgrupo15.view.fragments.BandListFragment"
         android:label="fragment_band_list"
         tools:layout="@layout/fragment_band_list" >
         <action

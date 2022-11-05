@@ -1,4 +1,4 @@
-package com.example.vinilosgrupo4.view.fragments
+package com.example.vinilosgrupo15.view.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -13,11 +13,11 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.vinilosgrupo4.R
 import com.example.vinilosgrupo4.databinding.FragmentBandListBinding
-import com.example.vinilosgrupo4.view.adapter.ItemsBandAdapter
-import com.example.vinilosgrupo4.viewmodels.BandViewModel
+import com.example.vinilosgrupo15.view.adapter.ItemsBandAdapter
+import com.example.vinilosgrupo15.viewmodels.BandViewModel
 
 class BandListFragment : Fragment() {
-    private var viewBandModel: BandViewModel ? = null
+    private var viewBandModel: BandViewModel? = null
     private var binding: FragmentBandListBinding? = null
     private var myBandAdapter: ItemsBandAdapter? = null
 

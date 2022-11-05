@@ -1,4 +1,4 @@
-package com.example.vinilosgrupo4.servicesadapter
+package com.example.vinilosgrupo15.servicesadapter
 
 import com.example.vinilosgrupo4.BuildConfig
 import okhttp3.OkHttpClient

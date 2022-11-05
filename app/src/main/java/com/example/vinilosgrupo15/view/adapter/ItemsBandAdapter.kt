@@ -1,4 +1,4 @@
-package com.example.vinilosgrupo4.view.adapter
+package com.example.vinilosgrupo15.view.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -7,8 +7,8 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.vinilosgrupo4.R
 import com.example.vinilosgrupo4.databinding.BandRowBinding
-import com.example.vinilosgrupo4.model.BandReponseDataModel
-import com.example.vinilosgrupo4.view.viewholder.ItemBandViewHolder
+import com.example.vinilosgrupo15.model.BandReponseDataModel
+import com.example.vinilosgrupo15.view.viewholder.ItemBandViewHolder
 
 class ItemsBandAdapter(): RecyclerView.Adapter<ItemBandViewHolder>() {
     private val resource = R.layout.band_row

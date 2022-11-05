@@ -1,4 +1,4 @@
-package com.example.vinilosgrupo4.view
+package com.example.vinilosgrupo15.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

@@ -1,9 +1,9 @@
-package com.example.vinilosgrupo4.viewmodels
+package com.example.vinilosgrupo15.viewmodels
 
 import android.app.Application
 import androidx.lifecycle.*
-import com.example.vinilosgrupo4.model.BandReponseDataModel
-import com.example.vinilosgrupo4.repository.BandRepository
+import com.example.vinilosgrupo15.model.BandReponseDataModel
+import com.example.vinilosgrupo15.repository.BandRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job

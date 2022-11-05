@@ -1,7 +1,7 @@
-package com.example.vinilosgrupo4.repository
+package com.example.vinilosgrupo15.repository
 
-import com.example.vinilosgrupo4.servicesadapter.MusicianService
-import com.example.vinilosgrupo4.servicesadapter.RetrofitClient
+import com.example.vinilosgrupo15.servicesadapter.MusicianService
+import com.example.vinilosgrupo15.servicesadapter.RetrofitClient
 
 class MusicianRepository {
     private var apiService: MusicianService? = null
