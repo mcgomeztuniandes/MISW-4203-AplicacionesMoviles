@@ -41,7 +41,7 @@ class MusicianListFragment : Fragment() {
         btnBand.setOnClickListener {
             activity?.supportFragmentManager
                 ?.beginTransaction()
-                ?.replace(R.id.container, BandListFragment())
+                ?.replace(R.id.container, BandListFragment.newInstance())
                 ?.addToBackStack(null)
                 ?.commit()
         }
@@ -72,10 +72,4 @@ class MusicianListFragment : Fragment() {
         fun newInstance() = MusicianListFragment()
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        //myMusicianAdapter = null
-        //binding = null
-        //viewMusicianModel = null
-    }
 }
