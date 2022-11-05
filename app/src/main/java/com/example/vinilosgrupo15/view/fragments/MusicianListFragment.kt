@@ -41,11 +41,9 @@ class MusicianListFragment : Fragment() {
         btnBand.setOnClickListener {
             activity?.supportFragmentManager
                 ?.beginTransaction()
-                ?.replace(android.R.id.content, BandListFragment.newInstance())
+                ?.replace(R.id.container, BandListFragment())
                 ?.addToBackStack(null)
                 ?.commit()
-
-            binding!!.recyclerview.isVisible = false
         }
 
         return binding!!.root
@@ -76,8 +74,8 @@ class MusicianListFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
-        myMusicianAdapter = null
-        binding = null
-        viewMusicianModel = null
+        //myMusicianAdapter = null
+        //binding = null
+        //viewMusicianModel = null
     }
 }

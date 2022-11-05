@@ -13,12 +13,17 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.vinilosgrupo15.R
 import com.example.vinilosgrupo15.databinding.FragmentBandListBinding
+import com.example.vinilosgrupo15.databinding.FragmentMusicianListBinding
+import com.example.vinilosgrupo15.view.MainActivity
 import com.example.vinilosgrupo15.view.adapter.ItemsBandAdapter
 import com.example.vinilosgrupo15.viewmodels.BandViewModel
+import com.example.vinilosgrupo15.viewmodels.MusicianViewModel
 
 class BandListFragment : Fragment() {
     private var viewBandModel: BandViewModel? = null
+    private var viewMusicianModel: MusicianViewModel? = null
     private var binding: FragmentBandListBinding? = null
+    private var binding2: FragmentMusicianListBinding? = null
     private var myBandAdapter: ItemsBandAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,6 +31,11 @@ class BandListFragment : Fragment() {
         viewBandModel =
             activity?.let {
                 ViewModelProvider(it).get(BandViewModel::class.java)
+            }!!
+
+        viewMusicianModel =
+            activity?.let {
+                ViewModelProvider(it).get(MusicianViewModel::class.java)
             }!!
     }
 
@@ -36,16 +46,17 @@ class BandListFragment : Fragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_band_list, container, false)
         binding!!.viewModel = viewBandModel
 
-        var btnbtnMusicians: Button = binding!!.btnMusician
 
-        btnbtnMusicians.setOnClickListener {
+        var btnMusicians: Button = binding!!.btnMusician
+
+        btnMusicians.setOnClickListener {
             activity?.supportFragmentManager
                 ?.beginTransaction()
-                ?.replace(android.R.id.content, MusicianListFragment.newInstance())
+                ?.replace(R.id.container, MusicianListFragment())
                 ?.addToBackStack(null)
                 ?.commit()
 
-            binding!!.recyclerview.isVisible = false
+            //binding!!.recyclerview.isVisible = false
         }
 
         return binding!!.root
@@ -76,8 +87,8 @@ class BandListFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
-        myBandAdapter = null
-        binding = null
-        viewBandModel = null
+        //myBandAdapter = null
+        //binding = null
+        //viewBandModel = null
     }
 }
