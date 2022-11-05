@@ -12,10 +12,10 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        var btnLogin: Button = findViewById(R.id.login)
+        var btnLogin: Button = this.findViewById(R.id.login)
         btnLogin.setOnClickListener { vinylsIngress() }
 
-        val spinner: Spinner = findViewById(R.id.rolList)
+        val spinner: Spinner = this.findViewById(R.id.rolList)
         ArrayAdapter.createFromResource(
             this,
             R.array.roles,
@@ -25,7 +25,6 @@ class LoginActivity : AppCompatActivity() {
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
             spinner.adapter = adapter
         }
-
 
     }
 

@@ -10,6 +10,9 @@
     <string name="singup">Continue</string>
     <string name="VinilsHome">Vinils App</string>
     <string name="campoobligatorio">campo obligatorio</string>
+    <string name="vinils_login">Vinils Login</string>
+    <string name="login_home">Login Home</string>
+    <string name="todo">TODO</string>
     <string-array name="roles">
         <item>Select rol</item>
         <item>Collector</item>
