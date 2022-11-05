@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/musicianListFragment"
-        android:name="com.example.vinilosgrupo4.view.fragments.MusicianListFragment"
+        android:name="com.example.vinilosgrupo15.view.fragments.MusicianListFragment"
         android:label="fragment_musician_list"
         tools:layout="@layout/fragment_musician_list" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/musicianDetailFragment"
-        android:name="com.example.vinilosgrupo4.view.fragments.MusicianDetailFragment"
+        android:name="com.example.vinilosgrupo15.view.fragments.MusicianDetailFragment"
         android:label="fragment_musician_detail"
         tools:layout="@layout/fragment_musician_detail" />
 </navigation>

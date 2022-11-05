@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Vinilos Grupo 4"
+rootProject.name = "Vinilos Grupo 15"
 include ':app'
