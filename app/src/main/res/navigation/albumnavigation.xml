@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/albumListFragment"
-        android:name="com.example.vinilosgrupo4.view.fragments.AlbumListFragment"
+        android:name="com.example.vinilosgrupo15.view.fragments.AlbumListFragment"
         android:label="AlbumListFragment" >
     </fragment>
 </navigation>
