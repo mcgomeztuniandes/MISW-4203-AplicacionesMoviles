@@ -54,8 +54,5 @@ class HomeFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
-        //myMusicianAdapter = null
-        //binding = null
-        //viewMusicianModel = null
     }
 }
