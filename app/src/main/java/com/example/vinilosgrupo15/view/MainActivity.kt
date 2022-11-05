@@ -3,8 +3,8 @@ package com.example.vinilosgrupo15.view
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
-import com.example.vinilosgrupo4.R
-import com.example.vinilosgrupo4.databinding.ActivityMainBinding
+import com.example.vinilosgrupo15.R
+import com.example.vinilosgrupo15.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding

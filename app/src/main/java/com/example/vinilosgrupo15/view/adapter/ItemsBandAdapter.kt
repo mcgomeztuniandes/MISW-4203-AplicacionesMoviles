@@ -5,8 +5,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.example.vinilosgrupo4.R
-import com.example.vinilosgrupo4.databinding.BandRowBinding
+import com.example.vinilosgrupo15.R
+import com.example.vinilosgrupo15.databinding.BandRowBinding
 import com.example.vinilosgrupo15.model.BandReponseDataModel
 import com.example.vinilosgrupo15.view.viewholder.ItemBandViewHolder
 

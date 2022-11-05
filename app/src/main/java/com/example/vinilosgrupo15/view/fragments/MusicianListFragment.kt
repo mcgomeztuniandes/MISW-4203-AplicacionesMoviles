@@ -11,8 +11,8 @@ import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.vinilosgrupo4.R
-import com.example.vinilosgrupo4.databinding.FragmentMusicianListBinding
+import com.example.vinilosgrupo15.R
+import com.example.vinilosgrupo15.databinding.FragmentMusicianListBinding
 import com.example.vinilosgrupo15.view.adapter.ItemsMusicianAdapter
 import com.example.vinilosgrupo15.viewmodels.MusicianViewModel
 

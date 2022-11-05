@@ -1,6 +1,6 @@
 package com.example.vinilosgrupo15.servicesadapter
 
-import com.example.vinilosgrupo4.BuildConfig
+import com.example.vinilosgrupo15.BuildConfig
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
