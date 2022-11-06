@@ -1,7 +1,5 @@
 package e2e;
 
-
-
 import static androidx.test.espresso.Espresso.onData;
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.clearText;
@@ -29,8 +27,6 @@ import org.junit.runner.RunWith;
 import com.example.vinilosgrupo15.R;
 import com.example.vinilosgrupo15.view.LoginActivity;
 import com.example.vinilosgrupo15.view.MainActivity;
-
-
 
 @RunWith(AndroidJUnit4.class)
 @LargeTest

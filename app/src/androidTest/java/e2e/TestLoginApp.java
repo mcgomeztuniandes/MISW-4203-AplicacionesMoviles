@@ -36,7 +36,7 @@ public class TestLoginApp {
 
 
     @Test
-    public void testLoginAppGuest(){
+    public void testLoginAppGuest() throws InterruptedException {
         onView(withText("Vinils APP")).check(matches(isDisplayed()));
 
         onView(withId(R.id.editTextTextPersonName)).perform(clearText(), typeText("Invitado"), closeSoftKeyboard());
@@ -49,11 +49,12 @@ public class TestLoginApp {
         onView(withId(R.id.login)).perform(click());
 
         onView(withText(R.string.app_name)).check(matches(isDisplayed()));
+        Thread.sleep(2000);
 
     }
 
     @Test
-    public void testLoginAppCollector(){
+    public void testLoginAppCollector() throws InterruptedException {
         onView(withText("Vinils APP")).check(matches(isDisplayed()));
 
         onView(withId(R.id.editTextTextPersonName)).perform(clearText(), typeText("Coleccionista"), closeSoftKeyboard());
@@ -66,14 +67,16 @@ public class TestLoginApp {
         onView(withId(R.id.login)).perform(click());
 
         onView(withText(R.string.app_name)).check(matches(isDisplayed()));
+        Thread.sleep(2000);
 
     }
 
     @Test
-    public void testLoginAppSinDatosUsuario(){
+    public void testLoginAppSinDatosUsuario() throws InterruptedException {
         onView(withText("Vinils APP")).check(matches(isDisplayed()));
 
         onView(withId(R.id.login)).perform(click());
+        Thread.sleep(2000);
 
     }
 
