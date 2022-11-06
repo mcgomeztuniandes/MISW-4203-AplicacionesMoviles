@@ -1,7 +1,8 @@
-package com.example.vinilosgrupo4
+package com.example.vinilosgrupo15
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.vinilosgrupo15.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
