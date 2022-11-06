@@ -29,10 +29,20 @@ class HomeFragment : Fragment() {
 
         var btnPerformers: TextView = binding!!.buttonPerformers
 
+        var btnAlbums: TextView = binding!!.buttonAlbums
+
         btnPerformers.setOnClickListener {
             activity?.supportFragmentManager
                 ?.beginTransaction()
                 ?.replace(R.id.container, MusicianListFragment())
+                ?.addToBackStack(null)
+                ?.commit()
+        }
+
+        btnAlbums.setOnClickListener {
+            activity?.supportFragmentManager
+                ?.beginTransaction()
+                ?.replace(R.id.container, AlbumListFragment())
                 ?.addToBackStack(null)
                 ?.commit()
         }
