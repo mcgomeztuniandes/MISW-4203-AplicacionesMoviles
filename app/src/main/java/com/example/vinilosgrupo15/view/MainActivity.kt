@@ -8,7 +8,6 @@ import com.example.vinilosgrupo15.R
 import com.example.vinilosgrupo15.view.fragments.AlbumListFragment
 import com.example.vinilosgrupo15.view.fragments.BandListFragment
 import com.example.vinilosgrupo15.view.fragments.HomeFragment
-import com.example.vinilosgrupo15.view.fragments.MusicianListFragment
 
 class MainActivity : AppCompatActivity() {
 
