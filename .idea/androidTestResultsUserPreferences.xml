@@ -62,6 +62,8 @@
                 <map>
                   <entry key="Duration" value="90" />
                   <entry key="MotoOneAction_API_22" value="120" />
+                  <entry key="Nexus_4_API_22_L" value="120" />
+                  <entry key="Pixel_5_API_22" value="120" />
                   <entry key="Pixel_5_API_23" value="120" />
                   <entry key="Tests" value="360" />
                 </map>
