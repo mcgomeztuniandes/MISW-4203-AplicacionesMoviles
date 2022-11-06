@@ -7,14 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.core.view.isInvisible
-import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.vinilosgrupo15.R
 import com.example.vinilosgrupo15.databinding.FragmentBandListBinding
 import com.example.vinilosgrupo15.databinding.FragmentMusicianListBinding
-import com.example.vinilosgrupo15.view.MainActivity
 import com.example.vinilosgrupo15.view.adapter.ItemsBandAdapter
 import com.example.vinilosgrupo15.viewmodels.BandViewModel
 import com.example.vinilosgrupo15.viewmodels.MusicianViewModel
