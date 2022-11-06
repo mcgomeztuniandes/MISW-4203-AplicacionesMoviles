@@ -57,8 +57,6 @@ class AlbumListFragment: Fragment() {
         viewAlbumModel.fetchAlbumData()
     }
 
-
-
     companion object {
         fun newInstance() = AlbumListFragment()
     }
