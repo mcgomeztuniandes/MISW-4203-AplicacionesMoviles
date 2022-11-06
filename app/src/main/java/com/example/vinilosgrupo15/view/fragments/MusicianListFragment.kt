@@ -13,14 +13,13 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.vinilosgrupo15.R
 import com.example.vinilosgrupo15.databinding.FragmentMusicianListBinding
-import com.example.vinilosgrupo15.model.MusiciansResponseDataModel
-import com.example.vinilosgrupo15.view.adapter.itemsMusicianAdapter
+import com.example.vinilosgrupo15.view.adapter.ItemsMusicianAdapter
 import com.example.vinilosgrupo15.viewmodels.MusicianViewModel
 
-class MusicianListFragment : Fragment(), ClickMusicianListener {
-    lateinit var viewMusicianModel: MusicianViewModel
-    lateinit var binding: FragmentMusicianListBinding
-    private var myMusicianAdapter: itemsMusicianAdapter?= null
+class MusicianListFragment : Fragment() {
+    private var viewMusicianModel: MusicianViewModel? = null
+    private var binding: FragmentMusicianListBinding? = null
+    private var myMusicianAdapter: ItemsMusicianAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,60 +34,42 @@ class MusicianListFragment : Fragment(), ClickMusicianListener {
         savedInstanceState: Bundle?
     ): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_musician_list, container, false)
-        binding.viewModel = viewMusicianModel
+        binding!!.viewModel = viewMusicianModel
 
-        var btnBand: Button = binding.btnBand
+        var btnBand: Button = binding!!.btnBand
 
         btnBand.setOnClickListener {
             activity?.supportFragmentManager
                 ?.beginTransaction()
-                ?.replace(android.R.id.content, BandListFragment.newInstance())
+                ?.replace(R.id.container, BandListFragment.newInstance())
                 ?.addToBackStack(null)
                 ?.commit()
-
-            binding.recyclerview.isVisible = false
         }
 
-        return binding.root
+        return binding!!.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        myMusicianAdapter = itemsMusicianAdapter(this)
-        binding.recyclerview.layoutManager = LinearLayoutManager(context)
-        binding.recyclerview.adapter = myMusicianAdapter
+        myMusicianAdapter = ItemsMusicianAdapter()
+        binding!!.recyclerview.layoutManager = LinearLayoutManager(context)
+        binding!!.recyclerview.adapter = myMusicianAdapter
 
-        viewMusicianModel.listMusicians.observe(viewLifecycleOwner) {
+        viewMusicianModel!!.listMusicians.observe(viewLifecycleOwner) {
             myMusicianAdapter?.setItems(list = it)
-            binding.progress.isInvisible = true
+            binding!!.progress.isInvisible = true
         }
 
-        viewMusicianModel.progressMusicians.observe(viewLifecycleOwner) {
-            binding.progress.isInvisible = true
+        viewMusicianModel!!.progressMusicians.observe(viewLifecycleOwner) {
+            binding!!.progress.isInvisible = true
         }
 
-        viewMusicianModel.fetchMusicianData()
-    }
-
-    override fun itemSelect(data: MusiciansResponseDataModel) {
-        viewMusicianModel.setItemSelection(data)
-
-        /*
-        activity?.supportFragmentManager
-            ?.beginTransaction()
-            ?.replace(android.R.id.content, MusicianDetailFragment.newInstance())
-            ?.addToBackStack(null)
-            ?.commit()
-
-         */
+        viewMusicianModel!!.fetchMusicianData()
     }
 
     companion object {
         fun newInstance() = MusicianListFragment()
     }
-}
 
-interface ClickMusicianListener {
-    fun itemSelect(data: MusiciansResponseDataModel)
 }

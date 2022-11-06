@@ -1,7 +1,7 @@
 package com.example.vinilosgrupo15.viewmodels
+
 import android.app.Application
 import androidx.lifecycle.*
-import androidx.lifecycle.Observer
 import com.example.vinilosgrupo15.model.BandReponseDataModel
 import com.example.vinilosgrupo15.repository.BandRepository
 import kotlinx.coroutines.CoroutineScope
@@ -12,9 +12,6 @@ import java.util.*
 import kotlin.coroutines.CoroutineContext
 
 class BandViewModel(app: Application): AndroidViewModel(app), CoroutineScope {
-    private val _itemSelected = MutableLiveData<BandReponseDataModel>()
-    var itemDataSelected: BandReponseDataModel? = null
-
     private val _listBands = MutableLiveData<ArrayList<BandReponseDataModel>>()
     var listBands: LiveData<ArrayList<BandReponseDataModel>> = _listBands
 
@@ -23,28 +20,10 @@ class BandViewModel(app: Application): AndroidViewModel(app), CoroutineScope {
 
     private val repository = BandRepository()
 
-    lateinit var observerOnCategorySelected: Observer<BandReponseDataModel>
-
     private val viewModelJob = Job()
 
     override val coroutineContext: CoroutineContext
         get() = viewModelJob + Dispatchers.Default
-
-    init {
-        observerOnCategorySelected = Observer { value ->
-            value.let {
-                _itemSelected.value = it
-            }
-        }
-    }
-
-    fun clearSelection() {
-        _itemSelected.value = null
-    }
-
-    fun setItemSelection(item: BandReponseDataModel) {
-        itemDataSelected = item
-    }
 
     fun fetchBandData() {
         _progressBands.value = true

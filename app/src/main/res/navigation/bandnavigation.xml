@@ -10,12 +10,9 @@
         android:name="com.example.vinilosgrupo15.view.fragments.BandListFragment"
         android:label="fragment_band_list"
         tools:layout="@layout/fragment_band_list" >
-        <action
-            android:id="@+id/action_bandListFragment_to_bandDetailFragment"
-            app:destination="@id/bandDetailFragment" />
+
     </fragment>
-    <fragment
-        android:id="@+id/bandDetailFragment"
-        android:name="com.example.vinilosgrupo15.view.fragments.BandDetailFragment"
-        android:label="BandDetailFragment" />
+
+
+
 </navigation>

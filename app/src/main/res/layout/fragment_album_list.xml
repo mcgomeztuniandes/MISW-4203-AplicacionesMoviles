@@ -6,24 +6,13 @@
     <data>
         <variable
             name="viewModel"
-            type="com.example.vinilosgrupo15.viewmodels.BandViewModel" />
+            type="com.example.vinilosgrupo15.viewmodels.AlbumViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".BandListFragment">
-
-        <Button
-            android:id="@+id/btnMusician"
-            android:layout_width="150dp"
-            android:layout_height="0dp"
-            android:layout_marginEnd="8dp"
-            android:text="Musicians"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            tools:ignore="MissingConstraints"
-            tools:text="Band" />
+        tools:context=".AlbumListFragment">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerview"
@@ -35,32 +24,16 @@
             app:layout_constraintHorizontal_bias="0.6"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:listitem="@layout/band_row" />
+            tools:listitem="@layout/album_row" />
 
         <ProgressBar
             android:id="@+id/progress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:visibility="gone"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="44dp"
-            android:fontFamily="sans-serif-black"
-            android:text="Performers"
-            android:textAlignment="viewStart"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textStyle="italic"
-            android:visibility="visible"
-            app:layout_constraintEnd_toStartOf="@+id/btnMusician"
-            app:layout_constraintHorizontal_bias="0.485"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteY="16dp"
-            tools:text="Performers" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

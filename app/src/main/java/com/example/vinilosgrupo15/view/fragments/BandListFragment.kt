@@ -13,20 +13,29 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.vinilosgrupo15.R
 import com.example.vinilosgrupo15.databinding.FragmentBandListBinding
-import com.example.vinilosgrupo15.model.BandReponseDataModel
-import com.example.vinilosgrupo15.view.adapter.itemsBandAdapter
+import com.example.vinilosgrupo15.databinding.FragmentMusicianListBinding
+import com.example.vinilosgrupo15.view.MainActivity
+import com.example.vinilosgrupo15.view.adapter.ItemsBandAdapter
 import com.example.vinilosgrupo15.viewmodels.BandViewModel
+import com.example.vinilosgrupo15.viewmodels.MusicianViewModel
 
-class BandListFragment : Fragment(), ClickBandListener {
-    lateinit var viewBandModel: BandViewModel
-    lateinit var binding: FragmentBandListBinding
-    private var myBandAdapter: itemsBandAdapter?= null
+class BandListFragment : Fragment() {
+    private var viewBandModel: BandViewModel? = null
+    private var viewMusicianModel: MusicianViewModel? = null
+    private var binding: FragmentBandListBinding? = null
+    private var binding2: FragmentMusicianListBinding? = null
+    private var myBandAdapter: ItemsBandAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewBandModel =
             activity?.let {
                 ViewModelProvider(it).get(BandViewModel::class.java)
+            }!!
+
+        viewMusicianModel =
+            activity?.let {
+                ViewModelProvider(it).get(MusicianViewModel::class.java)
             }!!
     }
 
@@ -35,60 +44,43 @@ class BandListFragment : Fragment(), ClickBandListener {
         savedInstanceState: Bundle?
     ): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_band_list, container, false)
-        binding.viewModel = viewBandModel
+        binding!!.viewModel = viewBandModel
 
-        var btnbtnMusicians: Button = binding.btnMusician
 
-        btnbtnMusicians.setOnClickListener {
+        var btnMusicians: Button = binding!!.btnMusician
+
+        btnMusicians.setOnClickListener {
             activity?.supportFragmentManager
                 ?.beginTransaction()
-                ?.replace(android.R.id.content, MusicianListFragment.newInstance())
+                ?.replace(R.id.container, MusicianListFragment.newInstance())
                 ?.addToBackStack(null)
                 ?.commit()
-
-            binding.recyclerview.isVisible = false
         }
 
-        return binding.root
+        return binding!!.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        myBandAdapter = itemsBandAdapter(this)
-        binding.recyclerview.layoutManager = LinearLayoutManager(context)
-        binding.recyclerview.adapter = myBandAdapter
+        myBandAdapter = ItemsBandAdapter()
+        binding!!.recyclerview.layoutManager = LinearLayoutManager(context)
+        binding!!.recyclerview.adapter = myBandAdapter
 
-        viewBandModel.listBands.observe(viewLifecycleOwner) {
+        viewBandModel!!.listBands.observe(viewLifecycleOwner) {
             myBandAdapter?.setItems(list = it)
-            binding.progress.isInvisible = true
+            binding!!.progress.isInvisible = true
         }
 
-        viewBandModel.progressBands.observe(viewLifecycleOwner) {
-            binding.progress.isInvisible = true
+        viewBandModel!!.progressBands.observe(viewLifecycleOwner) {
+            binding!!.progress.isInvisible = true
         }
 
-        viewBandModel.fetchBandData()
-    }
-
-    override fun itemSelect(data: BandReponseDataModel) {
-        viewBandModel.setItemSelection(data)
-
-        /*
-        activity?.supportFragmentManager
-            ?.beginTransaction()
-            ?.replace(android.R.id.content, BandDetailFragment.newInstance())
-            ?.addToBackStack(null)
-            ?.commit()
-
-         */
+        viewBandModel!!.fetchBandData()
     }
 
     companion object {
         fun newInstance() = BandListFragment()
     }
-}
 
-interface ClickBandListener {
-    fun itemSelect(data: BandReponseDataModel)
 }
