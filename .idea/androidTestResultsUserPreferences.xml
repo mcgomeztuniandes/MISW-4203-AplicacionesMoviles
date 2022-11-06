@@ -62,6 +62,7 @@
                 <map>
                   <entry key="Duration" value="90" />
                   <entry key="MotoOneAction_API_22" value="120" />
+                  <entry key="Pixel_5_API_23" value="120" />
                   <entry key="Tests" value="360" />
                 </map>
               </option>
