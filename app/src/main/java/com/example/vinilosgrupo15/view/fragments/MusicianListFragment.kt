@@ -12,10 +12,11 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.vinilosgrupo15.R
 import com.example.vinilosgrupo15.databinding.FragmentMusicianListBinding
+import com.example.vinilosgrupo15.model.MusiciansResponseDataModel
 import com.example.vinilosgrupo15.view.adapter.ItemsMusicianAdapter
 import com.example.vinilosgrupo15.viewmodels.MusicianViewModel
 
-class MusicianListFragment : Fragment() {
+class MusicianListFragment : Fragment(), ClickMusicianListener {
     private var viewMusicianModel: MusicianViewModel? = null
     private var binding: FragmentMusicianListBinding? = null
     private var myMusicianAdapter: ItemsMusicianAdapter? = null
@@ -51,7 +52,7 @@ class MusicianListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        myMusicianAdapter = ItemsMusicianAdapter()
+        myMusicianAdapter = ItemsMusicianAdapter(this)
         binding!!.recyclerview.layoutManager = LinearLayoutManager(context)
         binding!!.recyclerview.adapter = myMusicianAdapter
 
@@ -71,4 +72,17 @@ class MusicianListFragment : Fragment() {
         fun newInstance() = MusicianListFragment()
     }
 
+    override fun itemSelect(data: MusiciansResponseDataModel) {
+        viewMusicianModel!!.setItemSelection(data)
+
+        activity?.supportFragmentManager
+            ?.beginTransaction()
+            ?.replace(android.R.id.content, MusicianDetailFragment.newInstance())
+            ?.addToBackStack(null)
+            ?.commit()
+    }
+}
+
+interface ClickMusicianListener {
+    fun itemSelect(data: MusiciansResponseDataModel)
 }

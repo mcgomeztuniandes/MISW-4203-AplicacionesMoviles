@@ -12,6 +12,9 @@ import java.util.*
 import kotlin.coroutines.CoroutineContext
 
 class MusicianViewModel(app: Application): AndroidViewModel(app), CoroutineScope {
+    private val _itemSelected = MutableLiveData<MusiciansResponseDataModel>()
+    var itemDataSelected: MusiciansResponseDataModel? = null
+
     private val _listMusicians = MutableLiveData<ArrayList<MusiciansResponseDataModel>>()
     var listMusicians: LiveData<ArrayList<MusiciansResponseDataModel>> = _listMusicians
 
@@ -24,6 +27,14 @@ class MusicianViewModel(app: Application): AndroidViewModel(app), CoroutineScope
 
     override val coroutineContext: CoroutineContext
         get() = viewModelJob + Dispatchers.Default
+
+    fun clearSelection() {
+        _itemSelected.value = null
+    }
+
+    fun setItemSelection(item: MusiciansResponseDataModel) {
+        itemDataSelected = item
+    }
 
     fun fetchMusicianData() {
         _progressMusicians.value = true
