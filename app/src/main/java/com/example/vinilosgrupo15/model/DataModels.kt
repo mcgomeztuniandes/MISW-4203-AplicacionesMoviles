@@ -68,3 +68,19 @@ data class Track (
     val name: String,
     val duration: String
 )
+
+data class CollectorAlbums (
+    val id: Long,
+    val price: Long,
+    val status: String
+    )
+
+data class CollectorsResponseDataModel (
+    val id: Long,
+    val name: String,
+    val telephone: String,
+    val email: String,
+    val comments: List<Comment>,
+    val favoritePerformers: List<Performer>,
+    val collectorAlbums: List<CollectorAlbums>
+    )

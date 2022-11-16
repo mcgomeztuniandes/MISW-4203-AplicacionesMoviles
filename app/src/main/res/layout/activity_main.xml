@@ -52,6 +52,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="2dp"
+
             app:icon="@drawable/albums_icon"
             app:iconGravity="textStart"
             app:iconPadding="5dp"
@@ -71,12 +72,12 @@
             app:iconPadding="5dp"
             app:iconSize="30dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/lastBtn"
+            app:layout_constraintEnd_toStartOf="@+id/collectorsBtn"
             app:layout_constraintStart_toEndOf="@+id/albumsBtn"
             app:layout_constraintTop_toTopOf="@+id/guidelineMenu" />
 
         <Button
-            android:id="@+id/lastBtn"
+            android:id="@+id/collectorsBtn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="2dp"

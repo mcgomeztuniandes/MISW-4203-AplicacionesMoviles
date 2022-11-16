@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="name"
+            type="String" />
+        <variable
+            name="phone"
+            type="String" />
+        <variable
+            name="email"
+            type="String" />
+
+        <variable
+            name="goToDetail"
+            type="String" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="5dp">
+
+        <TextView
+            android:id="@+id/txt_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:text="@{name}"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/title_color"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/txt_phone"
+            app:layout_constraintBottom_toTopOf="@+id/txt_email"
+            tools:text="Character" />
+
+        <TextView
+            android:id="@+id/txt_email"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:layout_marginStart="15dp"
+            android:text="@{email}"
+            android:textSize="14sp"
+            android:textColor="@color/text_color"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_name"
+            app:layout_constraintEnd_toStartOf="@+id/btnDetail"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:text="Character" />
+
+        <TextView
+            android:id="@+id/txt_phone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="15dp"
+            android:textAlignment="textEnd"
+            android:text="@{phone}"
+            android:textSize="14sp"
+            android:textColor="@color/text_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/btnDetail"
+            app:layout_constraintStart_toEndOf="@+id/txt_name"
+            tools:text="Character" />
+
+
+
+        <TextView
+            android:id="@+id/btnDetail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="15dp"
+            android:textAlignment="textEnd"
+            android:textStyle="italic|bold"
+            android:text="@{goToDetail}"
+            android:textSize="11sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/txt_email"
+            app:layout_constraintTop_toBottomOf="@+id/txt_phone"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/gray_700"
+            android:gravity="center_horizontal"
+            android:textSize="0.5sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:layout_editor_absoluteX="0dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
