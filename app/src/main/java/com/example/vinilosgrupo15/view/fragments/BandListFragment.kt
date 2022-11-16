@@ -15,12 +15,10 @@ import com.example.vinilosgrupo15.databinding.FragmentBandListBinding
 import com.example.vinilosgrupo15.model.BandReponseDataModel
 import com.example.vinilosgrupo15.view.adapter.ItemsBandAdapter
 import com.example.vinilosgrupo15.viewmodels.BandViewModel
-import com.example.vinilosgrupo15.viewmodels.MusicianViewModel
 import com.example.vinilosgrupo4.view.fragments.BandDetailFragment
 
 class BandListFragment : Fragment(), ClickBandListener  {
     private var viewBandModel: BandViewModel? = null
-    private var viewMusicianModel: MusicianViewModel? = null
     private var binding: FragmentBandListBinding? = null
     private var myBandAdapter: ItemsBandAdapter? = null
 
@@ -74,7 +72,6 @@ class BandListFragment : Fragment(), ClickBandListener  {
 
     override fun itemSelect(data: BandReponseDataModel) {
         viewBandModel!!.setItemSelection(data)
-
 
         activity?.supportFragmentManager
             ?.beginTransaction()
