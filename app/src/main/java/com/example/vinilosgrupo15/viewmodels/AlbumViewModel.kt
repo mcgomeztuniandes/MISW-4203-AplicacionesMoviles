@@ -13,6 +13,9 @@ import java.util.ArrayList
 import kotlin.coroutines.CoroutineContext
 
 class AlbumViewModel (app: Application): AndroidViewModel(app), CoroutineScope {
+    private val _itemSelected = MutableLiveData<AlbumResponseDataModel>()
+    var itemDataSelected: AlbumResponseDataModel? = null
+
     private val _listAlbums = MutableLiveData<ArrayList<AlbumResponseDataModel>>()
     var listAlbums: LiveData<ArrayList<AlbumResponseDataModel>> = _listAlbums
 
@@ -21,10 +24,28 @@ class AlbumViewModel (app: Application): AndroidViewModel(app), CoroutineScope {
 
     private val repository = AlbumRepository()
 
+    lateinit var observerOnCategorySelected: Observer<AlbumResponseDataModel>
+
     private val viewModelJob = Job()
 
     override val coroutineContext: CoroutineContext
         get() = viewModelJob + Dispatchers.Default
+
+    init {
+        observerOnCategorySelected = Observer { value ->
+            value.let {
+                _itemSelected.value = it
+            }
+        }
+    }
+
+    fun clearSelection() {
+        _itemSelected.value = null
+    }
+
+    fun setItemSelection(item: AlbumResponseDataModel) {
+        itemDataSelected = item
+    }
 
     fun fetchAlbumData() {
         _progressAlbums.value = true

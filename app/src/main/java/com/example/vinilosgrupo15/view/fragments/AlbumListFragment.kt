@@ -11,11 +11,12 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.vinilosgrupo15.R
 import com.example.vinilosgrupo15.databinding.FragmentAlbumListBinding
+import com.example.vinilosgrupo15.model.AlbumResponseDataModel
 import com.example.vinilosgrupo15.view.adapter.ItemsAlbumAdapter
 import com.example.vinilosgrupo15.viewmodels.AlbumViewModel
 
 
-class AlbumListFragment: Fragment() {
+class AlbumListFragment: Fragment(), ClickAlbumListener {
     lateinit var viewAlbumModel: AlbumViewModel
     lateinit var binding: FragmentAlbumListBinding
     private var myAlbumAdapter: ItemsAlbumAdapter?= null
@@ -41,7 +42,7 @@ class AlbumListFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        myAlbumAdapter = ItemsAlbumAdapter()
+        myAlbumAdapter = ItemsAlbumAdapter(this)
         binding.recyclerview.layoutManager = LinearLayoutManager(context)
         binding.recyclerview.adapter = myAlbumAdapter
 
@@ -57,8 +58,22 @@ class AlbumListFragment: Fragment() {
         viewAlbumModel.fetchAlbumData()
     }
 
+    override fun itemSelect(data: AlbumResponseDataModel) {
+        viewAlbumModel.setItemSelection(data)
+
+
+        activity?.supportFragmentManager
+            ?.beginTransaction()
+            ?.replace(android.R.id.content, AlbumDetailFragment.newInstance())
+            ?.addToBackStack(null)
+            ?.commit()
+
+    }
     companion object {
         fun newInstance() = AlbumListFragment()
     }
+}
 
+interface ClickAlbumListener {
+    fun itemSelect(data: AlbumResponseDataModel)
 }
