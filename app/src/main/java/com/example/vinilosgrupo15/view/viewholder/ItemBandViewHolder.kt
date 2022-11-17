@@ -2,6 +2,7 @@ package com.example.vinilosgrupo15.view.viewholder
 
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.example.vinilosgrupo15.databinding.BandRowBinding
 import com.example.vinilosgrupo15.model.BandReponseDataModel
 
@@ -16,7 +17,13 @@ class ItemBandViewHolder(binding: BandRowBinding): RecyclerView.ViewHolder(bindi
         binding?.let { view ->
             view.name = model.name
 
-            Glide.with(view.root.context).load(model.image).into(view.imgCharacter)
+            val radius = 50
+
+            Glide.with(view.root.context)
+                .load(model.image)
+                .centerCrop()
+                .transform(RoundedCorners(radius))
+                .into(binding!!.imgCharacter)
         }
     }
 }

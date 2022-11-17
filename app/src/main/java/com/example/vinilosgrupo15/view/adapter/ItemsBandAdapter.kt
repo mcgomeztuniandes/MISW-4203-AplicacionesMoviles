@@ -8,9 +8,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.vinilosgrupo15.R
 import com.example.vinilosgrupo15.databinding.BandRowBinding
 import com.example.vinilosgrupo15.model.BandReponseDataModel
+import com.example.vinilosgrupo15.view.fragments.ClickBandListener
 import com.example.vinilosgrupo15.view.viewholder.ItemBandViewHolder
 
-class ItemsBandAdapter(): RecyclerView.Adapter<ItemBandViewHolder>() {
+class ItemsBandAdapter(private var listener: ClickBandListener): RecyclerView.Adapter<ItemBandViewHolder>() {
     private val resource = R.layout.band_row
     lateinit var context: Context
 
@@ -28,6 +29,10 @@ class ItemsBandAdapter(): RecyclerView.Adapter<ItemBandViewHolder>() {
 
     override fun onBindViewHolder(holder: ItemBandViewHolder, position: Int) {
         holder.setItem(itemList[position])
+
+        holder.itemView.setOnClickListener {
+            listener.itemSelect(itemList[position])
+        }
     }
 
     fun setItems(list: MutableList<BandReponseDataModel>) {
