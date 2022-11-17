@@ -60,10 +60,6 @@ public class TestAlbums {
         onView(withId(R.id.homeBtn)).perform(click());
         Thread.sleep(1000);
 
-
-
-
-
     }
 
 

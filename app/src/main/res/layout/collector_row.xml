@@ -38,7 +38,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/txt_phone"
             app:layout_constraintBottom_toTopOf="@+id/txt_email"
-            tools:text="Character" />
+            tools:text="Collector name" />
 
         <TextView
             android:id="@+id/txt_email"
@@ -53,7 +53,7 @@
             app:layout_constraintTop_toBottomOf="@+id/txt_name"
             app:layout_constraintEnd_toStartOf="@+id/btnDetail"
             app:layout_constraintBottom_toBottomOf="parent"
-            tools:text="Character" />
+            tools:text="collector@uniandes.edu.co" />
 
         <TextView
             android:id="@+id/txt_phone"
@@ -69,7 +69,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toTopOf="@+id/btnDetail"
             app:layout_constraintStart_toEndOf="@+id/txt_name"
-            tools:text="Character" />
+            tools:text="aaaa/mm/dd" />
 
 
 
@@ -86,7 +86,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/txt_email"
             app:layout_constraintTop_toBottomOf="@+id/txt_phone"
-            app:layout_constraintBottom_toBottomOf="parent" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:text=">"/>
 
         <TextView
             android:layout_width="match_parent"
