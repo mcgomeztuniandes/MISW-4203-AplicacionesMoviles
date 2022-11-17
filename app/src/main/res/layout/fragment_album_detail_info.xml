@@ -12,29 +12,6 @@
         android:layout_height="match_parent"
         android:background="@color/white"
         tools:context=".AlbumDetailInfoFragment">
-
-        <TextView
-            android:id="@+id/tvAlbumName"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:gravity="center"
-            android:textAlignment="center"
-            android:textColor="@color/design_default_color_primary_dark"
-            android:textSize="28sp"
-            app:layout_constraintBottom_toBottomOf="@id/line2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/line1"
-            tools:text="Nombre Álbum" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/line1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.04" />
-
         <Button
             android:id="@+id/btnInfo"
             android:layout_width="0dp"
@@ -83,22 +60,44 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/line1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.04" />
+
+        <TextView
+            android:id="@+id/tvAlbumName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textColor="@color/design_default_color_primary_dark"
+            android:textSize="28sp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/line2"
+            tools:text="Nombre Álbum" />
+
+        <androidx.constraintlayout.widget.Guideline
             android:id="@+id/line2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.12" />
+            app:layout_constraintGuide_percent="0.04" />
 
         <ImageView
             android:id="@+id/img"
             android:layout_width="0dp"
-            android:layout_height="190dp"
+            android:layout_height="200dp"
             android:layout_marginLeft="50dp"
             android:layout_marginRight="50dp"
             app:layout_constraintBottom_toBottomOf="@id/line3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/line2" />
+            app:layout_constraintTop_toBottomOf="@id/tvAlbumName" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/line3"
