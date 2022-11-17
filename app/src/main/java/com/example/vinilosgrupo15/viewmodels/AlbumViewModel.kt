@@ -24,20 +24,16 @@ class AlbumViewModel (app: Application): AndroidViewModel(app), CoroutineScope {
 
     private val repository = AlbumRepository()
 
-    lateinit var observerOnCategorySelected: Observer<AlbumResponseDataModel>
+    var observerOnCategorySelected: Observer<AlbumResponseDataModel> = Observer { value ->
+        value.let {
+            _itemSelected.value = it
+        }
+    }
 
     private val viewModelJob = Job()
 
     override val coroutineContext: CoroutineContext
         get() = viewModelJob + Dispatchers.Default
-
-    init {
-        observerOnCategorySelected = Observer { value ->
-            value.let {
-                _itemSelected.value = it
-            }
-        }
-    }
 
     fun clearSelection() {
         _itemSelected.value = null
