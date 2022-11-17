@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isInvisible
+import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -46,11 +47,11 @@ class CollectorListFragment : Fragment() {
 
         viewCollectorModel.listCollectors.observe(viewLifecycleOwner){
             myCollectorAdapter?.setItems(list = it)
-            binding.progress.isInvisible = true
+            binding.progress.isVisible = false
         }
 
         viewCollectorModel.progressCollectors.observe(viewLifecycleOwner){
-            binding.progress.isInvisible = true
+            binding.progress.isVisible = true
         }
 
         viewCollectorModel.fetchCollectorData()
