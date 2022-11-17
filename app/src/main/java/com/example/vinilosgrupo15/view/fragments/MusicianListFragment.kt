@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.core.view.isInvisible
+import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -58,11 +59,11 @@ class MusicianListFragment : Fragment(), ClickMusicianListener {
 
         viewMusicianModel!!.listMusicians.observe(viewLifecycleOwner) {
             myMusicianAdapter?.setItems(list = it)
-            binding!!.progress.isInvisible = true
+            binding!!.progress.isVisible = false
         }
 
         viewMusicianModel!!.progressMusicians.observe(viewLifecycleOwner) {
-            binding!!.progress.isInvisible = true
+            binding!!.progress.isVisible = true
         }
 
         viewMusicianModel!!.fetchMusicianData()

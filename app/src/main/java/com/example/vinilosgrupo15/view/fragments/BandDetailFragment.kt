@@ -5,20 +5,19 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.view.isInvisible
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.example.vinilosgrupo15.databinding.FragmentBandDetailBinding
 import com.example.vinilosgrupo15.model.PerformerPrize
-import com.example.vinilosgrupo15.view.adapter.ItemBandperformerPrizesAdapter
+import com.example.vinilosgrupo15.view.adapter.ItemPerformerPrizesAdapter
 import com.example.vinilosgrupo15.viewmodels.BandViewModel
 
 class BandDetailFragment : Fragment() {
     private var _binding: FragmentBandDetailBinding? = null
     private val binding get() = _binding
-    private var myBandperformerPrizesAdapter: ItemBandperformerPrizesAdapter? = null
+    private var myPerformerPrizesAdapter: ItemPerformerPrizesAdapter? = null
 
     lateinit var viewModel: BandViewModel
 
@@ -54,10 +53,10 @@ class BandDetailFragment : Fragment() {
             binding!!.tvCreationDate.text = "CreationDate: " + data.creationDate.substring(0, 10).replace("-","/")
             binding!!.tvDescription.text = data.description
 
-            myBandperformerPrizesAdapter = ItemBandperformerPrizesAdapter()
+            myPerformerPrizesAdapter = ItemPerformerPrizesAdapter()
             binding!!.recyclerview.layoutManager = LinearLayoutManager(context)
-            binding!!.recyclerview.adapter = myBandperformerPrizesAdapter
-            myBandperformerPrizesAdapter?.setItems(data.performerPrizes as ArrayList<PerformerPrize>)
+            binding!!.recyclerview.adapter = myPerformerPrizesAdapter
+            myPerformerPrizesAdapter?.setItems(data.performerPrizes as ArrayList<PerformerPrize>)
         }
     }
 

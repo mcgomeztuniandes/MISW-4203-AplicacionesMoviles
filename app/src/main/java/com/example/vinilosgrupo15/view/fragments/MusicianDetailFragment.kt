@@ -6,16 +6,20 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.MultiTransformation
 import com.bumptech.glide.load.resource.bitmap.CircleCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.example.vinilosgrupo15.databinding.FragmentMusicianDetailBinding
+import com.example.vinilosgrupo15.model.PerformerPrize
+import com.example.vinilosgrupo15.view.adapter.ItemPerformerPrizesAdapter
 import com.example.vinilosgrupo15.viewmodels.MusicianViewModel
 
 class MusicianDetailFragment : Fragment() {
     private var _binding: FragmentMusicianDetailBinding? = null
     private val binding get() = _binding
+    private var myPerformerPrizesAdapter: ItemPerformerPrizesAdapter? = null
 
     lateinit var viewModel: MusicianViewModel
 
@@ -50,6 +54,11 @@ class MusicianDetailFragment : Fragment() {
             binding!!.tvName.text = data.name
             binding!!.tvBirthDate.text = "BirthDate: " + data.birthDate.substring(0, 10).replace("-","/")
             binding!!.tvDescription.text = data.description
+
+            myPerformerPrizesAdapter = ItemPerformerPrizesAdapter()
+            binding!!.recyclerview.layoutManager = LinearLayoutManager(context)
+            binding!!.recyclerview.adapter = myPerformerPrizesAdapter
+            myPerformerPrizesAdapter?.setItems(data.performerPrizes as ArrayList<PerformerPrize>)
         }
     }
 

@@ -24,8 +24,6 @@ class ItemBandViewHolder(binding: BandRowBinding): RecyclerView.ViewHolder(bindi
                 .centerCrop()
                 .transform(RoundedCorners(radius))
                 .into(binding!!.imgCharacter)
-
-
         }
     }
 }

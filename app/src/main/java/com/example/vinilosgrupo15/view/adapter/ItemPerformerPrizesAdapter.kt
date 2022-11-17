@@ -8,25 +8,25 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.vinilosgrupo15.R
 import com.example.vinilosgrupo15.databinding.PerformerprizesRowBinding
 import com.example.vinilosgrupo15.model.PerformerPrize
-import com.example.vinilosgrupo15.view.viewholder.ItemBandperformerPrizesHolder
+import com.example.vinilosgrupo15.view.viewholder.ItemPerformerPrizesHolder
 
-class ItemBandperformerPrizesAdapter(): RecyclerView.Adapter<ItemBandperformerPrizesHolder>() {
+class ItemPerformerPrizesAdapter(): RecyclerView.Adapter<ItemPerformerPrizesHolder>() {
     private val resource = R.layout.performerprizes_row
     lateinit var context: Context
 
     private val itemList = arrayListOf<PerformerPrize>()
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemBandperformerPrizesHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemPerformerPrizesHolder {
         context = parent.context
 
         val layoutInflater: LayoutInflater = LayoutInflater.from(parent.context)
         val binding: PerformerprizesRowBinding =
             DataBindingUtil.inflate(layoutInflater, resource, parent, false)
 
-        return ItemBandperformerPrizesHolder(binding)
+        return ItemPerformerPrizesHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: ItemBandperformerPrizesHolder, position: Int) {
+    override fun onBindViewHolder(holder: ItemPerformerPrizesHolder, position: Int) {
         holder.setItem(itemList[position])
     }
 
