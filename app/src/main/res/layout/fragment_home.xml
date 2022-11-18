@@ -12,29 +12,32 @@
         android:layout_height="match_parent"
         tools:context=".view.MainActivity">
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.4" />
-
         <ImageView
             android:contentDescription="@+id/viewLogo"
-            android:layout_width="400dp"
-            android:layout_height="260dp"
+            android:layout_width="match_parent"
+            android:layout_marginTop="5dp"
+            android:layout_height="160dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
             android:src="@drawable/logo_home_2"
             app:layout_constraintBottom_toTopOf="@id/guideline2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.5" />
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.30" />
 
         <TextView
             android:id="@+id/buttonPerformers"
-            android:layout_width="160dp"
+            android:layout_width="0dp"
             android:layout_height="150dp"
-            android:layout_margin="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
             app:drawableTopCompat="@drawable/logo_musician"
             android:gravity="center|bottom"
             android:text="@string/btnPerformersText"
@@ -42,6 +45,7 @@
             android:textColor="#2E40A5"
             android:textSize="22sp"
             android:textStyle="italic|bold"
+            android:textAlignment="center"
             app:layout_constraintBottom_toTopOf="@+id/buttonCollectors"
             app:layout_constraintEnd_toStartOf="@+id/buttonAlbums"
             app:layout_constraintStart_toStartOf="parent"
@@ -49,9 +53,10 @@
 
         <TextView
             android:id="@+id/buttonAlbums"
-            android:layout_width="160dp"
+            android:layout_width="0dp"
             android:layout_height="150dp"
-            android:layout_margin="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
             app:drawableTopCompat="@drawable/logo_albums"
             android:gravity="bottom|center_horizontal"
             android:text="@string/btnAlbumsText"
@@ -59,6 +64,7 @@
             android:textColor="#2E40A5"
             android:textSize="22sp"
             android:textStyle="italic|bold"
+            android:textAlignment="center"
             app:layout_constraintBottom_toTopOf="@+id/button1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/buttonPerformers"
@@ -66,9 +72,10 @@
 
         <TextView
             android:id="@+id/buttonCollectors"
-            android:layout_width="160dp"
+            android:layout_width="0dp"
             android:layout_height="150dp"
-            android:layout_margin="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
             app:drawableTopCompat="@drawable/logo_collectors"
             android:gravity="bottom|center_horizontal"
             android:text="@string/btnCollectorsText"
@@ -76,6 +83,7 @@
             android:textColor="#2E40A5"
             android:textSize="22sp"
             android:textStyle="italic|bold"
+            android:textAlignment="center"
             app:layout_constraintBottom_toTopOf="@+id/guidelineMenu"
             app:layout_constraintEnd_toStartOf="@id/button1"
             app:layout_constraintHorizontal_bias="0.504"
@@ -84,9 +92,10 @@
 
         <TextView
             android:id="@+id/button1"
-            android:layout_width="160dp"
+            android:layout_width="0dp"
             android:layout_height="150dp"
-            android:layout_margin="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
             app:drawableTopCompat="@drawable/logo_tracks"
             android:gravity="bottom|center_horizontal"
             android:text="@string/btnTracksText"
@@ -94,10 +103,13 @@
             android:textColor="#2E40A5"
             android:textSize="22sp"
             android:textStyle="italic|bold"
+            android:textAlignment="center"
             app:layout_constraintBottom_toTopOf="@+id/guidelineMenu"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/buttonCollectors"
             app:layout_constraintTop_toBottomOf="@+id/buttonAlbums" />
+
+
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guidelineMenu"
