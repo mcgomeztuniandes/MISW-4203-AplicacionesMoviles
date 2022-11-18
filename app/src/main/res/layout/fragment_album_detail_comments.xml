@@ -14,75 +14,80 @@
         android:background="@color/white"
         tools:context=".AlbumDetailCommentsFragment">
 
-        <TextView
-            android:id="@+id/tvAlbumName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textSize="35sp"
-            android:textColor="@color/design_default_color_primary_dark"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
+        <Button
+            android:id="@+id/btnInfo"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:text="Info"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toTopOf="@id/line1"
+            app:layout_constraintEnd_toStartOf="@+id/btnTracks"
+            app:layout_constraintHorizontal_chainStyle="spread"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btnTracks"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:text="Tracks"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toTopOf="@id/line1"
+            app:layout_constraintEnd_toStartOf="@+id/btnComments"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toEndOf="@id/btnInfo"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btnComments"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:text="Comments"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toTopOf="@id/line1"
+            app:layout_constraintEnd_toStartOf="@+id/btnPerformers"
+            app:layout_constraintStart_toEndOf="@+id/btnTracks"
             app:layout_constraintTop_toTopOf="parent" />
 
 
         <Button
-            android:id="@+id/btnInfo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:background="@null"
-            android:gravity="center_horizontal|center_vertical"
-            android:text="Info"
-            android:textSize="12sp"
-            app:layout_constraintEnd_toStartOf="@+id/btnTracks"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvAlbumName"
-            tools:ignore="MissingConstraints"
-            tools:text="Info" />
-
-        <Button
-            android:id="@+id/btnTracks"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:background="@null"
-            android:gravity="center_horizontal|center_vertical"
-            android:text="Tracks"
-            android:textSize="12sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvAlbumName"
-            tools:ignore="MissingConstraints"
-            tools:text="Tracks" />
-
-
-        <Button
             android:id="@+id/btnPerformers"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:text="Performers"
+            android:textSize="9sp"
+            app:layout_constraintBottom_toTopOf="@id/line1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btnComments"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/line1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:background="@null"
-            android:gravity="center_horizontal|center_vertical"
-            android:text="Performers"
-            android:textSize="12sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/btnTracks"
-            app:layout_constraintTop_toBottomOf="@id/tvAlbumName"
-            tools:ignore="MissingConstraints"
-            tools:text="Performers" />
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.04" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/line2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.04" />
 
         <TextView
-            android:id="@+id/tvTextComments"
-            android:layout_width="wrap_content"
+            android:id="@+id/tvAlbumName"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:textSize="25sp"
-            android:text="Comments"
-            app:layout_constraintHorizontal_bias="0.5"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textColor="@color/design_default_color_primary_dark"
+            android:textSize="28sp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btnInfo" />
+            app:layout_constraintTop_toTopOf="@id/line2"
+            tools:text="Nombre Álbum" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerview"
@@ -93,7 +98,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.6"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvTextComments"
+            app:layout_constraintTop_toBottomOf="@id/tvAlbumName"
             tools:listitem="@layout/comment_row" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

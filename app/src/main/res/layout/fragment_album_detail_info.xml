@@ -67,6 +67,13 @@
             android:orientation="horizontal"
             app:layout_constraintGuide_percent="0.04" />
 
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/line2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.04" />
+
         <TextView
             android:id="@+id/tvAlbumName"
             android:layout_width="0dp"
@@ -76,18 +83,11 @@
             android:textAlignment="center"
             android:textColor="@color/design_default_color_primary_dark"
             android:textSize="28sp"
-
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/line2"
             tools:text="Nombre Álbum" />
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/line2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.04" />
 
         <ImageView
             android:id="@+id/img"

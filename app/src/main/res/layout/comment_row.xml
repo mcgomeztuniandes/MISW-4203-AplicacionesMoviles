@@ -14,44 +14,59 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        >
 
         <ImageView
             android:id="@+id/comment_icon"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:contentDescription="@null"
             android:src="@drawable/comments_icon"
+            android:layout_margin="15dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/line1"
+            app:layout_constraintBottom_toBottomOf="parent"
              />
 
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/line1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.20" />
         <TextView
             android:id="@+id/tvRating"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@{rating}"
-            android:layout_marginStart="0dp"
-            android:textSize="20sp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@id/comment_icon"
+            app:layout_constraintStart_toEndOf="@id/line1"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="Character" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/tvDescription"
+            tools:text="Rating: 5" />
 
         <TextView
             android:id="@+id/tvDescription"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@{description}"
-            android:layout_marginStart="0dp"
-            android:textSize="14sp"
-            app:layout_constraintStart_toEndOf="@id/comment_icon"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:textSize="15sp"
+            app:layout_constraintStart_toEndOf="@id/line1"
             app:layout_constraintTop_toBottomOf="@id/tvRating"
             app:layout_constraintBottom_toBottomOf="parent"
-
-            tools:text="Character" />
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="Description" />
 
         <TextView
             android:layout_width="match_parent"
