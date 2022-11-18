@@ -36,32 +36,32 @@ class AlbumDetailPerformersFragment : Fragment() {
     ): View? {
         _binding = FragmentAlbumDetailPerformersBinding.inflate(inflater, container, false)
 
-        var btnInfo: Button = binding!!.btnInfo
+        val btnInfo: Button = binding!!.btnInfo
 
         btnInfo.setOnClickListener {
             activity?.supportFragmentManager
                 ?.beginTransaction()
-                ?.replace(R.id.container, AlbumDetailInfoFragment.newInstance())
+                ?.replace(R.id.fragmentAlbumDetailPerformers, AlbumDetailInfoFragment.newInstance())
                 ?.addToBackStack(null)
                 ?.commit()
         }
 
-        var btnTracks: Button = binding!!.btnTracks
+        val btnTracks: Button = binding!!.btnTracks
 
         btnTracks.setOnClickListener {
             activity?.supportFragmentManager
                 ?.beginTransaction()
-                ?.replace(R.id.container, AlbumDetailTracksFragment.newInstance())
+                ?.replace(R.id.fragmentAlbumDetailPerformers, AlbumDetailTracksFragment.newInstance())
                 ?.addToBackStack(null)
                 ?.commit()
         }
 
-        var btnComments: Button = binding!!.btnComments
+        val btnComments: Button = binding!!.btnComments
 
         btnComments.setOnClickListener {
             activity?.supportFragmentManager
                 ?.beginTransaction()
-                ?.replace(R.id.container, AlbumDetailCommentsFragment.newInstance())
+                ?.replace(R.id.fragmentAlbumDetailPerformers, AlbumDetailCommentsFragment.newInstance())
                 ?.addToBackStack(null)
                 ?.commit()
         }

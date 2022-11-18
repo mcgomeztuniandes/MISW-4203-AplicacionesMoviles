@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.vinilosgrupo15.R
@@ -33,40 +34,40 @@ class AlbumDetailTracksFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        _binding = FragmentAlbumDetailTracksBinding.inflate(inflater, container, false)
+    ): View {
+        _binding = DataBindingUtil.inflate(inflater, R.layout.fragment_album_detail_tracks, container, false)
 
-        var btnInfo: Button = binding!!.btnInfo
+        val btnInfo: Button = binding!!.btnInfo
 
         btnInfo.setOnClickListener {
             activity?.supportFragmentManager
                 ?.beginTransaction()
-                ?.replace(R.id.container, AlbumDetailInfoFragment.newInstance())
+                ?.replace(R.id.fragmentAlbumDetailTracks, AlbumDetailInfoFragment.newInstance())
                 ?.addToBackStack(null)
                 ?.commit()
         }
 
-        var btnComments: Button = binding!!.btnComments
+        val btnComments: Button = binding!!.btnComments
 
         btnComments.setOnClickListener {
             activity?.supportFragmentManager
                 ?.beginTransaction()
-                ?.replace(R.id.container, AlbumDetailCommentsFragment.newInstance())
+                ?.replace(R.id.fragmentAlbumDetailTracks, AlbumDetailCommentsFragment.newInstance())
                 ?.addToBackStack(null)
                 ?.commit()
         }
 
-        var btnPerformers: Button = binding!!.btnPerformers
+        val btnPerformers: Button = binding!!.btnPerformers
 
         btnPerformers.setOnClickListener {
             activity?.supportFragmentManager
                 ?.beginTransaction()
-                ?.replace(R.id.container, AlbumDetailPerformersFragment.newInstance())
+                ?.replace(R.id.fragmentAlbumDetailTracks, AlbumDetailPerformersFragment.newInstance())
                 ?.addToBackStack(null)
                 ?.commit()
         }
 
-        return binding?.root
+        return binding!!.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

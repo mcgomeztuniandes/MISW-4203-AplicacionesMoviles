@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
@@ -14,8 +15,7 @@ import com.example.vinilosgrupo15.databinding.FragmentAlbumDetailInfoBinding
 import com.example.vinilosgrupo15.viewmodels.AlbumViewModel
 
 class AlbumDetailInfoFragment : Fragment() {
-    private var _binding: FragmentAlbumDetailInfoBinding? = null
-    private val binding get() = _binding
+    private var binding: FragmentAlbumDetailInfoBinding? = null
 
     lateinit var viewModel: AlbumViewModel
 
@@ -31,40 +31,49 @@ class AlbumDetailInfoFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
-    ): View? {
-        _binding = FragmentAlbumDetailInfoBinding.inflate(inflater, container, false)
+    ): View {
+        binding = DataBindingUtil.inflate(inflater,R.layout.fragment_album_detail_info, container, false)
 
-        var btnTracks: Button = binding!!.btnTracks
+        val btnInfo: Button = binding!!.btnInfo
+
+        btnInfo.setOnClickListener {
+            activity?.supportFragmentManager
+                ?.beginTransaction()
+                ?.replace(R.id.fragmentAlbumDetailInfo, newInstance())
+                ?.addToBackStack(null)
+                ?.commit()
+        }
+        val btnTracks: Button = binding!!.btnTracks
 
         btnTracks.setOnClickListener {
             activity?.supportFragmentManager
                 ?.beginTransaction()
-                ?.replace(R.id.container, AlbumDetailTracksFragment.newInstance())
+                ?.replace(R.id.fragmentAlbumDetailInfo, AlbumDetailTracksFragment.newInstance())
                 ?.addToBackStack(null)
                 ?.commit()
         }
 
-        var btnComments: Button = binding!!.btnComments
+        val btnComments: Button = binding!!.btnComments
 
         btnComments.setOnClickListener {
             activity?.supportFragmentManager
                 ?.beginTransaction()
-                ?.replace(R.id.container, AlbumDetailCommentsFragment.newInstance())
+                ?.replace(R.id.fragmentAlbumDetailInfo, AlbumDetailCommentsFragment.newInstance())
                 ?.addToBackStack(null)
                 ?.commit()
         }
 
-        var btnPerformers: Button = binding!!.btnPerformers
+        val btnPerformers: Button = binding!!.btnPerformers
 
         btnPerformers.setOnClickListener {
             activity?.supportFragmentManager
                 ?.beginTransaction()
-                ?.replace(R.id.container, AlbumDetailPerformersFragment.newInstance())
+                ?.replace(R.id.fragmentAlbumDetailInfo, AlbumDetailPerformersFragment.newInstance())
                 ?.addToBackStack(null)
                 ?.commit()
         }
 
-        return binding?.root
+        return binding!!.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -86,10 +95,10 @@ class AlbumDetailInfoFragment : Fragment() {
        }
     }
 
-    override fun onDestroyView() {
+   /* override fun onDestroyView() {
         super.onDestroyView()
-        _binding = null
-    }
+        binding = null
+    }*/
 
     companion object {
         fun newInstance() = AlbumDetailInfoFragment()

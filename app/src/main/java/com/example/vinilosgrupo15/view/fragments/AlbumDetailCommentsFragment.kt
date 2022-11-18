@@ -35,31 +35,31 @@ class AlbumDetailCommentsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentAlbumDetailCommentsBinding.inflate(inflater, container, false)
-        var btnInfo: Button = binding!!.btnInfo
+        val btnInfo: Button = binding!!.btnInfo
 
         btnInfo.setOnClickListener {
             activity?.supportFragmentManager
                 ?.beginTransaction()
-                ?.replace(R.id.container, AlbumDetailInfoFragment.newInstance())
+                ?.replace(R.id.fragmentAlbumDetailComments, AlbumDetailInfoFragment.newInstance())
                 ?.addToBackStack(null)
                 ?.commit()
         }
-        var btnTracks: Button = binding!!.btnTracks
+        val btnTracks: Button = binding!!.btnTracks
 
         btnTracks.setOnClickListener {
             activity?.supportFragmentManager
                 ?.beginTransaction()
-                ?.replace(R.id.container, AlbumDetailTracksFragment.newInstance())
+                ?.replace(R.id.fragmentAlbumDetailComments, AlbumDetailTracksFragment.newInstance())
                 ?.addToBackStack(null)
                 ?.commit()
         }
 
-        var btnPerformers: Button = binding!!.btnPerformers
+        val btnPerformers: Button = binding!!.btnPerformers
 
         btnPerformers.setOnClickListener {
             activity?.supportFragmentManager
                 ?.beginTransaction()
-                ?.replace(R.id.container, AlbumDetailPerformersFragment.newInstance())
+                ?.replace(R.id.fragmentAlbumDetailComments, AlbumDetailPerformersFragment.newInstance())
                 ?.addToBackStack(null)
                 ?.commit()
         }
