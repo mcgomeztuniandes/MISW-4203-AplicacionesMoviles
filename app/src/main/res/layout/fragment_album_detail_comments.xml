@@ -89,6 +89,22 @@
             app:layout_constraintTop_toTopOf="@id/line2"
             tools:text="Nombre Álbum" />
 
+        <TextView
+            android:id="@+id/tvTextComments"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:textSize="18sp"
+            android:textStyle="italic"
+            android:text="Comments"
+            android:textAlignment="textStart"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvAlbumName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/recyclerview"/>
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerview"
             android:layout_width="0dp"
@@ -98,7 +114,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.6"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvAlbumName"
+            app:layout_constraintTop_toBottomOf="@id/tvTextComments"
             tools:listitem="@layout/comment_row" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
