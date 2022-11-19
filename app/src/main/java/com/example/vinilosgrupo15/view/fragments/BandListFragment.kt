@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
@@ -39,6 +40,9 @@ class BandListFragment : Fragment(), ClickBandListener  {
 
 
         var btnMusicians: Button = binding!!.btnMusician
+        var btnBand:Button = binding!!.btnBand
+
+        btnBand.setBackgroundColor(ContextCompat.getColor(btnBand.context,R.color.btn_icon_selected_color))
 
         btnMusicians.setOnClickListener {
             activity?.supportFragmentManager

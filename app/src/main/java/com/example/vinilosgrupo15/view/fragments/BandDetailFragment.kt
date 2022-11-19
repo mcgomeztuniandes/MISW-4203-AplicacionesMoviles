@@ -50,7 +50,7 @@ class BandDetailFragment : Fragment() {
                 .transform(RoundedCorners(radius))
                 .into(binding!!.img)
             binding!!.tvName.text = data.name
-            binding!!.tvCreationDate.text = "CreationDate: " + data.creationDate.substring(0, 10).replace("-","/")
+            binding!!.tvCreationDate.text = "Creation: " + data.creationDate.substring(0, 10).replace("-","/")
             binding!!.tvDescription.text = data.description
 
             myPerformerPrizesAdapter = ItemPerformerPrizesAdapter()

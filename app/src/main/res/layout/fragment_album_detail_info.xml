@@ -16,7 +16,7 @@
         <Button
             android:id="@+id/btnInfo"
             android:layout_width="0dp"
-            android:layout_height="40dp"
+            android:layout_height="50dp"
             android:text="Info"
             android:textSize="10sp"
             app:layout_constraintBottom_toTopOf="@id/line1"
@@ -28,7 +28,7 @@
         <Button
             android:id="@+id/btnTracks"
             android:layout_width="0dp"
-            android:layout_height="40dp"
+            android:layout_height="50dp"
             android:text="Tracks"
             android:textSize="10sp"
             app:layout_constraintBottom_toTopOf="@id/line1"
@@ -40,7 +40,7 @@
         <Button
             android:id="@+id/btnComments"
             android:layout_width="0dp"
-            android:layout_height="40dp"
+            android:layout_height="50dp"
             android:text="Comments"
             android:textSize="10sp"
             app:layout_constraintBottom_toTopOf="@id/line1"
@@ -52,7 +52,7 @@
         <Button
             android:id="@+id/btnPerformers"
             android:layout_width="0dp"
-            android:layout_height="40dp"
+            android:layout_height="50dp"
             android:text="Performers"
             android:textSize="9sp"
             app:layout_constraintBottom_toTopOf="@id/line1"
@@ -65,28 +65,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.04" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/line2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.04" />
+            app:layout_constraintGuide_percent="0.053" />
 
         <TextView
             android:id="@+id/tvAlbumName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
+            android:layout_margin="10dp"
             android:gravity="center"
             android:textAlignment="center"
             android:textColor="@color/title_color"
             android:textSize="28sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/line2"
-
+            app:layout_constraintTop_toTopOf="@id/line1"
             tools:text="Nombre Álbum" />
 
 

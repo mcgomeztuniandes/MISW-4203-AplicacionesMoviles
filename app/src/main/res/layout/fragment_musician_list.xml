@@ -15,15 +15,33 @@
         tools:context=".MusicianListFragment">
 
         <Button
+            android:id="@+id/btnMusician"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:text="Musicians"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btnBand"
+            app:layout_constraintBottom_toTopOf="@id/line2"
+            tools:text="Musicians" />
+
+        <Button
             android:id="@+id/btnBand"
-            android:layout_width="150dp"
-            android:layout_height="0dp"
-            android:layout_marginEnd="8dp"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
             android:text="Bands"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btnMusician"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            tools:ignore="MissingConstraints"
-            tools:text="Bands" />
+            app:layout_constraintBottom_toTopOf="@id/line2" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/line2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.053" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerview"
@@ -34,7 +52,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.6"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/line2"
             tools:listitem="@layout/musician_row" />
 
         <androidx.constraintlayout.widget.Guideline
@@ -54,21 +72,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="44dp"
-            android:fontFamily="sans-serif-black"
-            android:text="Performers"
-            android:textAlignment="viewStart"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textStyle="italic"
-            android:visibility="visible"
-            app:layout_constraintEnd_toStartOf="@+id/btnBand"
-            app:layout_constraintHorizontal_bias="0.485"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteY="16dp"
-            tools:text="Performers" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
