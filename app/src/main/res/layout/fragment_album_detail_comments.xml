@@ -82,7 +82,7 @@
             android:layout_margin="5dp"
             android:gravity="center"
             android:textAlignment="center"
-            android:textColor="@color/design_default_color_primary_dark"
+            android:textColor="@color/title_color"
             android:textSize="28sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

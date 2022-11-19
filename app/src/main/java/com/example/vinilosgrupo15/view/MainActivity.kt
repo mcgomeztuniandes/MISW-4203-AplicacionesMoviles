@@ -25,39 +25,39 @@ class MainActivity : AppCompatActivity() {
 
         var btnCollectors = findViewById(R.id.collectorsBtn) as Button
 
+        btnHome.setBackgroundColor(ContextCompat.getColor(btnHome.context,R.color.btn_icon_selected_color))
+
         btnPerformers.setOnClickListener {
             loadFragment(BandListFragment())
             btnPerformers.setBackgroundColor(ContextCompat.getColor(btnHome.context,R.color.btn_icon_selected_color))
-            btnCollectors.setBackgroundColor(ContextCompat.getColor(btnHome.context,R.color.gray_500))
-            btnAlbums.setBackgroundColor(ContextCompat.getColor(btnHome.context,R.color.gray_500))
-            btnHome.setBackgroundColor(ContextCompat.getColor(btnHome.context,R.color.gray_500))
+            btnCollectors.setBackgroundColor(ContextCompat.getColor(btnHome.context,R.color.btn_icon_color))
+            btnAlbums.setBackgroundColor(ContextCompat.getColor(btnHome.context,R.color.btn_icon_color))
+            btnHome.setBackgroundColor(ContextCompat.getColor(btnHome.context,R.color.btn_icon_color))
         }
 
         btnHome.setOnClickListener {
             loadFragment(HomeFragment())
             btnHome.setBackgroundColor(ContextCompat.getColor(btnHome.context,R.color.btn_icon_selected_color))
-            btnCollectors.setBackgroundColor(ContextCompat.getColor(btnHome.context,R.color.gray_500))
-            btnAlbums.setBackgroundColor(ContextCompat.getColor(btnHome.context,R.color.gray_500))
-            btnPerformers.setBackgroundColor(ContextCompat.getColor(btnHome.context,R.color.gray_500))
+            btnCollectors.setBackgroundColor(ContextCompat.getColor(btnHome.context,R.color.btn_icon_color))
+            btnAlbums.setBackgroundColor(ContextCompat.getColor(btnHome.context,R.color.btn_icon_color))
+            btnPerformers.setBackgroundColor(ContextCompat.getColor(btnHome.context,R.color.btn_icon_color))
         }
 
         btnAlbums.setOnClickListener {
             loadFragment(AlbumListFragment())
             btnAlbums.setBackgroundColor(ContextCompat.getColor(btnHome.context,R.color.btn_icon_selected_color))
-            btnCollectors.setBackgroundColor(ContextCompat.getColor(btnHome.context,R.color.gray_500))
-            btnHome.setBackgroundColor(ContextCompat.getColor(btnHome.context,R.color.gray_500))
-            btnPerformers.setBackgroundColor(ContextCompat.getColor(btnHome.context,R.color.gray_500))
+            btnCollectors.setBackgroundColor(ContextCompat.getColor(btnHome.context,R.color.btn_icon_color))
+            btnHome.setBackgroundColor(ContextCompat.getColor(btnHome.context,R.color.btn_icon_color))
+            btnPerformers.setBackgroundColor(ContextCompat.getColor(btnHome.context,R.color.btn_icon_color))
         }
 
         btnCollectors.setOnClickListener{
             loadFragment(CollectorListFragment())
             btnCollectors.setBackgroundColor(ContextCompat.getColor(btnHome.context,R.color.btn_icon_selected_color))
-            btnHome.setBackgroundColor(ContextCompat.getColor(btnHome.context,R.color.gray_500))
-            btnAlbums.setBackgroundColor(ContextCompat.getColor(btnHome.context,R.color.gray_500))
-            btnPerformers.setBackgroundColor(ContextCompat.getColor(btnHome.context,R.color.gray_500))
+            btnHome.setBackgroundColor(ContextCompat.getColor(btnHome.context,R.color.btn_icon_color))
+            btnAlbums.setBackgroundColor(ContextCompat.getColor(btnHome.context,R.color.btn_icon_color))
+            btnPerformers.setBackgroundColor(ContextCompat.getColor(btnHome.context,R.color.btn_icon_color))
         }
-
-
 
         loadFragment(HomeFragment())
     }

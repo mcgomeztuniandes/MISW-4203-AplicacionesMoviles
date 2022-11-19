@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -35,17 +36,29 @@ class AlbumDetailInfoFragment : Fragment() {
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_album_detail_info, container, false)
 
         val btnInfo: Button = binding!!.btnInfo
+        val btnTracks: Button = binding!!.btnTracks
+        val btnComments: Button = binding!!.btnComments
+        val btnPerformers: Button = binding!!.btnPerformers
+
+        btnInfo.setBackgroundColor(ContextCompat.getColor(btnInfo.context,R.color.btn_icon_selected_color))
 
         btnInfo.setOnClickListener {
+            btnInfo.setBackgroundColor(ContextCompat.getColor(btnInfo.context,R.color.btn_icon_selected_color))
+            btnTracks.setBackgroundColor(ContextCompat.getColor(btnTracks.context,R.color.btn_icon_color))
+            btnPerformers.setBackgroundColor(ContextCompat.getColor(btnPerformers.context,R.color.btn_icon_color))
+            btnComments.setBackgroundColor(ContextCompat.getColor(btnComments.context,R.color.btn_icon_color))
             activity?.supportFragmentManager
                 ?.beginTransaction()
                 ?.replace(R.id.fragmentAlbumDetailInfo, newInstance())
                 ?.addToBackStack(null)
                 ?.commit()
         }
-        val btnTracks: Button = binding!!.btnTracks
 
         btnTracks.setOnClickListener {
+            btnTracks.setBackgroundColor(ContextCompat.getColor(btnTracks.context,R.color.btn_icon_selected_color))
+            btnInfo.setBackgroundColor(ContextCompat.getColor(btnInfo.context,R.color.btn_icon_color))
+            btnPerformers.setBackgroundColor(ContextCompat.getColor(btnPerformers.context,R.color.btn_icon_color))
+            btnComments.setBackgroundColor(ContextCompat.getColor(btnComments.context,R.color.btn_icon_color))
             activity?.supportFragmentManager
                 ?.beginTransaction()
                 ?.replace(R.id.fragmentAlbumDetailInfo, AlbumDetailTracksFragment.newInstance())
@@ -53,9 +66,11 @@ class AlbumDetailInfoFragment : Fragment() {
                 ?.commit()
         }
 
-        val btnComments: Button = binding!!.btnComments
-
         btnComments.setOnClickListener {
+            btnComments.setBackgroundColor(ContextCompat.getColor(btnComments.context,R.color.btn_icon_selected_color))
+            btnInfo.setBackgroundColor(ContextCompat.getColor(btnInfo.context,R.color.btn_icon_color))
+            btnPerformers.setBackgroundColor(ContextCompat.getColor(btnPerformers.context,R.color.btn_icon_color))
+            btnTracks.setBackgroundColor(ContextCompat.getColor(btnTracks.context,R.color.btn_icon_color))
             activity?.supportFragmentManager
                 ?.beginTransaction()
                 ?.replace(R.id.fragmentAlbumDetailInfo, AlbumDetailCommentsFragment.newInstance())
@@ -63,9 +78,11 @@ class AlbumDetailInfoFragment : Fragment() {
                 ?.commit()
         }
 
-        val btnPerformers: Button = binding!!.btnPerformers
-
         btnPerformers.setOnClickListener {
+            btnPerformers.setBackgroundColor(ContextCompat.getColor(btnPerformers.context,R.color.btn_icon_selected_color))
+            btnInfo.setBackgroundColor(ContextCompat.getColor(btnInfo.context,R.color.btn_icon_color))
+            btnTracks.setBackgroundColor(ContextCompat.getColor(btnTracks.context,R.color.btn_icon_color))
+            btnComments.setBackgroundColor(ContextCompat.getColor(btnComments.context,R.color.btn_icon_color))
             activity?.supportFragmentManager
                 ?.beginTransaction()
                 ?.replace(R.id.fragmentAlbumDetailInfo, AlbumDetailPerformersFragment.newInstance())

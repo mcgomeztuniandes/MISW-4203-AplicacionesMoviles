@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.vinilosgrupo15.R
@@ -48,7 +49,11 @@ class AlbumDetailPerformersFragment : Fragment() {
 
         val btnTracks: Button = binding!!.btnTracks
 
+
+
         btnTracks.setOnClickListener {
+            btnTracks.setBackgroundColor(ContextCompat.getColor(btnTracks.context,R.color.btn_icon_selected_color))
+
             activity?.supportFragmentManager
                 ?.beginTransaction()
                 ?.replace(R.id.fragmentAlbumDetailPerformers, AlbumDetailTracksFragment.newInstance())

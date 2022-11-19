@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isInvisible
+import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -48,11 +49,11 @@ class AlbumListFragment: Fragment(), ClickAlbumListener {
 
         viewAlbumModel.listAlbums.observe(viewLifecycleOwner) {
             myAlbumAdapter?.setItems(list = it)
-            binding.progress.isInvisible = true
+            binding.progress.isVisible = false
         }
 
         viewAlbumModel.progressAlbums.observe(viewLifecycleOwner) {
-            binding.progress.isInvisible = true
+            binding.progress.isVisible = true
         }
 
         viewAlbumModel.fetchAlbumData()
@@ -60,7 +61,6 @@ class AlbumListFragment: Fragment(), ClickAlbumListener {
 
     override fun itemSelect(data: AlbumResponseDataModel) {
         viewAlbumModel.setItemSelection(data)
-
 
         activity?.supportFragmentManager
             ?.beginTransaction()

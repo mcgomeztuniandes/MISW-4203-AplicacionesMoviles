@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.*
+import androidx.core.content.ContextCompat
 import com.example.vinilosgrupo15.R
 
 
@@ -14,7 +15,7 @@ class LoginActivity : AppCompatActivity() {
 
         var btnLogin: Button = this.findViewById(R.id.login)
         btnLogin.setOnClickListener { vinylsIngress() }
-
+        btnLogin.setBackgroundColor(ContextCompat.getColor(btnLogin.context,R.color.btn_icon_selected_color))
         val spinner: Spinner = this.findViewById(R.id.rolList)
         ArrayAdapter.createFromResource(
             this,

@@ -10,7 +10,8 @@
     <FrameLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        >
     </FrameLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -52,7 +53,6 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="2dp"
-
             app:icon="@drawable/albums_icon"
             app:iconGravity="textStart"
             app:iconPadding="5dp"

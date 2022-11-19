@@ -81,21 +81,22 @@
             android:layout_margin="5dp"
             android:gravity="center"
             android:textAlignment="center"
-            android:textColor="@color/design_default_color_primary_dark"
+            android:textColor="@color/title_color"
             android:textSize="28sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/line2"
+
             tools:text="Nombre Álbum" />
 
 
         <ImageView
             android:id="@+id/img"
-            android:layout_width="0dp"
-            android:layout_height="200dp"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
             android:layout_marginLeft="50dp"
             android:layout_marginRight="50dp"
-            app:layout_constraintBottom_toBottomOf="@id/line3"
+            app:layout_constraintBottom_toTopOf="@id/line3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvAlbumName" />
@@ -114,7 +115,7 @@
             android:layout_marginLeft="15dp"
             android:textAlignment="textStart"
             android:textSize="17sp"
-            android:textStyle="bold"
+            android:textStyle="italic"
             app:layout_constraintBottom_toBottomOf="@id/line4"
             app:layout_constraintEnd_toStartOf="@id/tvReleaseDate"
             app:layout_constraintHorizontal_chainStyle="spread"
@@ -133,7 +134,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/tvGenreRecordLabel"
             app:layout_constraintTop_toTopOf="@id/line3"
-            tools:text="1999-08-01" />
+            tools:text="aaaa-mm-dd" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/line4"
@@ -149,6 +150,7 @@
             android:layout_margin="15dp"
             android:justificationMode="inter_word"
             android:textSize="20dp"
+            android:textColor="@color/text_color"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
