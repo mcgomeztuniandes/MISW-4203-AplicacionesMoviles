@@ -1,23 +1,15 @@
 <resources>
     <string name="app_name">Vinilos Grupo 15</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="btnPerformersText">Performers</string>
     <string name="btnAlbumsText">Albums</string>
     <string name="btnCollectorsText">Collectors</string>
     <string name="btnTracksText">Tracks</string>
-
     <string name="full_name">Full Name</string>
     <string name="password">Password</string>
-    <string name="vinils_app">Vinils APP</string>
-    <string name="login">Continue</string>
-    <string name="rolList">Rol, Collector</string>
+    <string name="vinils_app">Vynils App</string>
     <string name="singup">Continue</string>
-    <string name="VinilsHome">Vinils App</string>
     <string name="campoobligatorio">campo obligatorio</string>
-    <string name="vinils_login">Vinils Login</string>
-    <string name="login_home">Login Home</string>
-    <string name="todo">TODO</string>
     <string-array name="roles">
         <item>Select rol</item>
         <item>Collector</item>

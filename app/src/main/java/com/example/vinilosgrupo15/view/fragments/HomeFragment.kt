@@ -23,6 +23,8 @@ class HomeFragment : Fragment() {
 
         var btnAlbums: TextView = binding!!.buttonAlbums
 
+        var btnCollectors: TextView = binding!!.buttonCollectors
+
         btnPerformers.setOnClickListener {
             activity?.supportFragmentManager
                 ?.beginTransaction()
@@ -35,6 +37,14 @@ class HomeFragment : Fragment() {
             activity?.supportFragmentManager
                 ?.beginTransaction()
                 ?.replace(R.id.container, AlbumListFragment())
+                ?.addToBackStack(null)
+                ?.commit()
+        }
+
+        btnCollectors.setOnClickListener {
+            activity?.supportFragmentManager
+                ?.beginTransaction()
+                ?.replace(R.id.container, CollectorListFragment())
                 ?.addToBackStack(null)
                 ?.commit()
         }

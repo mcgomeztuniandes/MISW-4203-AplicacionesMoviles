@@ -6,6 +6,5 @@ import retrofit2.http.GET
 
 interface MusicianService {
     @GET("musicians")
-
     suspend fun getMusicians(): Response<ArrayList<MusiciansResponseDataModel>>
 }

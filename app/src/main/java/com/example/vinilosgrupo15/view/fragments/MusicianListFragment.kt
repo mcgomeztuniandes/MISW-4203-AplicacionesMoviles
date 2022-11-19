@@ -6,16 +6,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.core.content.ContextCompat
 import androidx.core.view.isInvisible
+import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.vinilosgrupo15.R
 import com.example.vinilosgrupo15.databinding.FragmentMusicianListBinding
+import com.example.vinilosgrupo15.model.MusiciansResponseDataModel
 import com.example.vinilosgrupo15.view.adapter.ItemsMusicianAdapter
 import com.example.vinilosgrupo15.viewmodels.MusicianViewModel
 
-class MusicianListFragment : Fragment() {
+class MusicianListFragment : Fragment(), ClickMusicianListener {
     private var viewMusicianModel: MusicianViewModel? = null
     private var binding: FragmentMusicianListBinding? = null
     private var myMusicianAdapter: ItemsMusicianAdapter? = null
@@ -36,6 +39,9 @@ class MusicianListFragment : Fragment() {
         binding!!.viewModel = viewMusicianModel
 
         var btnBand: Button = binding!!.btnBand
+        var btnMusicians: Button = binding!!.btnMusician
+
+        btnMusicians.setBackgroundColor(ContextCompat.getColor(btnMusicians.context,R.color.btn_icon_selected_color))
 
         btnBand.setOnClickListener {
             activity?.supportFragmentManager
@@ -51,17 +57,17 @@ class MusicianListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        myMusicianAdapter = ItemsMusicianAdapter()
+        myMusicianAdapter = ItemsMusicianAdapter(this)
         binding!!.recyclerview.layoutManager = LinearLayoutManager(context)
         binding!!.recyclerview.adapter = myMusicianAdapter
 
         viewMusicianModel!!.listMusicians.observe(viewLifecycleOwner) {
             myMusicianAdapter?.setItems(list = it)
-            binding!!.progress.isInvisible = true
+            binding!!.progress.isVisible = false
         }
 
         viewMusicianModel!!.progressMusicians.observe(viewLifecycleOwner) {
-            binding!!.progress.isInvisible = true
+            binding!!.progress.isVisible = true
         }
 
         viewMusicianModel!!.fetchMusicianData()
@@ -71,4 +77,17 @@ class MusicianListFragment : Fragment() {
         fun newInstance() = MusicianListFragment()
     }
 
+    override fun itemSelect(data: MusiciansResponseDataModel) {
+        viewMusicianModel!!.setItemSelection(data)
+
+        activity?.supportFragmentManager
+            ?.beginTransaction()
+            ?.replace(android.R.id.content, MusicianDetailFragment.newInstance())
+            ?.addToBackStack(null)
+            ?.commit()
+    }
+}
+
+interface ClickMusicianListener {
+    fun itemSelect(data: MusiciansResponseDataModel)
 }

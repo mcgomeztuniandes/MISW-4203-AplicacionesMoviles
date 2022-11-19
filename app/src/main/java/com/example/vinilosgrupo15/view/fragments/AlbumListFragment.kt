@@ -6,16 +6,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isInvisible
+import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.vinilosgrupo15.R
 import com.example.vinilosgrupo15.databinding.FragmentAlbumListBinding
+import com.example.vinilosgrupo15.model.AlbumResponseDataModel
 import com.example.vinilosgrupo15.view.adapter.ItemsAlbumAdapter
 import com.example.vinilosgrupo15.viewmodels.AlbumViewModel
 
 
-class AlbumListFragment: Fragment() {
+class AlbumListFragment: Fragment(), ClickAlbumListener {
     lateinit var viewAlbumModel: AlbumViewModel
     lateinit var binding: FragmentAlbumListBinding
     private var myAlbumAdapter: ItemsAlbumAdapter?= null
@@ -41,24 +43,37 @@ class AlbumListFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        myAlbumAdapter = ItemsAlbumAdapter()
+        myAlbumAdapter = ItemsAlbumAdapter(this)
         binding.recyclerview.layoutManager = LinearLayoutManager(context)
         binding.recyclerview.adapter = myAlbumAdapter
 
         viewAlbumModel.listAlbums.observe(viewLifecycleOwner) {
             myAlbumAdapter?.setItems(list = it)
-            binding.progress.isInvisible = true
+            binding.progress.isVisible = false
         }
 
         viewAlbumModel.progressAlbums.observe(viewLifecycleOwner) {
-            binding.progress.isInvisible = true
+            binding.progress.isVisible = true
         }
 
         viewAlbumModel.fetchAlbumData()
     }
 
+    override fun itemSelect(data: AlbumResponseDataModel) {
+        viewAlbumModel.setItemSelection(data)
+
+        activity?.supportFragmentManager
+            ?.beginTransaction()
+            ?.replace(android.R.id.content, AlbumDetailInfoFragment())
+            ?.addToBackStack(null)
+            ?.commit()
+
+    }
     companion object {
         fun newInstance() = AlbumListFragment()
     }
+}
 
+interface ClickAlbumListener {
+    fun itemSelect(data: AlbumResponseDataModel)
 }

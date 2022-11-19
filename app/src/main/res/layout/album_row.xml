@@ -24,69 +24,104 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:layout_marginTop="5dp">
-
+        android:layout_height="wrap_content"
+        >
         <ImageView
             android:id="@+id/img_album"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="15dp"
             android:contentDescription="@null"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/divisorLine"
+            app:layout_constraintEnd_toStartOf="@id/line1"
             tools:src="@mipmap/ic_launcher" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/line1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.20" />
 
         <TextView
             android:id="@+id/txt_name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
             android:text="@{name}"
             android:textSize="20sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/img_album"
+            android:textColor="@color/title_color"
+            app:layout_constraintStart_toEndOf="@+id/line1"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="Character" />
+            app:layout_constraintBottom_toTopOf="@id/txt_genre_record_label"
+            app:layout_constraintEnd_toStartOf="@id/txt_release_date"
+            tools:text="Titulo album" />
 
         <TextView
             android:id="@+id/txt_genre_record_label"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="35dp"
             android:text="@{genreAndRecordLabel}"
-            android:textSize="11sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/img_album"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="Character" />
+            android:textSize="14sp"
+            android:textStyle="italic"
+            android:textColor="@color/text_color"
+            app:layout_constraintStart_toEndOf="@+id/line1"
+            app:layout_constraintTop_toBottomOf="@id/txt_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/divisorLine"
+            tools:text="Genero" />
 
         <TextView
             android:id="@+id/txt_release_date"
-            android:layout_width="0dp"
+            android:layout_width="80dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginEnd="15dp"
             android:text="@{releaseDate}"
-            android:textSize="11sp"
+            android:textSize="12sp"
             android:textStyle="bold"
+            android:textAlignment="textEnd"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="Character" />
+            app:layout_constraintBottom_toTopOf="@id/details"
+            app:layout_constraintStart_toEndOf="@id/txt_name"
+            tools:text="aaaa/mm/dd" />
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/design_default_color_primary_dark"
-            android:gravity="center_horizontal"
-            android:textSize="0.5sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            tools:layout_editor_absoluteX="0dp" />
-
-        <TextView
+            android:id="@+id/details"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@{goToDetail}"
-            android:textSize="20sp"
+            android:layout_marginEnd="15dp"
+            android:textSize="14sp"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/divisorLine"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/txt_genre_record_label"
+            app:layout_constraintTop_toBottomOf="@id/txt_release_date"
+            tools:text=">"
+            />
+
+        <TextView
+            android:id="@+id/divisorLine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/backgroundColor2"
+            android:layout_marginBottom="0dp"
+            android:textSize="0.5sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_genre_record_label"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -7,9 +7,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.vinilosgrupo15.R
 import com.example.vinilosgrupo15.databinding.AlbumRowBinding
 import com.example.vinilosgrupo15.model.AlbumResponseDataModel
+import com.example.vinilosgrupo15.view.fragments.ClickAlbumListener
 import com.example.vinilosgrupo15.view.viewholder.ItemAlbumViewHolder
 
-class ItemsAlbumAdapter(): RecyclerView.Adapter<ItemAlbumViewHolder>() {
+class ItemsAlbumAdapter(private val listener: ClickAlbumListener): RecyclerView.Adapter<ItemAlbumViewHolder>() {
     private val resource = R.layout.album_row
     lateinit var context: Context
 
@@ -27,12 +28,15 @@ class ItemsAlbumAdapter(): RecyclerView.Adapter<ItemAlbumViewHolder>() {
 
     override fun onBindViewHolder(holder: ItemAlbumViewHolder, position: Int) {
         holder.setItem(itemList[position])
+        holder.itemView.setOnClickListener {
+            listener.itemSelect(itemList[position])
+        }
     }
 
     fun setItems(list: MutableList<AlbumResponseDataModel>) {
         itemList.clear()
         itemList.addAll(list)
-        notifyDataSetChanged()
+        notifyItemChanged(1)
     }
 
     override fun getItemCount(): Int {
