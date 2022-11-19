@@ -33,7 +33,8 @@ class ItemsCollectorAdapter(): RecyclerView.Adapter<ItemCollectorViewHolder>() {
     fun setItems(list: MutableList<CollectorsResponseDataModel>){
         itemList.clear()
         itemList.addAll(list)
-        notifyDataSetChanged()
+        //notifyDataSetChanged()
+        notifyItemChanged(1)
     }
 
     override fun getItemCount(): Int {

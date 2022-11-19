@@ -33,7 +33,7 @@ class ItemsCommentAdapter(): RecyclerView.Adapter<ItemCommentViewHolder>() {
     fun setItems(list: ArrayList<Comment>) {
         itemList.clear()
         itemList.addAll(list)
-        notifyDataSetChanged()
+        notifyItemChanged(1)
     }
 
     override fun getItemCount(): Int {

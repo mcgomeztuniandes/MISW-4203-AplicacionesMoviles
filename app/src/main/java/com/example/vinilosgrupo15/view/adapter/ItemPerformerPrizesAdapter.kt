@@ -33,7 +33,7 @@ class ItemPerformerPrizesAdapter(): RecyclerView.Adapter<ItemPerformerPrizesHold
     fun setItems(list: ArrayList<PerformerPrize>) {
         itemList.clear()
         itemList.addAll(list)
-        notifyDataSetChanged()
+        notifyItemChanged(1)
     }
 
     override fun getItemCount(): Int {

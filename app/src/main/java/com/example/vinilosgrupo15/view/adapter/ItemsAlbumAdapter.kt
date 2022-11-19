@@ -36,7 +36,7 @@ class ItemsAlbumAdapter(private val listener: ClickAlbumListener): RecyclerView.
     fun setItems(list: MutableList<AlbumResponseDataModel>) {
         itemList.clear()
         itemList.addAll(list)
-        notifyDataSetChanged()
+        notifyItemChanged(1)
     }
 
     override fun getItemCount(): Int {
