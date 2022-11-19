@@ -64,7 +64,7 @@ public class TestAlbums {
 
         /* Volver al home */
         onView(withId(R.id.homeBtn)).check(matches(isDisplayed()));
-        onView(withId(R.id.homeBtn)).perform(click());
+        onView(withId(R.id.homeBtn)).perform(forceClick());
         Thread.sleep(1000);
 
     }
@@ -106,7 +106,7 @@ public class TestAlbums {
         onView(withId(R.id.btnTracks)).perform(forceClick());
 
         Thread.sleep(1000);
-        pressBack();
+        //pressBack();
 
         /* Ingresar a Comments */
         Thread.sleep(1000);
@@ -114,7 +114,7 @@ public class TestAlbums {
         onView(withId(R.id.btnComments)).perform(forceClick());
 
         Thread.sleep(1000);
-        pressBack();
+        //pressBack();
 
         /* Ingresar a Comments */
         Thread.sleep(1000);
@@ -122,8 +122,14 @@ public class TestAlbums {
         onView(withId(R.id.btnPerformers)).perform(forceClick());
 
         Thread.sleep(1000);
-        pressBack();
+        //pressBack();
         Thread.sleep(1000);
+
+        /* Regresar  */
+        pressBack();
+        pressBack();
+        pressBack();
+        pressBack();
 
         /* Volver al home */
         onView(withId(R.id.homeBtn)).check(matches(isDisplayed()));

@@ -1,5 +1,6 @@
 package com.example.vinilosgrupo15.view.adapter
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -30,10 +31,12 @@ class ItemsTrackAdapter(): RecyclerView.Adapter<ItemTrackViewHolder>() {
         holder.setItem(itemList[position])
     }
 
+    //@SuppressLint("NotifyDataSetChanged")
     fun setItems(list: ArrayList<Track>) {
         itemList.clear()
         itemList.addAll(list)
-        notifyDataSetChanged()
+        //notifyDataSetChanged()
+        notifyItemChanged(1)
     }
 
     override fun getItemCount(): Int {

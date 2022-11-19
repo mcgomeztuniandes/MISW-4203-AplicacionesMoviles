@@ -32,7 +32,7 @@ class ItemsPerformerAdapter(): RecyclerView.Adapter<ItemPerformerViewHolder>() {
     fun setItems(list: ArrayList<Performer>) {
         itemList.clear()
         itemList.addAll(list)
-        notifyDataSetChanged()
+        notifyItemChanged(1)
     }
 
     override fun getItemCount(): Int {

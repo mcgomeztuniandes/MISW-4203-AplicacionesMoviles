@@ -38,7 +38,7 @@ class ItemsBandAdapter(private var listener: ClickBandListener): RecyclerView.Ad
     fun setItems(list: MutableList<BandReponseDataModel>) {
         itemList.clear()
         itemList.addAll(list)
-        notifyDataSetChanged()
+        notifyItemChanged(1)
     }
 
     override fun getItemCount(): Int {
