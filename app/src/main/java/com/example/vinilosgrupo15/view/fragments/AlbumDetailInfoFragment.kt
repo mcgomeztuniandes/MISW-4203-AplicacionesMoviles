@@ -112,10 +112,10 @@ class AlbumDetailInfoFragment : Fragment() {
        }
     }
 
-   /* override fun onDestroyView() {
+    override fun onDestroyView() {
         super.onDestroyView()
         binding = null
-    }*/
+    }
 
     companion object {
         fun newInstance() = AlbumDetailInfoFragment()

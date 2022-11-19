@@ -5,11 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.vinilosgrupo15.R
 import com.example.vinilosgrupo15.viewmodels.AlbumViewModel
 import com.example.vinilosgrupo15.databinding.FragmentAlbumDetailPerformersBinding
 import com.example.vinilosgrupo15.model.Performer
@@ -36,41 +33,6 @@ class AlbumDetailPerformersFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentAlbumDetailPerformersBinding.inflate(inflater, container, false)
-
-        val btnInfo: Button = binding!!.btnInfo
-
-        btnInfo.setOnClickListener {
-            activity?.supportFragmentManager
-                ?.beginTransaction()
-                ?.replace(R.id.fragmentAlbumDetailPerformers, AlbumDetailInfoFragment.newInstance())
-                ?.addToBackStack(null)
-                ?.commit()
-        }
-
-        val btnTracks: Button = binding!!.btnTracks
-
-
-
-        btnTracks.setOnClickListener {
-            btnTracks.setBackgroundColor(ContextCompat.getColor(btnTracks.context,R.color.btn_icon_selected_color))
-
-            activity?.supportFragmentManager
-                ?.beginTransaction()
-                ?.replace(R.id.fragmentAlbumDetailPerformers, AlbumDetailTracksFragment.newInstance())
-                ?.addToBackStack(null)
-                ?.commit()
-        }
-
-        val btnComments: Button = binding!!.btnComments
-
-        btnComments.setOnClickListener {
-            activity?.supportFragmentManager
-                ?.beginTransaction()
-                ?.replace(R.id.fragmentAlbumDetailPerformers, AlbumDetailCommentsFragment.newInstance())
-                ?.addToBackStack(null)
-                ?.commit()
-        }
-
         return binding?.root
     }
 
