@@ -1,13 +1,215 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".view.fragments.AlbumCreateFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <TextView
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Crear Album" />
+        tools:context=".view.fragments.AlbumCreateFragment">
 
-</FrameLayout>
+        <TextView
+            android:id="@+id/labelName"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="15dp"
+            android:textAlignment="textStart"
+            app:layout_constraintVertical_chainStyle="spread"
+            android:textSize="20sp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/editTextAlbumName"
+            android:text="@string/labelAlbumName"/>
+
+        <EditText
+            android:id="@+id/editTextAlbumName"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginBottom="20dp"
+            android:autofillHints=""
+            android:hint="@string/inputAlbumName"
+            android:inputType="text"
+            android:textColorHint="#757575"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/labelCover"
+            app:layout_constraintTop_toBottomOf="@id/labelName"
+            />
+
+        <TextView
+            android:id="@+id/labelCover"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:textAlignment="textStart"
+            android:textSize="20sp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/editTextAlbumCover"
+            app:layout_constraintTop_toBottomOf="@id/editTextAlbumName"
+            android:text="@string/labelAlbumCover" />
+
+        <EditText
+            android:id="@+id/editTextAlbumCover"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginBottom="20dp"
+            android:autofillHints=""
+            android:hint="@string/inputAlbumCover"
+            android:inputType="text"
+            android:textColorHint="#757575"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/labelCover"
+            app:layout_constraintBottom_toTopOf="@id/labelReleaseDate"
+            />
+
+        <TextView
+            android:id="@+id/labelReleaseDate"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:textAlignment="textStart"
+            android:textSize="20sp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/editTextAlbumCover"
+            app:layout_constraintBottom_toTopOf="@id/editTextAlbumReleaseDate"
+            android:text="@string/labelAlbumReleaseDate"
+            />
+
+        <EditText
+            android:id="@+id/editTextAlbumReleaseDate"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginBottom="20dp"
+            android:autofillHints=""
+            android:inputType="date"
+            android:textColorHint="#757575"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/labelReleaseDate"
+            app:layout_constraintBottom_toTopOf="@id/labelGenre"
+            />
+
+        <TextView
+            android:id="@+id/labelGenre"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:textAlignment="textStart"
+            android:textSize="20sp"
+            android:text="@string/labelAlbumGenre"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/editTextAlbumReleaseDate"
+            app:layout_constraintBottom_toTopOf="@id/genreList"
+            />
+
+        <Spinner
+            android:id="@+id/genreList"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginBottom="20dp"
+            android:minHeight="48dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/labelGenre"
+            app:layout_constraintBottom_toTopOf="@id/labelRecord"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <TextView
+            android:id="@+id/labelRecord"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:textAlignment="textStart"
+            android:textSize="20sp"
+            android:text="@string/labelAlbumRecord"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/genreList"
+            app:layout_constraintBottom_toTopOf="@id/recordList"
+            />
+
+
+        <Spinner
+            android:id="@+id/recordList"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginBottom="20dp"
+            android:minHeight="48dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/labelRecord"
+            app:layout_constraintBottom_toTopOf="@id/labelDescription"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <TextView
+            android:id="@+id/labelDescription"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:textAlignment="textStart"
+            android:textSize="20sp"
+            android:text="@string/labelAlbumDescription"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/recordList"
+            app:layout_constraintBottom_toTopOf="@id/editTextAlbumDescription"
+            />
+
+        <EditText
+            android:id="@+id/editTextAlbumDescription"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginBottom="20dp"
+            android:autofillHints=""
+            android:inputType="textImeMultiLine"
+            android:textColorHint="#757575"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/labelDescription"
+            app:layout_constraintBottom_toTopOf="@id/saveAlbum"
+            />
+
+        <Button
+            android:id="@+id/saveAlbum"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginBottom="15dp"
+            android:text="@string/labelBtnCreateAlbum"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextAlbumDescription"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

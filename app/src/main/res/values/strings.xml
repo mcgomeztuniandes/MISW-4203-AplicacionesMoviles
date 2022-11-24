@@ -15,4 +15,27 @@
         <item>Collector</item>
         <item>Guest</item>
     </string-array>
+    <!-- String Album create Layout -->
+    <string name="inputAlbumName">Album name</string>
+    <string name="inputAlbumCover">Cover name</string>
+    <string name="labelAlbumName">Name</string>
+    <string name="labelAlbumCover">Cover</string>
+    <string name="labelAlbumReleaseDate">Release Date</string>
+    <string name="labelAlbumGenre">Genre</string>
+    <string name="labelAlbumRecord">Record</string>
+    <string name="labelAlbumDescription">Description</string>
+    <string name="labelBtnCreateAlbum">Create</string>
+    <string-array name="AlbumGenres">
+        <item>Classical</item>
+        <item>Folk</item>
+        <item>Salsa</item>
+        <item>Rock</item>
+    </string-array>
+    <string-array name="AlbumLabels">
+        <item>Discos Fuentes</item>
+        <item>EMI</item>
+        <item>Elektra</item>
+        <item>Fania Rocords</item>
+        <item>Sony Music</item>
+    </string-array>
 </resources>
