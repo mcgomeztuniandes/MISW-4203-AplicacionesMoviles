@@ -17,7 +17,7 @@
     </string-array>
     <!-- String Album create Layout -->
     <string name="inputAlbumName">Album name</string>
-    <string name="inputAlbumCover">Cover name</string>
+    <string name="inputAlbumCover">An image url: http://albumImage.png</string>
     <string name="labelAlbumName">Name</string>
     <string name="labelAlbumCover">Cover</string>
     <string name="labelAlbumReleaseDate">Release Date</string>
