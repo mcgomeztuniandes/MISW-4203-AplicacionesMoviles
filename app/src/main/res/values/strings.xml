@@ -26,12 +26,14 @@
     <string name="labelAlbumDescription">Description</string>
     <string name="labelBtnCreateAlbum">Create</string>
     <string-array name="AlbumGenres">
+        <item>Select genre</item>
         <item>Classical</item>
         <item>Folk</item>
         <item>Salsa</item>
         <item>Rock</item>
     </string-array>
     <string-array name="AlbumLabels">
+        <item>Select label</item>
         <item>Discos Fuentes</item>
         <item>EMI</item>
         <item>Elektra</item>

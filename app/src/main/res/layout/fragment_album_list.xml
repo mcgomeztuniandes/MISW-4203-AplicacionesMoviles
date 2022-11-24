@@ -32,6 +32,19 @@
             android:orientation="horizontal"
             app:layout_constraintGuide_percent="0.94" />
 
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnCreate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@color/backgroundColor"
+            android:padding="4dp"
+            android:src="@android:drawable/ic_input_add"
+            app:backgroundTint="@color/backgroundColor"
+            app:layout_constraintBottom_toBottomOf="@id/guidelineMenu"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:tint="@color/white" />
+
         <ProgressBar
             android:id="@+id/progress"
             android:layout_width="wrap_content"
