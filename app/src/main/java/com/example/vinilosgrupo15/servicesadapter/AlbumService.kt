@@ -1,6 +1,7 @@
 package com.example.vinilosgrupo15.servicesadapter
 import com.example.vinilosgrupo15.model.Album
 import com.example.vinilosgrupo15.model.AlbumResponseDataModel
+import com.example.vinilosgrupo15.model.MyAlbum
 import retrofit2.Call
 import retrofit2.Response
 import retrofit2.http.Body
@@ -14,5 +15,5 @@ interface AlbumService {
 
     @Headers("Content-Type: application/json")
     @POST("albums")
-    suspend fun createAlbum(@Body albumData:Album ):Call<Album>
+    suspend fun createAlbum(@Body albumData: MyAlbum): Response<Album>
 }

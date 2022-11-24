@@ -2,7 +2,9 @@ package com.example.vinilosgrupo15.viewmodels
 
 import android.app.Application
 import androidx.lifecycle.*
+import com.example.vinilosgrupo15.model.Album
 import com.example.vinilosgrupo15.model.AlbumResponseDataModel
+import com.example.vinilosgrupo15.model.MyAlbum
 
 import com.example.vinilosgrupo15.repository.AlbumRepository
 import kotlinx.coroutines.CoroutineScope
@@ -51,6 +53,13 @@ class AlbumViewModel (app: Application): AndroidViewModel(app), CoroutineScope {
             response?.body()?.let { list ->
                 _listAlbums.value = list
             }
+        }
+    }
+
+    fun fetchCreateAlbum(newAlbum:MyAlbum){
+        viewModelScope.launch {
+            val response = repository.createNewAlbum(newAlbum)
+            response?.body()
         }
     }
 

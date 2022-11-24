@@ -22,7 +22,7 @@
     <string name="labelAlbumCover">Cover</string>
     <string name="labelAlbumReleaseDate">Release Date</string>
     <string name="labelAlbumGenre">Genre</string>
-    <string name="labelAlbumRecord">Record</string>
+    <string name="labelAlbumRecord">Record label</string>
     <string name="labelAlbumDescription">Description</string>
     <string name="labelBtnCreateAlbum">Create</string>
     <string-array name="AlbumGenres">
@@ -33,11 +33,11 @@
         <item>Rock</item>
     </string-array>
     <string-array name="AlbumLabels">
-        <item>Select label</item>
+        <item>Select record label</item>
         <item>Discos Fuentes</item>
         <item>EMI</item>
         <item>Elektra</item>
-        <item>Fania Rocords</item>
+        <item>Fania Records</item>
         <item>Sony Music</item>
     </string-array>
 </resources>
