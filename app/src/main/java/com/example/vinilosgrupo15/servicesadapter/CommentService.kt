@@ -1,5 +1,6 @@
 package com.example.vinilosgrupo15.servicesadapter
 
+import com.example.vinilosgrupo15.model.Comment
 import com.example.vinilosgrupo15.model.CommentDTO
 import retrofit2.Response
 import retrofit2.http.Body
@@ -11,5 +12,5 @@ interface CommentService {
 
     @Headers("Content-Type: application/json")
     @POST("/albums/{albumId}/comments")
-    suspend fun addComment(@Path("albumId") albumId: Long, @Body commentDTO: CommentDTO): Response<CommentDTO>
+    suspend fun addComment(@Path("albumId") albumId: Long, @Body commentDTO: CommentDTO): Response<Comment>
 }

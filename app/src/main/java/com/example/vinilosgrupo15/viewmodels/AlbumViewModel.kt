@@ -3,6 +3,7 @@ package com.example.vinilosgrupo15.viewmodels
 import android.app.Application
 import androidx.lifecycle.*
 import com.example.vinilosgrupo15.model.AlbumResponseDataModel
+import com.example.vinilosgrupo15.model.Comment
 import com.example.vinilosgrupo15.model.CommentDTO
 
 import com.example.vinilosgrupo15.repository.AlbumRepository
@@ -60,10 +61,8 @@ class AlbumViewModel (app: Application): AndroidViewModel(app), CoroutineScope {
     fun fetchCreateCommentData(id_album:Long, commentDTO: CommentDTO) {
         viewModelScope.launch {
             val response = repositoryComment.addComment(id_album, commentDTO)
-
-            response?.body()?.let { list ->
-
-            }
+            val comment: Comment = Comment(0, commentDTO.description, commentDTO.rating)
+            itemDataSelected!!.comments.add(comment)
         }
     }
 

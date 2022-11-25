@@ -4,10 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
 import android.widget.Button
-import android.widget.Spinner
-import android.widget.SpinnerAdapter
 import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
@@ -97,16 +94,16 @@ class AlbumDetailInfoFragment : Fragment() {
         }
 
         btnAddComment.setOnClickListener {
-
-
             viewModel.itemDataSelected?.let { data ->
-                val collectorDTO: CollectorDTO = CollectorDTO(101)
-                val commentDTO: CommentDTO = CommentDTO(binding!!.etComment.text.toString(), (1..5).random().toString(), collectorDTO)
-
+                val collectorDTO = CollectorDTO(101)
+                val commentDTO = CommentDTO(binding!!.etComment.text.toString(), (1..5).random().toString(), collectorDTO)
                 viewModel.fetchCreateCommentData(data.id, commentDTO)
-
+                activity?.supportFragmentManager
+                    ?.beginTransaction()
+                    ?.replace(R.id.fragmentAlbumDetailInfo, newInstance())
+                    ?.addToBackStack(null)
+                    ?.commit()
             }
-
         }
 
         return binding!!.root
