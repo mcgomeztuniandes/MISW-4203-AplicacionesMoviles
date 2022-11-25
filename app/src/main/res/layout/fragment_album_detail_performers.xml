@@ -11,10 +11,55 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"
         tools:context=".AlbumDetailPerformersFragment">
 
+        <Button
+            android:id="@+id/btnInfo"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:text="Info"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toTopOf="@id/line1"
+            app:layout_constraintEnd_toStartOf="@+id/btnTracks"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
+
+        <Button
+            android:id="@+id/btnTracks"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:text="Tracks"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toTopOf="@id/line1"
+            app:layout_constraintEnd_toStartOf="@+id/btnComments"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toEndOf="@id/btnInfo"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btnComments"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:text="Comments"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toTopOf="@id/line1"
+            app:layout_constraintEnd_toStartOf="@+id/btnPerformers"
+            app:layout_constraintStart_toEndOf="@+id/btnTracks"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <Button
+            android:id="@+id/btnPerformers"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:text="Performers"
+            android:textSize="9sp"
+            app:layout_constraintBottom_toTopOf="@id/line1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btnComments"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/line1"
