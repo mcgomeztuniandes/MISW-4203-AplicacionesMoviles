@@ -54,11 +54,11 @@
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:text="Performers"
-            android:textSize="9sp"
+            android:textSize="8sp"
             app:layout_constraintBottom_toTopOf="@id/line1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/btnComments"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"/>
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/line1"
@@ -141,13 +141,39 @@
             android:layout_height="0dp"
             android:layout_margin="15dp"
             android:justificationMode="inter_word"
-            android:textSize="20dp"
             android:textColor="@color/text_color"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toTopOf="@+id/etComment"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/line4"
+            app:layout_constraintVertical_bias="1.0"
             tools:text="Descripción del álbum" />
+
+        <EditText
+            android:id="@+id/etComment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:hint="Add comment"
+            app:layout_constraintBottom_toBottomOf="@+id/btnAddComments"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvDescription"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/btnAddComments"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:text="Add comment"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.898"
+            app:layout_constraintTop_toBottomOf="@id/etComment"
+            tools:ignore="MissingConstraints" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
