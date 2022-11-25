@@ -150,18 +150,6 @@
             app:layout_constraintVertical_bias="1.0"
             tools:text="Descripción del álbum" />
 
-        <Spinner
-            android:id="@+id/listCollectors"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            app:layout_constraintBottom_toTopOf="@id/etComment"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvDescription"
-            tools:ignore="SpeakableTextPresentCheck" />
-
         <EditText
             android:id="@+id/etComment"
             android:layout_width="match_parent"
@@ -184,7 +172,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.898"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/etComment"
             tools:ignore="MissingConstraints" />
 

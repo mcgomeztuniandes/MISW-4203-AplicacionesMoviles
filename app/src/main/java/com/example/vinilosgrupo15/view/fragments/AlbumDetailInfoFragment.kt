@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.EditText
 import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
@@ -14,6 +15,7 @@ import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.example.vinilosgrupo15.R
 import com.example.vinilosgrupo15.databinding.FragmentAlbumDetailInfoBinding
 import com.example.vinilosgrupo15.model.CollectorDTO
+import com.example.vinilosgrupo15.model.Comment
 import com.example.vinilosgrupo15.model.CommentDTO
 import com.example.vinilosgrupo15.viewmodels.AlbumViewModel
 
@@ -98,14 +100,12 @@ class AlbumDetailInfoFragment : Fragment() {
                 val collectorDTO = CollectorDTO(101)
                 val commentDTO = CommentDTO(binding!!.etComment.text.toString(), (1..5).random().toString(), collectorDTO)
                 viewModel.fetchCreateCommentData(data.id, commentDTO)
-                activity?.supportFragmentManager
-                    ?.beginTransaction()
-                    ?.replace(R.id.fragmentAlbumDetailInfo, newInstance())
-                    ?.addToBackStack(null)
-                    ?.commit()
+                binding!!.etComment.text.clear()
+                val comment = Comment(0, commentDTO.description, commentDTO.rating)
+                viewModel.itemDataSelected?.comments!!.add(comment)
             }
+            btnComments.callOnClick()
         }
-
         return binding!!.root
     }
 
