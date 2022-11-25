@@ -4,7 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
 import android.widget.Button
+import android.widget.Spinner
+import android.widget.SpinnerAdapter
 import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
@@ -13,6 +16,8 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.example.vinilosgrupo15.R
 import com.example.vinilosgrupo15.databinding.FragmentAlbumDetailInfoBinding
+import com.example.vinilosgrupo15.model.CollectorDTO
+import com.example.vinilosgrupo15.model.CommentDTO
 import com.example.vinilosgrupo15.viewmodels.AlbumViewModel
 
 class AlbumDetailInfoFragment : Fragment() {
@@ -39,6 +44,7 @@ class AlbumDetailInfoFragment : Fragment() {
         val btnTracks: Button = binding!!.btnTracks
         val btnComments: Button = binding!!.btnComments
         val btnPerformers: Button = binding!!.btnPerformers
+        val btnAddComment: Button = binding!!.btnAddComments
 
         btnInfo.setBackgroundColor(ContextCompat.getColor(btnInfo.context,R.color.btn_icon_selected_color))
 
@@ -90,6 +96,19 @@ class AlbumDetailInfoFragment : Fragment() {
                 ?.commit()
         }
 
+        btnAddComment.setOnClickListener {
+
+
+            viewModel.itemDataSelected?.let { data ->
+                val collectorDTO: CollectorDTO = CollectorDTO(101, "", "", "")
+                val commentDTO: CommentDTO = CommentDTO(binding!!.etComment.text.toString(), "4", collectorDTO)
+
+                viewModel.fetchCreateCommentData(data.id, commentDTO)
+
+            }
+
+        }
+
         return binding!!.root
     }
 
@@ -108,10 +127,8 @@ class AlbumDetailInfoFragment : Fragment() {
             binding!!.tvDescription.text = data.description
             binding!!.tvGenreRecordLabel.text =  data.genre + " - " + data.recordLabel
             binding!!.tvReleaseDate.text = data.releaseDate.substring(0,10)
-
        }
     }
-
     override fun onDestroyView() {
         super.onDestroyView()
         binding = null

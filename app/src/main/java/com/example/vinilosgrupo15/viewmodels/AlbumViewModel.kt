@@ -3,8 +3,10 @@ package com.example.vinilosgrupo15.viewmodels
 import android.app.Application
 import androidx.lifecycle.*
 import com.example.vinilosgrupo15.model.AlbumResponseDataModel
+import com.example.vinilosgrupo15.model.CommentDTO
 
 import com.example.vinilosgrupo15.repository.AlbumRepository
+import com.example.vinilosgrupo15.repository.CommentRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -23,6 +25,7 @@ class AlbumViewModel (app: Application): AndroidViewModel(app), CoroutineScope {
     var progressAlbums: LiveData<Boolean> = _progressAlbums
 
     private val repository = AlbumRepository()
+    private val repositoryComment = CommentRepository()
 
     var observerOnCategorySelected: Observer<AlbumResponseDataModel> = Observer { value ->
         value.let {
@@ -50,6 +53,17 @@ class AlbumViewModel (app: Application): AndroidViewModel(app), CoroutineScope {
 
             response?.body()?.let { list ->
                 _listAlbums.value = list
+            }
+        }
+    }
+
+    fun fetchCreateCommentData(id_album:Long, commentDTO: CommentDTO) {
+        viewModelScope.launch {
+            val response = repositoryComment.addComment(id_album, commentDTO)
+
+            response?.body()?.let { list ->
+                val valor = list
+
             }
         }
     }
