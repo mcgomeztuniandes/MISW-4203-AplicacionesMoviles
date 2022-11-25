@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragmentCollectorDetailInfo">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".CollectorDetailFragment">
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/line1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.053" />
+
+        <TextView
+            android:id="@+id/collectorName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textColor="@color/title_color"
+            android:textSize="28sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/line1"
+            tools:text="Collector name" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/line3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.14" />
+
+
+        <TextView
+            android:id="@+id/lbCollectorTelephone"
+            android:layout_width="91dp"
+            android:layout_height="26dp"
+            android:text="@string/telephone"
+            android:textAlignment="textStart"
+            android:textSize="17sp"
+            android:textStyle="italic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.05"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/line3"
+            tools:ignore="MissingConstraints" />
+
+
+        <TextView
+            android:id="@+id/collectorTelephone"
+            android:layout_width="280dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="1dp"
+            android:textAlignment="textStart"
+            android:textSize="17sp"
+            android:textStyle="italic"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toEndOf="@+id/lbCollectorTelephone"
+            app:layout_constraintTop_toTopOf="@id/line3"
+            tools:text="Telephone" />
+
+        <TextView
+            android:id="@+id/lbEmail"
+            android:layout_width="92dp"
+            android:layout_height="22dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:text="@string/email"
+            android:textAlignment="textStart"
+            android:textSize="17sp"
+            android:textStyle="italic"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lbCollectorTelephone"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/collectorEmail"
+            android:layout_width="278dp"
+            android:layout_height="19dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginBottom="24dp"
+            android:textAlignment="textStart"
+            android:textSize="17sp"
+            android:textStyle="italic"
+            app:layout_constraintBottom_toBottomOf="@id/line4"
+            app:layout_constraintStart_toEndOf="@+id/lbEmail"
+            tools:text="Email" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/line4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.24" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview"
+            android:layout_width="379dp"
+            android:layout_height="478dp"
+            android:layout_marginBottom="5dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            app:layout_constraintVertical_bias="0.333"
+            tools:layout_editor_absoluteX="15dp"
+            tools:listitem="@layout/performer_row"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="15dp"
+            android:textSize="20sp"
+            android:textColor="@color/text_color"
+            android:text="@string/favorite_performers"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/line4" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

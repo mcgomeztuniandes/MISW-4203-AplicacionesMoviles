@@ -11,11 +11,12 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.vinilosgrupo15.R
 import com.example.vinilosgrupo15.databinding.FragmentCollectorListBinding
+import com.example.vinilosgrupo15.model.CollectorsResponseDataModel
 import com.example.vinilosgrupo15.view.adapter.ItemsCollectorAdapter
 import com.example.vinilosgrupo15.viewmodels.CollectorViewModel
 
 
-class CollectorListFragment : Fragment() {
+class CollectorListFragment : Fragment(), ClickCollectorListener {
     lateinit var viewCollectorModel : CollectorViewModel
     lateinit var binding: FragmentCollectorListBinding
     private var myCollectorAdapter: ItemsCollectorAdapter? = null
@@ -40,7 +41,7 @@ class CollectorListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        myCollectorAdapter = ItemsCollectorAdapter()
+        myCollectorAdapter = ItemsCollectorAdapter(this)
         binding.recyclerview.layoutManager = LinearLayoutManager(context)
         binding.recyclerview.adapter = myCollectorAdapter
 
@@ -62,4 +63,19 @@ class CollectorListFragment : Fragment() {
         fun newInstance() = CollectorListFragment()
 
     }
+
+    override fun itemSelect(data: CollectorsResponseDataModel) {
+        viewCollectorModel.setItemSelection(data)
+
+        activity?.supportFragmentManager
+            ?.beginTransaction()
+            ?.replace(R.id.container, CollectorDetailFragment())
+            ?.addToBackStack(null)
+            ?.commit()
+
+    }
+}
+
+interface ClickCollectorListener {
+    fun itemSelect(data: CollectorsResponseDataModel)
 }

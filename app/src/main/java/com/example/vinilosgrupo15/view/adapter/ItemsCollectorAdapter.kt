@@ -8,11 +8,15 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.vinilosgrupo15.R
 import com.example.vinilosgrupo15.databinding.CollectorRowBinding
 import com.example.vinilosgrupo15.model.CollectorsResponseDataModel
+import com.example.vinilosgrupo15.view.fragments.ClickCollectorListener
 import com.example.vinilosgrupo15.view.viewholder.ItemCollectorViewHolder
 
-class ItemsCollectorAdapter(): RecyclerView.Adapter<ItemCollectorViewHolder>() {
+
+
+class ItemsCollectorAdapter(private val listener: ClickCollectorListener? ): RecyclerView.Adapter<ItemCollectorViewHolder>() {
     private val resource = R.layout.collector_row
     lateinit var context: Context
+
 
     private val itemList = mutableListOf<CollectorsResponseDataModel>()
 
@@ -28,12 +32,14 @@ class ItemsCollectorAdapter(): RecyclerView.Adapter<ItemCollectorViewHolder>() {
 
     override fun onBindViewHolder(holder: ItemCollectorViewHolder, position: Int) {
         holder.setItem(itemList[position])
+        holder.itemView.setOnClickListener {
+            listener?.itemSelect(itemList[position])
+        }
     }
 
     fun setItems(list: MutableList<CollectorsResponseDataModel>){
         itemList.clear()
         itemList.addAll(list)
-        //notifyDataSetChanged()
         notifyItemChanged(1)
     }
 
