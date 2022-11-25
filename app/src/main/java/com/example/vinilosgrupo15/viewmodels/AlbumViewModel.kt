@@ -62,7 +62,6 @@ class AlbumViewModel (app: Application): AndroidViewModel(app), CoroutineScope {
             val response = repositoryComment.addComment(id_album, commentDTO)
 
             response?.body()?.let { list ->
-                val valor = list
 
             }
         }

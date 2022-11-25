@@ -100,8 +100,8 @@ class AlbumDetailInfoFragment : Fragment() {
 
 
             viewModel.itemDataSelected?.let { data ->
-                val collectorDTO: CollectorDTO = CollectorDTO(101, "", "", "")
-                val commentDTO: CommentDTO = CommentDTO(binding!!.etComment.text.toString(), "4", collectorDTO)
+                val collectorDTO: CollectorDTO = CollectorDTO(101)
+                val commentDTO: CommentDTO = CommentDTO(binding!!.etComment.text.toString(), (1..5).random().toString(), collectorDTO)
 
                 viewModel.fetchCreateCommentData(data.id, commentDTO)
 
