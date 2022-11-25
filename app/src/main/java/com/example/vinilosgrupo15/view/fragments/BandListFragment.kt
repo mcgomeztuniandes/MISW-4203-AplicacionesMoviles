@@ -39,8 +39,8 @@ class BandListFragment : Fragment(), ClickBandListener  {
         binding!!.viewModel = viewBandModel
 
 
-        var btnMusicians: Button = binding!!.btnMusician
-        var btnBand:Button = binding!!.btnBand
+        val btnMusicians: Button = binding!!.btnMusician
+        val btnBand:Button = binding!!.btnBand
 
         btnBand.setBackgroundColor(ContextCompat.getColor(btnBand.context,R.color.btn_icon_selected_color))
 
@@ -79,7 +79,7 @@ class BandListFragment : Fragment(), ClickBandListener  {
 
         activity?.supportFragmentManager
             ?.beginTransaction()
-            ?.replace(android.R.id.content, BandDetailFragment.newInstance())
+            ?.replace(R.id.container, BandDetailFragment.newInstance())
             ?.addToBackStack(null)
             ?.commit()
 

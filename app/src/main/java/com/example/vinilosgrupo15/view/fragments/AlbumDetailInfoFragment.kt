@@ -47,18 +47,6 @@ class AlbumDetailInfoFragment : Fragment() {
 
         btnInfo.setBackgroundColor(ContextCompat.getColor(btnInfo.context,R.color.btn_icon_selected_color))
 
-        btnInfo.setOnClickListener {
-            btnInfo.setBackgroundColor(ContextCompat.getColor(btnInfo.context,R.color.btn_icon_selected_color))
-            btnTracks.setBackgroundColor(ContextCompat.getColor(btnTracks.context,R.color.btn_icon_color))
-            btnPerformers.setBackgroundColor(ContextCompat.getColor(btnPerformers.context,R.color.btn_icon_color))
-            btnComments.setBackgroundColor(ContextCompat.getColor(btnComments.context,R.color.btn_icon_color))
-            activity?.supportFragmentManager
-                ?.beginTransaction()
-                ?.replace(R.id.fragmentAlbumDetailInfo, newInstance())
-                ?.addToBackStack(null)
-                ?.commit()
-        }
-
         btnTracks.setOnClickListener {
             btnTracks.setBackgroundColor(ContextCompat.getColor(btnTracks.context,R.color.btn_icon_selected_color))
             btnInfo.setBackgroundColor(ContextCompat.getColor(btnInfo.context,R.color.btn_icon_color))
@@ -66,7 +54,7 @@ class AlbumDetailInfoFragment : Fragment() {
             btnComments.setBackgroundColor(ContextCompat.getColor(btnComments.context,R.color.btn_icon_color))
             activity?.supportFragmentManager
                 ?.beginTransaction()
-                ?.replace(R.id.fragmentAlbumDetailInfo, AlbumDetailTracksFragment.newInstance())
+                ?.replace(R.id.container, AlbumDetailTracksFragment.newInstance())
                 ?.addToBackStack(null)
                 ?.commit()
         }
@@ -78,7 +66,7 @@ class AlbumDetailInfoFragment : Fragment() {
             btnTracks.setBackgroundColor(ContextCompat.getColor(btnTracks.context,R.color.btn_icon_color))
             activity?.supportFragmentManager
                 ?.beginTransaction()
-                ?.replace(R.id.fragmentAlbumDetailInfo, AlbumDetailCommentsFragment.newInstance())
+                ?.replace(R.id.container, AlbumDetailCommentsFragment.newInstance())
                 ?.addToBackStack(null)
                 ?.commit()
         }
@@ -90,7 +78,7 @@ class AlbumDetailInfoFragment : Fragment() {
             btnComments.setBackgroundColor(ContextCompat.getColor(btnComments.context,R.color.btn_icon_color))
             activity?.supportFragmentManager
                 ?.beginTransaction()
-                ?.replace(R.id.fragmentAlbumDetailInfo, AlbumDetailPerformersFragment.newInstance())
+                ?.replace(R.id.container, AlbumDetailPerformersFragment.newInstance())
                 ?.addToBackStack(null)
                 ?.commit()
         }

@@ -73,7 +73,7 @@ class AlbumListFragment: Fragment(), ClickAlbumListener {
 
         activity?.supportFragmentManager
             ?.beginTransaction()
-            ?.replace(android.R.id.content, AlbumDetailInfoFragment())
+            ?.replace(R.id.container, AlbumDetailInfoFragment())
             ?.addToBackStack(null)
             ?.commit()
 
