@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
@@ -95,15 +96,26 @@ class AlbumDetailInfoFragment : Fragment() {
         }
 
         btnAddComment.setOnClickListener {
-            viewModel.itemDataSelected?.let { data ->
-                val collectorDTO = CollectorDTO(101)
-                val commentDTO = CommentDTO(binding!!.etComment.text.toString(), (1..5).random().toString(), collectorDTO)
-                viewModel.fetchCreateCommentData(data.id, commentDTO)
-                binding!!.etComment.text.clear()
-                val comment = Comment(0, commentDTO.description, commentDTO.rating)
-                viewModel.itemDataSelected?.comments!!.add(comment)
+            if(binding!!.etComment.text.toString().length > 0) {
+                viewModel.itemDataSelected?.let { data ->
+                    val collectorDTO = CollectorDTO(101)
+                    val commentDTO = CommentDTO(binding!!.etComment.text.toString(),
+                        (1..5).random().toString(),
+                        collectorDTO)
+                    viewModel.fetchCreateCommentData(data.id, commentDTO)
+                    binding!!.etComment.text.clear()
+                    val comment = Comment(0, commentDTO.description, commentDTO.rating)
+                    viewModel.itemDataSelected?.comments!!.add(comment)
+                }
+                Toast.makeText(this@AlbumDetailInfoFragment.requireActivity(),
+                    "Comment created successful",
+                    Toast.LENGTH_SHORT).show()
+                btnComments.callOnClick()
+            } else {
+                Toast.makeText(this@AlbumDetailInfoFragment.requireActivity(),
+                    "You must post a comment",
+                    Toast.LENGTH_SHORT).show()
             }
-            btnComments.callOnClick()
         }
         return binding!!.root
     }
