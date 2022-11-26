@@ -34,10 +34,11 @@
         <EditText
             android:id="@+id/editTextAlbumName"
             android:layout_width="0dp"
-            android:layout_height="40dp"
+            android:layout_height="0dp"
             android:layout_marginStart="30dp"
             android:layout_marginEnd="30dp"
             android:layout_marginBottom="15dp"
+            android:textSize="15sp"
             android:autofillHints=""
             android:hint="@string/inputAlbumName"
             android:inputType="text"
@@ -66,10 +67,11 @@
         <EditText
             android:id="@+id/editTextAlbumCover"
             android:layout_width="0dp"
-            android:layout_height="80dp"
+            android:layout_height="0dp"
             android:layout_marginStart="30dp"
             android:layout_marginEnd="30dp"
             android:layout_marginBottom="15dp"
+            android:textSize="15sp"
             android:autofillHints=""
             android:hint="@string/inputAlbumCover"
             android:inputType="textMultiLine"
@@ -102,11 +104,12 @@
         <EditText
             android:id="@+id/editTextAlbumReleaseDate"
             android:layout_width="0dp"
-            android:layout_height="40dp"
+            android:layout_height="0dp"
             android:layout_marginStart="30dp"
             android:layout_marginEnd="30dp"
             android:layout_marginBottom="15dp"
             android:autofillHints=""
+            android:textSize="15sp"
             android:hint="yyyy-mm-dd"
             android:textColorHint="#757575"
             app:layout_constraintStart_toStartOf="parent"
@@ -134,7 +137,7 @@
         <Spinner
             android:id="@+id/genreList"
             android:layout_width="0dp"
-            android:layout_height="30dp"
+            android:layout_height="0dp"
             android:layout_marginStart="30dp"
             android:layout_marginEnd="30dp"
             android:layout_marginBottom="20dp"
@@ -166,7 +169,7 @@
         <Spinner
             android:id="@+id/recordList"
             android:layout_width="0dp"
-            android:layout_height="30dp"
+            android:layout_height="0dp"
             android:layout_marginStart="30dp"
             android:layout_marginEnd="30dp"
             android:layout_marginBottom="15dp"
@@ -197,11 +200,12 @@
         <EditText
             android:id="@+id/editTextAlbumDescription"
             android:layout_width="0dp"
-            android:layout_height="80dp"
+            android:layout_height="0dp"
             android:layout_marginStart="30dp"
             android:layout_marginEnd="30dp"
             android:layout_marginBottom="15dp"
             android:autofillHints=""
+            android:textSize="15sp"
             android:inputType="textMultiLine"
             android:minLines="2"
             android:maxLines="8"
@@ -219,13 +223,20 @@
             android:layout_height="50dp"
             android:layout_marginStart="30dp"
             android:layout_marginEnd="30dp"
-            android:layout_marginBottom="70dp"
+            android:layout_marginBottom="5dp"
             android:text="@string/labelBtnCreateAlbum"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/guidelineMenu"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editTextAlbumDescription"
             />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.94" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

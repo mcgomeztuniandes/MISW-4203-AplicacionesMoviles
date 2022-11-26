@@ -144,6 +144,7 @@
             android:layout_height="0dp"
             android:layout_marginEnd="15dp"
             android:layout_marginStart="15dp"
+            android:layout_marginBottom="10dp"
             app:layout_constraintBottom_toTopOf="@+id/etComment"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -184,13 +185,20 @@
             android:layout_height="40dp"
             android:text="Add comment"
             android:textSize="10sp"
-            android:layout_marginBottom="50dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="5dp"
+            app:layout_constraintBottom_toBottomOf="@id/guidelineMenu"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.94"
             app:layout_constraintTop_toBottomOf="@id/etComment"
             app:layout_constraintStart_toStartOf="parent"
             tools:ignore="MissingConstraints" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.94" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
