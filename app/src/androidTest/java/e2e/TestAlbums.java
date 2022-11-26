@@ -137,7 +137,68 @@ public class TestAlbums {
     }
 
     @Test
-    public void testNavegarAlbumsCreacion () throws InterruptedException {
+    public void testAlbumsCreacion () throws InterruptedException {
+        onView(withText("Vinilos Grupo 15")).check(matches(isDisplayed()));
+
+        /* Autenticar usuario guest */
+        onView(withId(R.id.editTextTextPersonName)).perform(clearText(), typeText("Invitado"), closeSoftKeyboard());
+        onView(withId(R.id.editTextTextPassword)).perform(clearText(), typeText("Invitado"), closeSoftKeyboard());
+        onView(withId(R.id.rolList)).perform(click());
+        onData(hasToString(startsWith("Guest"))).perform(click());
+        onView(withId(R.id.rolList)).check(matches(withSpinnerText(containsString("Guest"))));
+        onView(withId(R.id.login)).perform(click());
+
+        /* Ir a Albums */
+        onView(withId(R.id.buttonAlbums)).check(matches(isDisplayed()));
+        onView(withId(R.id.buttonAlbums)).perform(click());
+
+        Thread.sleep(1000);
+        /*  Valida imagenes en Recyclerview */
+        onView(allOf(withId(R.id.img_album), isDisplayed()));
+
+        /* Clic boton crear album  */
+        Thread.sleep(1000);
+
+        onView(withId(R.id.btnCreate)).check(matches(isDisplayed()));
+        onView(withId(R.id.btnCreate)).perform(forceClick());
+
+
+        /* Ingresar al formulario de creacion */
+        Thread.sleep(5000);
+
+
+        /* LLenar campos formulario */
+        onView(withId(R.id.editTextAlbumName)).perform(clearText(), typeText("Test creacion album nuevo"), closeSoftKeyboard());
+        onView(withId(R.id.editTextAlbumCover)).perform(clearText(), typeText("https://upload.wikimedia.org/wikipedia/en/6/6a/Amoonshapedpool.png"), closeSoftKeyboard());
+        onView(withId(R.id.editTextAlbumReleaseDate)).perform(clearText(), typeText("2022-11-26"), closeSoftKeyboard());
+
+        onView(withId(R.id.genreList)).perform(click());
+        onData(hasToString(startsWith("Rock"))).perform(click());
+        onView(withId(R.id.genreList)).check(matches(withSpinnerText(containsString("Rock"))));
+
+        onView(withId(R.id.recordList)).perform(click());
+        onData(hasToString(startsWith("EMI"))).perform(click());
+        onView(withId(R.id.recordList)).check(matches(withSpinnerText(containsString("EMI"))));
+
+        onView(withId(R.id.editTextAlbumDescription)).perform(clearText(), typeText("Test descripcion del album nuevo a crear"), closeSoftKeyboard());
+
+        Thread.sleep(1000);
+
+        onView(withId(R.id.saveAlbum)).check(matches(isDisplayed()));
+        onView(withId(R.id.saveAlbum)).perform(forceClick());
+
+        Thread.sleep(2000);
+        //pressBack();
+
+        /* Volver al home */
+        onView(withId(R.id.homeBtn)).check(matches(isDisplayed()));
+        onView(withId(R.id.homeBtn)).perform(click());
+        Thread.sleep(1000);
+
+    }
+
+    @Test
+    public void testAlbumsComentarioCreacion () throws InterruptedException {
         onView(withText("Vinilos Grupo 15")).check(matches(isDisplayed()));
 
         /* Autenticar usuario guest */
