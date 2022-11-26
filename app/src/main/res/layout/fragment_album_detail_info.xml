@@ -16,9 +16,10 @@
         <Button
             android:id="@+id/btnInfo"
             android:layout_width="0dp"
-            android:layout_height="50dp"
+            android:layout_height="60dp"
             android:text="Info"
             android:textSize="10sp"
+            android:layout_margin="0.5dp"
             app:layout_constraintBottom_toTopOf="@id/line1"
             app:layout_constraintEnd_toStartOf="@+id/btnTracks"
             app:layout_constraintHorizontal_chainStyle="spread"
@@ -29,9 +30,10 @@
         <Button
             android:id="@+id/btnTracks"
             android:layout_width="0dp"
-            android:layout_height="50dp"
+            android:layout_height="60dp"
             android:text="Tracks"
             android:textSize="10sp"
+            android:layout_margin="0.5dp"
             app:layout_constraintBottom_toTopOf="@id/line1"
             app:layout_constraintEnd_toStartOf="@+id/btnComments"
             app:layout_constraintHorizontal_chainStyle="spread"
@@ -41,9 +43,10 @@
         <Button
             android:id="@+id/btnComments"
             android:layout_width="0dp"
-            android:layout_height="50dp"
+            android:layout_height="60dp"
             android:text="Comments"
             android:textSize="10sp"
+            android:layout_margin="0.5dp"
             app:layout_constraintBottom_toTopOf="@id/line1"
             app:layout_constraintEnd_toStartOf="@+id/btnPerformers"
             app:layout_constraintStart_toEndOf="@+id/btnTracks"
@@ -53,9 +56,10 @@
         <Button
             android:id="@+id/btnPerformers"
             android:layout_width="0dp"
-            android:layout_height="50dp"
+            android:layout_height="60dp"
             android:text="Performers"
             android:textSize="8sp"
+            android:layout_margin="0.5dp"
             app:layout_constraintBottom_toTopOf="@id/line1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/btnComments"
@@ -66,7 +70,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.053" />
+            app:layout_constraintGuide_percent="0.066" />
 
         <TextView
             android:id="@+id/tvAlbumName"
@@ -166,13 +170,14 @@
         <EditText
             android:id="@+id/etComment"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="80dp"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
             android:layout_marginBottom="5dp"
             android:hint="Add comment"
+            android:textColorHint="@color/text_color"
             app:layout_constraintBottom_toTopOf="@+id/btnAddComments"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -182,10 +187,11 @@
         <Button
             android:id="@+id/btnAddComments"
             android:layout_width="150dp"
-            android:layout_height="40dp"
+            android:layout_height="50dp"
             android:text="Add comment"
             android:textSize="10sp"
             android:layout_marginBottom="5dp"
+            android:contentDescription="Button to add a comment into an album"
             app:layout_constraintBottom_toBottomOf="@id/guidelineMenu"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.94"
@@ -198,7 +204,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.94" />
+            app:layout_constraintGuide_percent="0.93" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
