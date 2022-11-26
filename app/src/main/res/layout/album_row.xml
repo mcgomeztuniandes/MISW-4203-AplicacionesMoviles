@@ -31,7 +31,7 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_margin="15dp"
-            android:contentDescription="@null"
+            android:contentDescription="Album cover image"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toTopOf="@id/divisorLine"

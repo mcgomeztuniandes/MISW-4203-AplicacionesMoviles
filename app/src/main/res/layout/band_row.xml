@@ -23,6 +23,7 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_margin="15dp"
+            android:contentDescription="Band image"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
