@@ -36,7 +36,6 @@ import org.junit.runner.RunWith;
 
 import com.example.vinilosgrupo15.R;
 import com.example.vinilosgrupo15.view.LoginActivity;
-import com.example.vinilosgrupo15.view.MainActivity;
 
 @RunWith(AndroidJUnit4.class)
 @LargeTest

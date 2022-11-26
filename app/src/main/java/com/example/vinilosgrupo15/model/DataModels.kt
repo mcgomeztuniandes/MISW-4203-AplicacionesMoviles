@@ -1,7 +1,5 @@
 package com.example.vinilosgrupo15.model
 
-import com.google.gson.annotations.SerializedName
-
 data class MusiciansResponseDataModel (
     val id: Long,
     val name: String,

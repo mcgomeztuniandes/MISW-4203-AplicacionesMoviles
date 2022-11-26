@@ -2,10 +2,8 @@ package com.example.vinilosgrupo15.viewmodels
 
 import android.app.Application
 import androidx.lifecycle.*
-
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.example.vinilosgrupo15.model.AlbumResponseDataModel
 import com.example.vinilosgrupo15.model.CollectorsResponseDataModel
 import com.example.vinilosgrupo15.repository.CollectorRepository
 import kotlinx.coroutines.CoroutineScope
