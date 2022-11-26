@@ -16,7 +16,7 @@
         <Button
             android:id="@+id/btnInfo"
             android:layout_width="0dp"
-            android:layout_height="50dp"
+            android:layout_height="60dp"
             android:text="Info"
             android:textSize="10sp"
             app:layout_constraintBottom_toTopOf="@id/line1"
@@ -29,7 +29,7 @@
         <Button
             android:id="@+id/btnTracks"
             android:layout_width="0dp"
-            android:layout_height="50dp"
+            android:layout_height="60dp"
             android:text="Tracks"
             android:textSize="10sp"
             app:layout_constraintBottom_toTopOf="@id/line1"
@@ -41,7 +41,7 @@
         <Button
             android:id="@+id/btnComments"
             android:layout_width="0dp"
-            android:layout_height="50dp"
+            android:layout_height="60dp"
             android:text="Comments"
             android:textSize="10sp"
             app:layout_constraintBottom_toTopOf="@id/line1"
@@ -53,7 +53,7 @@
         <Button
             android:id="@+id/btnPerformers"
             android:layout_width="0dp"
-            android:layout_height="50dp"
+            android:layout_height="60dp"
             android:text="Performers"
             android:textSize="9sp"
             app:layout_constraintBottom_toTopOf="@id/line1"
@@ -66,7 +66,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.053" />
+            app:layout_constraintGuide_percent="0.066" />
 
         <TextView
             android:id="@+id/tvAlbumName"
