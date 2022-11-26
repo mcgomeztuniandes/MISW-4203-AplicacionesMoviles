@@ -80,6 +80,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/line1"
+            app:layout_constraintBottom_toTopOf="@id/img"
             tools:text="Nombre Álbum" />
 
 
@@ -136,20 +137,30 @@
             android:orientation="horizontal"
             app:layout_constraintGuide_percent="0.45" />
 
-        <TextView
-            android:id="@+id/tvDescription"
+        <ScrollView
+            android:id="@+id/scrollDescription"
             android:layout_width="0dp"
+            android:layout_marginTop="20dp"
             android:layout_height="0dp"
-            android:layout_margin="15dp"
-            android:justificationMode="inter_word"
-            android:textColor="@color/text_color"
-            android:textSize="20dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginStart="15dp"
             app:layout_constraintBottom_toTopOf="@+id/etComment"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/line4"
-            app:layout_constraintVertical_bias="1.0"
-            tools:text="Descripción del álbum" />
+            android:orientation="vertical"
+            >
+            <TextView
+                android:id="@+id/tvDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:justificationMode="inter_word"
+                android:textColor="@color/text_color"
+                android:textSize="20dp"
+                tools:text="Descripción del álbum" />
+        </ScrollView>
+
 
         <EditText
             android:id="@+id/etComment"
@@ -157,23 +168,28 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="5dp"
             android:hint="Add comment"
-            app:layout_constraintBottom_toBottomOf="@+id/btnAddComments"
+            app:layout_constraintBottom_toTopOf="@+id/btnAddComments"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvDescription"
+            app:layout_constraintTop_toBottomOf="@id/scrollDescription"
             tools:ignore="MissingConstraints" />
 
         <Button
             android:id="@+id/btnAddComments"
             android:layout_width="150dp"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:text="Add comment"
             android:textSize="10sp"
+            android:layout_marginBottom="50dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.898"
+            app:layout_constraintHorizontal_bias="0.94"
             app:layout_constraintTop_toBottomOf="@id/etComment"
+            app:layout_constraintStart_toStartOf="parent"
             tools:ignore="MissingConstraints" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
