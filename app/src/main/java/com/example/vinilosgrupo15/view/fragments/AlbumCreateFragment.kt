@@ -5,16 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.EditText
-import android.widget.Spinner
 import android.widget.Toast
-import androidx.core.view.contains
-import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.example.vinilosgrupo15.R
 import com.example.vinilosgrupo15.databinding.FragmentAlbumCreateBinding
-import com.example.vinilosgrupo15.model.MyAlbum
+import com.example.vinilosgrupo15.model.AlbumDTO
 import com.example.vinilosgrupo15.viewmodels.AlbumViewModel
 
 class AlbumCreateFragment : Fragment() {
@@ -93,7 +88,7 @@ class AlbumCreateFragment : Fragment() {
 
         println(validForm)
         if(validForm) {
-            val albumInfo = MyAlbum(
+            val albumInfo = AlbumDTO(
                 name = inputName,
                 cover = inputCover,
                 releaseDate = inputReleaseDate,
