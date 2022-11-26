@@ -191,6 +191,8 @@ public class TestPerformers {
         Thread.sleep(1000);
         onView(withId(R.id.recyclerview)).check(matches(isDisplayed()));
 
+
+
         /* Volver al home */
         onView(withId(R.id.homeBtn)).check(matches(isDisplayed()));
         onView(withId(R.id.homeBtn)).perform(forceClick());
