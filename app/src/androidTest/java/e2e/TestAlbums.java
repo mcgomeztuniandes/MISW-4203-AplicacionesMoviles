@@ -127,9 +127,58 @@ public class TestAlbums {
 
         /* Regresar  */
         pressBack();
-        pressBack();
-        pressBack();
-        pressBack();
+
+
+        /* Volver al home */
+        onView(withId(R.id.homeBtn)).check(matches(isDisplayed()));
+        onView(withId(R.id.homeBtn)).perform(click());
+        Thread.sleep(1000);
+
+    }
+
+    @Test
+    public void testNavegarAlbumsCreacion () throws InterruptedException {
+        onView(withText("Vinilos Grupo 15")).check(matches(isDisplayed()));
+
+        /* Autenticar usuario guest */
+        onView(withId(R.id.editTextTextPersonName)).perform(clearText(), typeText("Invitado"), closeSoftKeyboard());
+        onView(withId(R.id.editTextTextPassword)).perform(clearText(), typeText("Invitado"), closeSoftKeyboard());
+        onView(withId(R.id.rolList)).perform(click());
+        onData(hasToString(startsWith("Guest"))).perform(click());
+        onView(withId(R.id.rolList)).check(matches(withSpinnerText(containsString("Guest"))));
+        onView(withId(R.id.login)).perform(click());
+
+        /* Ir a Albums */
+        onView(withId(R.id.buttonAlbums)).check(matches(isDisplayed()));
+        onView(withId(R.id.buttonAlbums)).perform(click());
+
+        Thread.sleep(1000);
+        /*  Valida imagenes en Recyclerview */
+        onView(allOf(withId(R.id.img_album), isDisplayed()));
+
+        /* Ingresar al primer elemento del recyclerview */
+        Thread.sleep(1000);
+
+        onView(ViewMatchers.withId(R.id.recyclerview))
+                .perform(
+                        RecyclerViewActions.actionOnItemAtPosition(
+                                ITEM_BELOW_THE_FOLD,
+                                click()
+                        )
+                );
+
+        /* Ingresar al formulario de creacion */
+        Thread.sleep(1000);
+
+        onView(withId(R.id.etComment)).perform(clearText(), typeText("Texto comentario"), closeSoftKeyboard());
+
+        Thread.sleep(5000);
+
+        onView(withId(R.id.btnAddComments)).check(matches(isDisplayed()));
+        onView(withId(R.id.btnAddComments)).perform(forceClick());
+
+        Thread.sleep(1000);
+        //pressBack();
 
         /* Volver al home */
         onView(withId(R.id.homeBtn)).check(matches(isDisplayed()));
