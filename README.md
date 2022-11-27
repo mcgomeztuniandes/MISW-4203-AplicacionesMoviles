@@ -76,7 +76,8 @@ Los resultados y los artefactos generados se encuentran disponibles en la [Wiki]
 ### Instalar APK
 Descargar el apk e instalelo en un dispositivo Android. Tenga en cuenta que debe permitir instalar aplicaciones *no seguras* debido a que no se descargan directamente del Play Store. Seleccione la opción **Instalar de todas formas**
 
-![no seguro](https://user-images.githubusercontent.com/99267339/200183232-7cc3ca55-53c9-4320-9673-479473c25bf0.png)
+![image](https://user-images.githubusercontent.com/99267339/204155871-33e21aff-887a-4cc1-b471-4ee22a9c683a.png)
+
 
 
 ### Ejecutar pruebas de reconocimiento con monkeys
@@ -107,7 +108,7 @@ Recuerde que el `path` de la variable `adb` puede variar de acuerdo a donde haya
 C:\Users\SU_USUARIO\AppData\Local\Android\Sdk\platform-tools\ 
 ```
 
-3. Para ejecutar pruebas de Monkey, primero es necesario que el APK esté instalado en el dispositivo Android y sea reconocido por el *Packet Manager*. Para esto, desde la misma terminal ubique el archivo [APK]() , y ejecute el siguiente comando para instalarlo en el dispositivo:
+3. Para ejecutar pruebas de Monkey, primero es necesario que el APK esté instalado en el dispositivo Android y sea reconocido por el *Packet Manager*. Para esto, desde la misma terminal ubique el archivo [APK](https://github.com/mcgomeztuniandes/MISW-4203-AplicacionesMoviles/tree/main/app/Sprint_3) , y ejecute el siguiente comando para instalarlo en el dispositivo:
 
 ```
 adb install app-vynils-final-grupo15.apk
@@ -140,15 +141,14 @@ Para poder ejecutar estas pruebas debe crear un proyecto con su cuenta de Google
 
 2. En la ventana que se abre dar click en Run a test
 
-3. Cargue el archivo [APK]() y [LoginActivity_robo_script.json]() o arrastrelos directamente al espacio **App APK or AAB** y **Robo script**, respectivamente.
+3. Cargue el archivo [APK](https://github.com/mcgomeztuniandes/MISW-4203-AplicacionesMoviles/tree/main/app/Sprint_3) y [LoginActivity_robo_script.json](https://github.com/mcgomeztuniandes/MISW-4203-AplicacionesMoviles/tree/main/app/Sprint_3) o arrastrelos directamente al espacio **App APK or AAB** y **Robo script**, respectivamente.
 
 ![image](https://user-images.githubusercontent.com/99267339/204155632-dc6652af-f784-4283-87d6-c153449f4a0b.png)
 
-4. Seleccione el dipositivo y de click en Run a test
-
-5. Podrá ver el resultado de la ejecución de las pruebas
+4. Seleccione el dipositivo y de click en *Run a test* y espere a que aparexcan los resultados de la ejecución de las pruebas.
 
  ![image](https://user-images.githubusercontent.com/99267339/204155762-846ef3b0-86c0-49b5-827e-3cd3296b3654.png)
 
 ![image](https://user-images.githubusercontent.com/99267339/204155784-79020d2f-fcf2-4ed8-b613-6de621bfe2b0.png)
+
 
