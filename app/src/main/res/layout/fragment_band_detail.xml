@@ -52,13 +52,12 @@
             android:layout_marginTop="5dp"
             android:layout_marginBottom="15dp"
             android:textColor="@color/text_color"
-            android:text="Creation: aaaa/mm/dd"
+            android:text="@string/creationBand"
             android:textAlignment="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/img"
-            app:layout_constraintBottom_toTopOf="@id/scrollDescription"
-            />
+            app:layout_constraintBottom_toTopOf="@id/scrollDescription" />
 
         <ScrollView
             android:id="@+id/scrollDescription"
@@ -93,7 +92,7 @@
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
             android:layout_marginBottom="5dp"
-            android:text="Premiations Date:"
+            android:text="@string/premiationsMusician"
             android:textSize="20dp"
             android:textColor="@color/text_color"
             app:layout_constraintEnd_toEndOf="parent"

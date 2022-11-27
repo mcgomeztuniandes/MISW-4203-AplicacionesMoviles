@@ -83,6 +83,7 @@
             android:textStyle="italic|bold"
             android:text="@{goToDetail}"
             android:textSize="11sp"
+            android:contentDescription="go to this collector"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/txt_email"
             app:layout_constraintTop_toBottomOf="@+id/txt_phone"

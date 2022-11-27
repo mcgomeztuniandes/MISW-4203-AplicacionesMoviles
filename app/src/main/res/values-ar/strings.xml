@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">مجموعة فينيل 15</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="btnPerformersText">المؤدون</string>
+    <string name="btnAlbumsText">ألبومات</string>
+    <string name="btnCollectorsText">جامعي</string>
+    <string name="btnTracksText">المسارات</string>
+    <string name="full_name">الاسم الكامل</string>
+    <string name="password">كلمة المرور</string>
+    <string name="vinils_app">تطبيق فينيل</string>
+    <string name="singup">يكمل</string>
+    <string name="campoobligatorio">مجال إجباري</string>
+    <string name="telephone">هاتف:</string>
+    <string name="email">البريد الإلكتروني:</string>
+    <string name="favorite_performers">فناني الأداء المفضل</string>
+    <string-array name="roles">
+        <item>حدد</item>
+        <item>جامع</item>
+        <item>زائر</item>
+    </string-array>
+    <!-- String Album create Layout -->
+    <string name="inputAlbumName">اسم الألبوم</string>
+    <string name="inputAlbumCover">رابط الصورة: http: //albumImage.png</string>
+    <string name="labelAlbumName">اسم</string>
+    <string name="labelAlbumCover">التغطية</string>
+    <string name="labelAlbumReleaseDate">يوم الاصدار</string>
+    <string name="labelAlbumGenre">النوع</string>
+    <string name="labelAlbumRecord">سجل العلامة</string>
+    <string name="labelAlbumDescription">وصف</string>
+    <string name="labelBtnCreateAlbum">خلق</string>
+    <string name="brithdateMusician">تاريخ الميلاد:</string>
+    <string name="premiationsMusician">Premiations Date:</string>
+    <string name="labelComments">تعليقات</string>
+    <string name="hintAgregarComentario">أضف تعليق</string>
+    <string name="btnAgregarComentario">أضف تعليق</string>
+    <string name="musicians">موسيقيون</string>
+    <string name="bands">يربط</string>
+    <string name="creationBand">خلق:</string>
+    <string name="info">Info</string>
+    <string name="btnAgregarComentarioDescripcion">زر لإضافة تعليق في ألبوم</string>
+    <string-array name="AlbumGenres">
+        <item>حدد النوع</item>
+        <item>كلاسيكي</item>
+        <item>قوم</item>
+        <item>الصلصا</item>
+        <item>صخر</item>
+    </string-array>
+    <string-array name="AlbumLabels">
+        <item>حدد تسمية السجل</item>
+        <item>المراقص فوينتيس</item>
+        <item>همiنا</item>
+        <item>إليكترا</item>
+        <item>سجلات فانيا</item>
+        <item>موسيقى سوني</item>
+    </string-array>
+
+</resources>
