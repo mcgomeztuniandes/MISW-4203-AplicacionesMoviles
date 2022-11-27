@@ -36,7 +36,6 @@ import org.junit.runner.RunWith;
 
 import com.example.vinilosgrupo15.R;
 import com.example.vinilosgrupo15.view.LoginActivity;
-import com.example.vinilosgrupo15.view.MainActivity;
 
 @RunWith(AndroidJUnit4.class)
 @LargeTest
@@ -49,7 +48,7 @@ public class TestPerformers {
 
     @Test
     public void testNavegarListaPerformers() throws InterruptedException {
-        onView(withText("Vinilos Grupo 15")).check(matches(isDisplayed()));
+        onView(withText("Vynils Group 15")).check(matches(isDisplayed()));
 
         /* Autenticar usuario guest */
         onView(withId(R.id.editTextTextPersonName)).perform(clearText(), typeText("Invitado"), closeSoftKeyboard());
@@ -77,7 +76,7 @@ public class TestPerformers {
 
     @Test
     public void testNavegarPerformersInformacion() throws InterruptedException {
-        onView(withText("Vinilos Grupo 15")).check(matches(isDisplayed()));
+        onView(withText("Vynils Group 15")).check(matches(isDisplayed()));
 
         /* Autenticar usuario guest */
         onView(withId(R.id.editTextTextPersonName)).perform(clearText(), typeText("Invitado"), closeSoftKeyboard());
@@ -119,7 +118,7 @@ public class TestPerformers {
 
     @Test
     public void testNavegarListaBands() throws InterruptedException {
-        onView(withText("Vinilos Grupo 15")).check(matches(isDisplayed()));
+        onView(withText("Vynils Group 15")).check(matches(isDisplayed()));
 
         /* Autenticar usuario guest */
         onView(withId(R.id.editTextTextPersonName)).perform(clearText(), typeText("Invitado"), closeSoftKeyboard());
@@ -167,7 +166,7 @@ public class TestPerformers {
 
     @Test
     public void testNavegarBandsInformacion() throws InterruptedException {
-        onView(withText("Vinilos Grupo 15")).check(matches(isDisplayed()));
+        onView(withText("Vynils Group 15")).check(matches(isDisplayed()));
 
         /* Autenticar usuario guest */
         onView(withId(R.id.editTextTextPersonName)).perform(clearText(), typeText("Invitado"), closeSoftKeyboard());
@@ -190,6 +189,8 @@ public class TestPerformers {
         /* Valida que exista RecyleView interprete */
         Thread.sleep(1000);
         onView(withId(R.id.recyclerview)).check(matches(isDisplayed()));
+
+
 
         /* Volver al home */
         onView(withId(R.id.homeBtn)).check(matches(isDisplayed()));

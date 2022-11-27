@@ -2,7 +2,6 @@ package com.example.vinilosgrupo15.viewmodels
 
 import android.app.Application
 import androidx.lifecycle.*
-
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.vinilosgrupo15.model.CollectorsResponseDataModel
@@ -17,6 +16,8 @@ class CollectorViewModel (app:Application): AndroidViewModel(app), CoroutineScop
 
     private val _listCollectors = MutableLiveData<ArrayList<CollectorsResponseDataModel>>()
     var listCollectors: LiveData<ArrayList<CollectorsResponseDataModel>> = _listCollectors
+
+    var itemDataSelected: CollectorsResponseDataModel? = null
 
     private val _progressCollectors = MutableLiveData<Boolean>()
     var progressCollectors: LiveData<Boolean> = _progressCollectors
@@ -37,6 +38,10 @@ class CollectorViewModel (app:Application): AndroidViewModel(app), CoroutineScop
                 _listCollectors.value = list
             }
         }
+    }
+
+    fun setItemSelection(item: CollectorsResponseDataModel) {
+        itemDataSelected = item
     }
 
     override fun onCleared(){

@@ -46,8 +46,9 @@ Si por algun motivo el botón *Run 'app'* aparece deshabilitado debe cerciorarse
 
    ![physical device](https://user-images.githubusercontent.com/99267339/200151312-fb3fe431-4536-48ad-9d50-df7b7c28a245.png)
 
+## Pruebas
 
-## Ejecutar pruebas end-to-end 
+### Ejecutar pruebas end-to-end 
 
 Para ejecutar las pruebas end-to-end se debe abrir el proyecto desde Android Studio y seguir los siguientes pasos:
 1. En el menú superior Seleccionar la opción *Test in 'e2e'* y sincronizar las dependencias desde el archivo Gradle.
@@ -72,11 +73,82 @@ Las pruebas se ejecutaron en las siguientes versiones de Android
 
 Los resultados y los artefactos generados se encuentran disponibles en la [Wiki](https://github.com/mcgomeztuniandes/MISW-4203-AplicacionesMoviles/wiki/Artefactos-de-Pruebas) del proyecto
 
-## Instalar APK
+### Instalar APK
 Descargar el apk e instalelo en un dispositivo Android. Tenga en cuenta que debe permitir instalar aplicaciones *no seguras* debido a que no se descargan directamente del Play Store. Seleccione la opción **Instalar de todas formas**
 
-![no seguro](https://user-images.githubusercontent.com/99267339/200183232-7cc3ca55-53c9-4320-9673-479473c25bf0.png)
+![image](https://user-images.githubusercontent.com/99267339/204155871-33e21aff-887a-4cc1-b471-4ee22a9c683a.png)
 
 
+
+### Ejecutar pruebas de reconocimiento con monkeys
+
+Siga los siguientes pasos: 
+
+1. Conecte el dispositivo móvil a su computadora y asegure que esté conectado en modo de **transferencia de archivos** y tenga activadas las opciones de **desarrollador**, en particular con los permisos de instalación y depuración por ADB. 
+
+2. Verifique si se estableció el puente ABD ejecutando en la terminal el siguiente comando:
+
+```
+abd devices
+```
+    
+  En el resultado debería estar incluído el/los dispositivo(s) conectado(s):
+  
+```
+C:\Users\su_usuario>adb devices
+List of devices attached
+emulator-5554   device
+```
+
+**Nota:** si el comando `adb devices` arroja error o no es reconocido por el sistema, debe agregar `adb` como variable de entorno de acuerdo a su sistema operativo. 
+    
+Recuerde que el `path` de la variable `adb` puede variar de acuerdo a donde haya instalado el SDK de Android en su computador. Por defecto, en sistema operativo Windows, la ruta de instalación por defecto es:
+    
+```
+C:\Users\SU_USUARIO\AppData\Local\Android\Sdk\platform-tools\ 
+```
+
+3. Para ejecutar pruebas de Monkey, primero es necesario que el APK esté instalado en el dispositivo Android y sea reconocido por el *Packet Manager*. Para esto, desde la misma terminal ubique el archivo [APK](https://github.com/mcgomeztuniandes/MISW-4203-AplicacionesMoviles/tree/main/app/Sprint_3) , y ejecute el siguiente comando para instalarlo en el dispositivo:
+
+```
+adb install app-vynils-final-grupo15.apk
+```
+4. Abra la aplicación y desde la configuración propia de su dispositivo *fije* la aplicación. 
+
+![image](https://user-images.githubusercontent.com/99267339/204154646-c6117374-17b9-42bd-8d99-ebc5a9407391.png)
+
+5. Llene el formulario del login e ingrese para que el monkey ejecute las pruebas desde la pantalla principal (Home)
+
+![image](https://user-images.githubusercontent.com/99267339/204154587-e2dbbee2-d977-46d6-b501-4ee9d5017467.png)
+
+
+6. Desde una terminal ejecute la prueba del monkey con el comando
+
+```
+adb shell monkey -p com.example.vinilosgrupo15 -s 3 --pct-syskeys 0 --throttle 100 --pct-majornav 10 -v -v 2000
+```
+Este comando genera 2000 eventos que dentro de la aplicación con distribución que privilegia eventos de navegación dentro de la misma. Además, se fija una semilla en 3. Preste atención a la pantalla de su dispositivo, ya que los eventos generan interacciones reales en el mismo que usted podrá observar.
+
+Adicionalmente, en la terminal usted podrá ver que se muestran los resultados de la prueba
+
+### Ejecutar pruebas de reconocimiento con Firebase Testlab
+
+Para poder ejecutar estas pruebas debe crear un proyecto con su cuenta de Google en Firebase. Cree una aplicación cualquiera con la opción de Google Analytics activada y siga los siguientes pasos:
+
+1. Ingrese a la aplicación recién creada y busque en el panel lateral izquierdo la opción Test Lab. 
+
+![image](https://user-images.githubusercontent.com/99267339/204155485-e8e254ac-b716-457c-aa38-32e7bad40076.png)
+
+2. En la ventana que se abre dar click en Run a test
+
+3. Cargue el archivo [APK](https://github.com/mcgomeztuniandes/MISW-4203-AplicacionesMoviles/tree/main/app/Sprint_3) y [LoginActivity_robo_script.json](https://github.com/mcgomeztuniandes/MISW-4203-AplicacionesMoviles/tree/main/app/Sprint_3) o arrastrelos directamente al espacio **App APK or AAB** y **Robo script**, respectivamente.
+
+![image](https://user-images.githubusercontent.com/99267339/204155632-dc6652af-f784-4283-87d6-c153449f4a0b.png)
+
+4. Seleccione el dipositivo y de click en *Run a test* y espere a que aparezcan los resultados de la ejecución de las pruebas.
+
+ ![image](https://user-images.githubusercontent.com/99267339/204155762-846ef3b0-86c0-49b5-827e-3cd3296b3654.png)
+
+![image](https://user-images.githubusercontent.com/99267339/204155784-79020d2f-fcf2-4ed8-b613-6de621bfe2b0.png)
 
 

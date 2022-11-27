@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="backgroundColor2">#043C91</color>
-    <color name="backgroundColor">#043C91</color>
+    <color name="backgroundColor2">#003366</color>
+    <color name="backgroundColor">#003366</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="title_color">#2E40A5</color>
     <color name="text_color">#353536</color>
     <color name="btn_icon_color">#043C91</color>
-    <color name="btn_icon_selected_color">#0096d2</color>
+    <color name="btn_icon_selected_color">#006699</color>
 
 </resources>

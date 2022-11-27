@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragmentCollectorDetailInfo">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".CollectorDetailFragment">
+
+
+        <TextView
+            android:id="@+id/collectorName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:textAlignment="center"
+            android:textColor="@color/title_color"
+            android:textSize="28sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/line3"
+            tools:text="Collector name" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/line3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.08" />
+
+
+        <TextView
+            android:id="@+id/lbCollectorTelephone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:text="@string/telephone"
+            android:textAlignment="textStart"
+            android:textSize="17sp"
+            android:textStyle="italic"
+            android:textColor="@color/text_color"
+            app:layout_constraintEnd_toStartOf="@id/collectorTelephone"
+            app:layout_constraintBottom_toTopOf="@id/lbEmail"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/line3"
+            tools:ignore="MissingConstraints" />
+
+
+        <TextView
+            android:id="@+id/collectorTelephone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:textAlignment="textStart"
+            android:layout_marginEnd="15dp"
+            android:textSize="17sp"
+            android:textStyle="italic"
+            android:textColor="@color/text_color"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toEndOf="@+id/lbCollectorTelephone"
+            app:layout_constraintTop_toTopOf="@id/line3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/collectorEmail"
+            tools:text="Telephone" />
+
+        <TextView
+            android:id="@+id/lbEmail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="4dp"
+            android:text="@string/email"
+            android:textAlignment="textStart"
+            android:textSize="17sp"
+            android:textStyle="italic"
+            android:textColor="@color/text_color"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lbCollectorTelephone"
+            app:layout_constraintEnd_toStartOf="@id/collectorEmail"
+            app:layout_constraintBottom_toTopOf="@id/line4"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/collectorEmail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="15dp"
+            android:textAlignment="textStart"
+            android:textSize="17sp"
+            android:textStyle="italic"
+            android:textColor="@color/text_color"
+            app:layout_constraintBottom_toBottomOf="@id/line4"
+            app:layout_constraintStart_toEndOf="@+id/lbEmail"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/collectorTelephone"
+            tools:text="Email" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/line4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.2" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="5dp"
+            android:textSize="20sp"
+            android:text="@string/favorite_performers"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/line4"
+            app:layout_constraintBottom_toTopOf="@id/recyclerview"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="@id/guidelineMenu"
+            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:layout_editor_absoluteX="15dp"
+            tools:listitem="@layout/performer_row"
+            tools:ignore="MissingConstraints" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.93" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -5,8 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.vinilosgrupo15.R
 import com.example.vinilosgrupo15.viewmodels.AlbumViewModel
 import com.example.vinilosgrupo15.databinding.FragmentAlbumDetailCommentsBinding
 import com.example.vinilosgrupo15.model.Comment
@@ -33,6 +36,48 @@ class AlbumDetailCommentsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentAlbumDetailCommentsBinding.inflate(inflater, container, false)
+        val btnInfo: Button = binding!!.btnInfo
+        val btnTracks: Button = binding!!.btnTracks
+        val btnComments: Button = binding!!.btnComments
+        val btnPerformers: Button = binding!!.btnPerformers
+
+        btnComments.setBackgroundColor(ContextCompat.getColor(btnInfo.context, R.color.btn_icon_selected_color))
+
+        btnInfo.setOnClickListener {
+             btnInfo.setBackgroundColor(ContextCompat.getColor(btnInfo.context,R.color.btn_icon_selected_color))
+             btnTracks.setBackgroundColor(ContextCompat.getColor(btnTracks.context,R.color.btn_icon_color))
+             btnPerformers.setBackgroundColor(ContextCompat.getColor(btnPerformers.context,R.color.btn_icon_color))
+             btnComments.setBackgroundColor(ContextCompat.getColor(btnComments.context,R.color.btn_icon_color))
+             activity?.supportFragmentManager
+                 ?.beginTransaction()
+                 ?.replace(R.id.container, AlbumDetailInfoFragment.newInstance())
+                 ?.addToBackStack(null)
+                 ?.commit()
+         }
+
+        btnTracks.setOnClickListener {
+            btnTracks.setBackgroundColor(ContextCompat.getColor(btnTracks.context, R.color.btn_icon_selected_color))
+            btnInfo.setBackgroundColor(ContextCompat.getColor(btnInfo.context, R.color.btn_icon_color))
+            btnPerformers.setBackgroundColor(ContextCompat.getColor(btnPerformers.context, R.color.btn_icon_color))
+            btnComments.setBackgroundColor(ContextCompat.getColor(btnComments.context, R.color.btn_icon_color))
+            activity?.supportFragmentManager
+                ?.beginTransaction()
+                ?.replace(R.id.container, AlbumDetailTracksFragment.newInstance())
+                ?.addToBackStack(null)
+                ?.commit()
+        }
+
+        btnPerformers.setOnClickListener {
+            btnPerformers.setBackgroundColor(ContextCompat.getColor(btnPerformers.context, R.color.btn_icon_selected_color))
+            btnInfo.setBackgroundColor(ContextCompat.getColor(btnInfo.context, R.color.btn_icon_color))
+            btnTracks.setBackgroundColor(ContextCompat.getColor(btnTracks.context, R.color.btn_icon_color))
+            btnComments.setBackgroundColor(ContextCompat.getColor(btnComments.context, R.color.btn_icon_color))
+            activity?.supportFragmentManager
+                ?.beginTransaction()
+                ?.replace(R.id.container, AlbumDetailPerformersFragment.newInstance())
+                ?.addToBackStack(null)
+                ?.commit()
+        }
         return binding?.root
     }
 

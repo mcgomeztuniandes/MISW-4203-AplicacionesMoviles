@@ -10,7 +10,6 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"
         tools:context=".BandDetailFragment">
 
         <TextView
@@ -36,6 +35,7 @@
             android:layout_gravity="bottom|center_horizontal"
             android:layout_marginEnd="15dp"
             android:layout_marginStart="15dp"
+            android:contentDescription="Image of the musician"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvName"
@@ -50,41 +50,55 @@
             android:layout_marginTop="5dp"
             android:layout_marginBottom="15dp"
             android:textColor="@color/text_color"
-            android:text="Brithdate: aaaa/mm/dd"
+            android:text="@string/brithdateMusician"
             android:textAlignment="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/img"
-            app:layout_constraintBottom_toTopOf="@id/tvDescription"/>
+            app:layout_constraintBottom_toTopOf="@id/scrollDescription"/>
 
-        <TextView
-            android:id="@+id/tvDescription"
+        <ScrollView
+            android:id="@+id/scrollDescription"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_height="0dp"
             android:layout_marginEnd="15dp"
-            android:layout_marginBottom="15dp"
-            android:text="Description"
-            android:textSize="20dp"
-            android:textColor="@color/text_color"
+            android:layout_marginStart="15dp"
+            android:layout_marginBottom="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvBirthDate"
-            app:layout_constraintBottom_toTopOf="@id/tvLabel"/>
+            app:layout_constraintBottom_toTopOf="@id/tvLabel"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:id="@+id/tvDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="15dp"
+                android:text="Description"
+                android:textSize="20dp"
+                android:justificationMode="inter_word"
+                android:textColor="@color/text_color"
+                />
+
+        </ScrollView>
 
         <TextView
             android:id="@+id/tvLabel"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="@string/premiationsMusician"
+            android:textSize="20dp"
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
-            android:layout_marginBottom="5dp"
-            android:text="Premiations Date:"
-            android:textSize="20dp"
             android:textColor="@color/text_color"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvDescription"
+            app:layout_constraintTop_toBottomOf="@+id/scrollDescription"
             app:layout_constraintBottom_toTopOf="@id/recyclerview"/>
 
         <androidx.recyclerview.widget.RecyclerView
@@ -96,12 +110,19 @@
             android:layout_marginBottom="5dp"
             android:textAlignment="textEnd"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/guidelineMenu"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.6"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvLabel"
             tools:listitem="@layout/performerprizes_row" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.93" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

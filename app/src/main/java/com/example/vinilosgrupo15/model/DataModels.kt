@@ -30,7 +30,7 @@ data class AlbumResponseDataModel (
     val recordLabel: String,
     val tracks: List<Track>,
     val performers: List<Performer>,
-    val comments: List<Comment>
+    val comments: MutableList<Comment>
 )
 
 data class Album (
@@ -48,10 +48,10 @@ data class PerformerPrize (
     val premiationDate: String
 )
 
-data class Comment (
+data class Comment(
     val id: Long,
-    val description: String,
-    val rating: Long
+    var description: String,
+    val rating: String
 )
 
 data class Performer (

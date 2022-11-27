@@ -11,26 +11,29 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"
         tools:context=".AlbumDetailInfoFragment">
+
         <Button
             android:id="@+id/btnInfo"
             android:layout_width="0dp"
-            android:layout_height="50dp"
-            android:text="Info"
+            android:layout_height="60dp"
+            android:text="@string/info"
             android:textSize="10sp"
+            android:layout_margin="0.5dp"
             app:layout_constraintBottom_toTopOf="@id/line1"
             app:layout_constraintEnd_toStartOf="@+id/btnTracks"
             app:layout_constraintHorizontal_chainStyle="spread"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+
         <Button
             android:id="@+id/btnTracks"
             android:layout_width="0dp"
-            android:layout_height="50dp"
-            android:text="Tracks"
+            android:layout_height="60dp"
+            android:text="@string/btnTracksText"
             android:textSize="10sp"
+            android:layout_margin="0.5dp"
             app:layout_constraintBottom_toTopOf="@id/line1"
             app:layout_constraintEnd_toStartOf="@+id/btnComments"
             app:layout_constraintHorizontal_chainStyle="spread"
@@ -40,9 +43,10 @@
         <Button
             android:id="@+id/btnComments"
             android:layout_width="0dp"
-            android:layout_height="50dp"
-            android:text="Comments"
+            android:layout_height="60dp"
+            android:text="@string/labelComments"
             android:textSize="10sp"
+            android:layout_margin="0.5dp"
             app:layout_constraintBottom_toTopOf="@id/line1"
             app:layout_constraintEnd_toStartOf="@+id/btnPerformers"
             app:layout_constraintStart_toEndOf="@+id/btnTracks"
@@ -52,20 +56,21 @@
         <Button
             android:id="@+id/btnPerformers"
             android:layout_width="0dp"
-            android:layout_height="50dp"
-            android:text="Performers"
-            android:textSize="9sp"
+            android:layout_height="60dp"
+            android:text="@string/btnPerformersText"
+            android:textSize="8sp"
+            android:layout_margin="0.5dp"
             app:layout_constraintBottom_toTopOf="@id/line1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/btnComments"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"/>
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/line1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.053" />
+            app:layout_constraintGuide_percent="0.066" />
 
         <TextView
             android:id="@+id/tvAlbumName"
@@ -79,6 +84,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/line1"
+            app:layout_constraintBottom_toTopOf="@id/img"
             tools:text="Nombre Álbum" />
 
 
@@ -88,6 +94,7 @@
             android:layout_height="150dp"
             android:layout_marginLeft="50dp"
             android:layout_marginRight="50dp"
+            android:contentDescription="Album cover image"
             app:layout_constraintBottom_toTopOf="@id/line3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -135,19 +142,70 @@
             android:orientation="horizontal"
             app:layout_constraintGuide_percent="0.45" />
 
-        <TextView
-            android:id="@+id/tvDescription"
+        <ScrollView
+            android:id="@+id/scrollDescription"
             android:layout_width="0dp"
+            android:layout_marginTop="20dp"
             android:layout_height="0dp"
-            android:layout_margin="15dp"
-            android:justificationMode="inter_word"
-            android:textSize="20dp"
-            android:textColor="@color/text_color"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginEnd="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/etComment"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/line4"
-            tools:text="Descripción del álbum" />
+            android:orientation="vertical"
+            >
+            <TextView
+                android:id="@+id/tvDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:justificationMode="inter_word"
+                android:textColor="@color/text_color"
+                android:textSize="20dp"
+                tools:text="Descripción del álbum" />
+        </ScrollView>
+
+
+        <EditText
+            android:id="@+id/etComment"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="5dp"
+            android:hint="@string/hintAgregarComentario"
+            android:textColorHint="@color/text_color"
+            app:layout_constraintBottom_toTopOf="@+id/btnAddComments"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/scrollDescription"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/btnAddComments"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:text="@string/btnAgregarComentario"
+            android:textSize="10sp"
+            android:layout_marginBottom="5dp"
+            android:contentDescription="Button to add a comment into an album"
+            app:layout_constraintBottom_toBottomOf="@id/guidelineMenu"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.94"
+            app:layout_constraintTop_toBottomOf="@id/etComment"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.93" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

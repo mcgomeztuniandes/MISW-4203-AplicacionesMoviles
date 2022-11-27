@@ -13,6 +13,7 @@
         android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
         android:src="@drawable/vinils_login"
+        android:contentDescription="someone listening to music"
         app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

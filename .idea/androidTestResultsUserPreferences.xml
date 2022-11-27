@@ -75,11 +75,15 @@
               <option name="preferredColumnWidths">
                 <map>
                   <entry key="Duration" value="90" />
+                  <entry key="LENOVO&#13;&#10; Lenovo TB-7703X" value="120" />
                   <entry key="MotoOneAction_API_22" value="120" />
                   <entry key="Pixel_4_API_22" value="120" />
                   <entry key="Pixel_5_API_23" value="120" />
+                  <entry key="Pixel_6_API_23" value="120" />
+                  <entry key="Pixel_6_API_24" value="120" />
                   <entry key="Pixel_6_Pro_API_22" value="120" />
                   <entry key="Tests" value="360" />
+                  <entry key="b4d3965c" value="120" />
                 </map>
               </option>
             </AndroidTestResultsTableState>
@@ -150,6 +154,19 @@
             </AndroidTestResultsTableState>
           </value>
         </entry>
+        <entry key="-279307160">
+          <value>
+            <AndroidTestResultsTableState>
+              <option name="preferredColumnWidths">
+                <map>
+                  <entry key="Duration" value="90" />
+                  <entry key="Pixel_4_API_22" value="120" />
+                  <entry key="Tests" value="360" />
+                </map>
+              </option>
+            </AndroidTestResultsTableState>
+          </value>
+        </entry>
         <entry key="-132598738">
           <value>
             <AndroidTestResultsTableState>
@@ -169,6 +186,7 @@
               <option name="preferredColumnWidths">
                 <map>
                   <entry key="Duration" value="90" />
+                  <entry key="Pixel_4_API_22" value="120" />
                   <entry key="Pixel_6_Pro_API_22" value="120" />
                   <entry key="Tests" value="360" />
                 </map>
@@ -205,6 +223,19 @@
             </AndroidTestResultsTableState>
           </value>
         </entry>
+        <entry key="825144100">
+          <value>
+            <AndroidTestResultsTableState>
+              <option name="preferredColumnWidths">
+                <map>
+                  <entry key="Duration" value="90" />
+                  <entry key="Pixel_4_API_22" value="120" />
+                  <entry key="Tests" value="360" />
+                </map>
+              </option>
+            </AndroidTestResultsTableState>
+          </value>
+        </entry>
         <entry key="1092923054">
           <value>
             <AndroidTestResultsTableState>
@@ -225,6 +256,32 @@
                 <map>
                   <entry key="Duration" value="90" />
                   <entry key="MotoOneAction_API_22" value="120" />
+                  <entry key="Pixel_4_API_22" value="120" />
+                  <entry key="Tests" value="360" />
+                </map>
+              </option>
+            </AndroidTestResultsTableState>
+          </value>
+        </entry>
+        <entry key="1373678744">
+          <value>
+            <AndroidTestResultsTableState>
+              <option name="preferredColumnWidths">
+                <map>
+                  <entry key="Duration" value="90" />
+                  <entry key="Pixel_4_API_22" value="120" />
+                  <entry key="Tests" value="360" />
+                </map>
+              </option>
+            </AndroidTestResultsTableState>
+          </value>
+        </entry>
+        <entry key="1416506294">
+          <value>
+            <AndroidTestResultsTableState>
+              <option name="preferredColumnWidths">
+                <map>
+                  <entry key="Duration" value="90" />
                   <entry key="Pixel_4_API_22" value="120" />
                   <entry key="Tests" value="360" />
                 </map>

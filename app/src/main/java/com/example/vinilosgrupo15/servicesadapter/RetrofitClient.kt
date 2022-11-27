@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit
 
 object RetrofitClient {
     private var retrofit: Retrofit? = null
-    private const val BASE_URL = "https://backvynils-grupo15.herokuapp.com/"
+    private const val BASE_URL = "http://35.198.27.73/"
 
     private val logger: OkHttpClient
         get() {

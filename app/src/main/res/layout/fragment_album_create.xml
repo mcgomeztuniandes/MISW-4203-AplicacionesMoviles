@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.vinilosgrupo15.viewmodels.AlbumViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".AlbumCreateFragment">
+
+        <TextView
+            android:id="@+id/labelName"
+            android:layout_width="0dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="10dp"
+            android:textAlignment="textStart"
+            app:layout_constraintVertical_chainStyle="spread"
+            android:textSize="12sp"
+            android:textColor="@color/text_color"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/editTextAlbumName"
+            android:text="@string/labelAlbumName"/>
+
+        <EditText
+            android:id="@+id/editTextAlbumName"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="5dp"
+            android:textSize="15sp"
+            android:autofillHints=""
+            android:hint="@string/inputAlbumName"
+            android:inputType="text"
+            android:textColorHint="@color/text_color"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/labelCover"
+            app:layout_constraintTop_toBottomOf="@id/labelName"
+            />
+
+        <TextView
+            android:id="@+id/labelCover"
+            android:layout_width="0dp"
+            android:layout_height="15dp"
+            android:textAlignment="textStart"
+            android:textSize="12sp"
+            android:textColor="@color/text_color"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/editTextAlbumCover"
+            app:layout_constraintTop_toBottomOf="@id/editTextAlbumName"
+            android:text="@string/labelAlbumCover" />
+
+        <EditText
+            android:id="@+id/editTextAlbumCover"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="5dp"
+            android:textSize="15sp"
+            android:autofillHints=""
+            android:hint="@string/inputAlbumCover"
+            android:inputType="textMultiLine"
+            android:minLines="2"
+            android:maxLines="3"
+            android:gravity="top|start"
+            android:textColorHint="@color/text_color"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/labelCover"
+            app:layout_constraintBottom_toTopOf="@id/labelReleaseDate"
+            />
+
+        <TextView
+            android:id="@+id/labelReleaseDate"
+            android:layout_width="0dp"
+            android:layout_height="15dp"
+            android:textAlignment="textStart"
+            android:textSize="12sp"
+            android:textColor="@color/text_color"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/editTextAlbumCover"
+            app:layout_constraintBottom_toTopOf="@id/editTextAlbumReleaseDate"
+            android:text="@string/labelAlbumReleaseDate"
+            />
+
+        <EditText
+            android:id="@+id/editTextAlbumReleaseDate"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="5dp"
+            android:autofillHints=""
+            android:textSize="15sp"
+            android:hint="yyyy-mm-dd"
+            android:textColorHint="@color/text_color"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/labelReleaseDate"
+            app:layout_constraintBottom_toTopOf="@id/labelGenre"
+            />
+
+        <TextView
+            android:id="@+id/labelGenre"
+            android:layout_width="0dp"
+            android:layout_height="15dp"
+            android:textAlignment="textStart"
+            android:textSize="12sp"
+            android:textColor="@color/text_color"
+            android:text="@string/labelAlbumGenre"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/editTextAlbumReleaseDate"
+            app:layout_constraintBottom_toTopOf="@id/genreList"
+            />
+
+        <Spinner
+            android:id="@+id/genreList"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="5dp"
+            android:minHeight="50dp"
+            android:entries="@array/AlbumGenres"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/labelGenre"
+            app:layout_constraintBottom_toTopOf="@id/labelRecord"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <TextView
+            android:id="@+id/labelRecord"
+            android:layout_width="0dp"
+            android:layout_height="15dp"
+            android:textAlignment="textStart"
+            android:textSize="12sp"
+            android:textColor="@color/text_color"
+            android:text="@string/labelAlbumRecord"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/genreList"
+            app:layout_constraintBottom_toTopOf="@id/recordList"
+            />
+
+
+        <Spinner
+            android:id="@+id/recordList"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="5dp"
+            android:minHeight="48dp"
+            android:entries="@array/AlbumLabels"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/labelRecord"
+            app:layout_constraintBottom_toTopOf="@id/labelDescription"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <TextView
+            android:id="@+id/labelDescription"
+            android:layout_width="0dp"
+            android:layout_height="15dp"
+            android:textAlignment="textStart"
+            android:textSize="12sp"
+            android:textColor="@color/text_color"
+            android:text="@string/labelAlbumDescription"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/recordList"
+            app:layout_constraintBottom_toTopOf="@id/editTextAlbumDescription"
+            />
+
+        <EditText
+            android:id="@+id/editTextAlbumDescription"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="5dp"
+            android:autofillHints=""
+            android:textSize="12sp"
+            android:inputType="textMultiLine"
+            android:minLines="2"
+            android:maxLines="8"
+            android:gravity="top|start"
+            android:textColorHint="@color/text_color"
+            android:contentDescription="Album description comments"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/labelDescription"
+            app:layout_constraintBottom_toTopOf="@id/saveAlbum"
+            />
+
+        <Button
+            android:id="@+id/saveAlbum"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="5dp"
+            android:text="@string/labelBtnCreateAlbum"
+            android:contentDescription="Button to submit form to create a new album"
+            app:layout_constraintBottom_toBottomOf="@id/guidelineMenu"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextAlbumDescription"
+            />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.93" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

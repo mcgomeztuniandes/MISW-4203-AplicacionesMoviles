@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Vinilos Grupo 15</string>
+    <string name="app_name">Vynils Group 15</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="btnPerformersText">Performers</string>
     <string name="btnAlbumsText">Albums</string>
@@ -9,10 +9,48 @@
     <string name="password">Password</string>
     <string name="vinils_app">Vynils App</string>
     <string name="singup">Continue</string>
-    <string name="campoobligatorio">campo obligatorio</string>
+    <string name="campoobligatorio">Obligatory field</string>
+    <string name="telephone">Telephone:</string>
+    <string name="email">Email:</string>
+    <string name="favorite_performers">Favorite Performers</string>
     <string-array name="roles">
         <item>Select rol</item>
         <item>Collector</item>
         <item>Guest</item>
+    </string-array>
+    <!-- String Album create Layout -->
+    <string name="inputAlbumName">Album name</string>
+    <string name="inputAlbumCover">An image url: http://albumImage.png</string>
+    <string name="labelAlbumName">Name</string>
+    <string name="labelAlbumCover">Cover</string>
+    <string name="labelAlbumReleaseDate">Release Date</string>
+    <string name="labelAlbumGenre">Genre</string>
+    <string name="labelAlbumRecord">Record label</string>
+    <string name="labelAlbumDescription">Description</string>
+    <string name="labelBtnCreateAlbum">Create</string>
+    <string name="brithdateMusician">Brithdate: aaaa/mm/dd</string>
+    <string name="premiationsMusician">Premiations Date:</string>
+    <string name="labelComments">Comments</string>
+    <string name="hintAgregarComentario">Add Comment</string>
+    <string name="btnAgregarComentario">Add Comment</string>
+    <string name="musicians">Musicians</string>
+    <string name="bands">Bands</string>
+    <string name="creationBand">Creation: aaaa/mm/dd</string>
+    <string name="info">Info</string>
+    <string name="btnAgregarComentarioDescripcion">Button to add a comment into an album</string>
+    <string-array name="AlbumGenres">
+        <item>Select genre</item>
+        <item>Classical</item>
+        <item>Folk</item>
+        <item>Salsa</item>
+        <item>Rock</item>
+    </string-array>
+    <string-array name="AlbumLabels">
+        <item>Select record label</item>
+        <item>Discos Fuentes</item>
+        <item>EMI</item>
+        <item>Elektra</item>
+        <item>Fania Records</item>
+        <item>Sony Music</item>
     </string-array>
 </resources>

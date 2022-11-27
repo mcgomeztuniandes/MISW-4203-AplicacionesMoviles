@@ -11,15 +11,62 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"
         tools:context=".AlbumDetailCommentsFragment">
+
+        <Button
+            android:id="@+id/btnInfo"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:text="Info"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toTopOf="@id/line1"
+            app:layout_constraintEnd_toStartOf="@+id/btnTracks"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <Button
+            android:id="@+id/btnTracks"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:text="@string/btnTracksText"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toTopOf="@id/line1"
+            app:layout_constraintEnd_toStartOf="@+id/btnComments"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toEndOf="@id/btnInfo"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btnComments"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:text="@string/labelComments"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toTopOf="@id/line1"
+            app:layout_constraintEnd_toStartOf="@+id/btnPerformers"
+            app:layout_constraintStart_toEndOf="@+id/btnTracks"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <Button
+            android:id="@+id/btnPerformers"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:text="@string/btnPerformersText"
+            android:textSize="9sp"
+            app:layout_constraintBottom_toTopOf="@id/line1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btnComments"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/line1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.053" />
+            app:layout_constraintGuide_percent="0.066" />
 
 
         <TextView
@@ -44,7 +91,7 @@
             android:layout_marginTop="10dp"
             android:textSize="18sp"
             android:textStyle="italic"
-            android:text="Comments"
+            android:text="@string/labelComments"
             android:textAlignment="textStart"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -57,12 +104,19 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/guidelineMenu"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.6"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvTextComments"
             tools:listitem="@layout/comment_row" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.93" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

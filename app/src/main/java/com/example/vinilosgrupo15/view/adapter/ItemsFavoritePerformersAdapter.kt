@@ -6,35 +6,34 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.vinilosgrupo15.R
-import com.example.vinilosgrupo15.databinding.TrackRowBinding
-import com.example.vinilosgrupo15.model.Track
-import com.example.vinilosgrupo15.view.viewholder.ItemTrackViewHolder
+import com.example.vinilosgrupo15.databinding.PerformerRowBinding
+import com.example.vinilosgrupo15.model.Performer
+import com.example.vinilosgrupo15.view.viewholder.ItemPerformerViewHolder
 
-class ItemsTrackAdapter(): RecyclerView.Adapter<ItemTrackViewHolder>() {
-    private val resource = R.layout.track_row
+class ItemsFavoritePerformersAdapter() : RecyclerView.Adapter<ItemPerformerViewHolder>() {
+    private val resource = R.layout.performer_row
     lateinit var context: Context
 
-    private val itemList = arrayListOf<Track>()
+    private val itemList = arrayListOf<Performer>()
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemTrackViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemPerformerViewHolder {
         context = parent.context
 
         val layoutInflater: LayoutInflater = LayoutInflater.from(parent.context)
-        val binding: TrackRowBinding =
+
+        val binding: PerformerRowBinding =
             DataBindingUtil.inflate(layoutInflater, resource, parent, false)
 
-        return ItemTrackViewHolder(binding)
+        return ItemPerformerViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: ItemTrackViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ItemPerformerViewHolder, position: Int) {
         holder.setItem(itemList[position])
     }
 
-    //@SuppressLint("NotifyDataSetChanged")
-    fun setItems(list: ArrayList<Track>) {
+    fun setItems(list: ArrayList<Performer>) {
         itemList.clear()
         itemList.addAll(list)
-        //notifyDataSetChanged()
         notifyItemChanged(1)
     }
 
