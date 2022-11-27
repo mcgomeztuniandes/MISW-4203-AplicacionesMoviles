@@ -132,6 +132,23 @@ Adicionalmente, en la terminal usted podrá ver que se muestran los resultados d
 
 ### Ejecutar pruebas de reconocimiento con Firebase Testlab
 
+Para poder ejecutar estas pruebas debe crear un proyecto con su cuenta de Google en Firebase. Cree una aplicación cualquiera con la opción de Google Analytics activada y siga los siguientes pasos:
 
+1. Ingrese a la aplicación recién creada y busque en el panel lateral izquierdo la opción Test Lab. 
 
+![image](https://user-images.githubusercontent.com/99267339/204155485-e8e254ac-b716-457c-aa38-32e7bad40076.png)
+
+2. En la ventana que se abre dar click en Run a test
+
+3. Cargue el archivo [APK]() y [LoginActivity_robo_script.json]() o arrastrelos directamente al espacio **App APK or AAB** y **Robo script**, respectivamente.
+
+![image](https://user-images.githubusercontent.com/99267339/204155632-dc6652af-f784-4283-87d6-c153449f4a0b.png)
+
+4. Seleccione el dipositivo y de click en Run a test
+
+5. Podrá ver el resultado de la ejecución de las pruebas
+
+ ![image](https://user-images.githubusercontent.com/99267339/204155762-846ef3b0-86c0-49b5-827e-3cd3296b3654.png)
+
+![image](https://user-images.githubusercontent.com/99267339/204155784-79020d2f-fcf2-4ed8-b613-6de621bfe2b0.png)
 
