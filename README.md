@@ -127,7 +127,7 @@ adb install app-vynils-final-grupo15.apk
 ```
 adb shell monkey -p com.example.vinilosgrupo15 -s 3 --pct-syskeys 0 --throttle 100 --pct-majornav 10 -v -v 2000
 ```
-Este comando genera 2000 eventos igualmente distribuidos. Preste atención a la pantalla de su dispositivo, ya que los eventos generan interacciones reales en el mismo que usted podrá observar.
+Este comando genera 2000 eventos que dentro de la aplicación con distribución que privilegia eventos de navegación dentro de la misma. Además, se fija una semilla en 3. Preste atención a la pantalla de su dispositivo, ya que los eventos generan interacciones reales en el mismo que usted podrá observar.
 
 Adicionalmente, en la terminal usted podrá ver que se muestran los resultados de la prueba
 
@@ -145,7 +145,7 @@ Para poder ejecutar estas pruebas debe crear un proyecto con su cuenta de Google
 
 ![image](https://user-images.githubusercontent.com/99267339/204155632-dc6652af-f784-4283-87d6-c153449f4a0b.png)
 
-4. Seleccione el dipositivo y de click en *Run a test* y espere a que aparexcan los resultados de la ejecución de las pruebas.
+4. Seleccione el dipositivo y de click en *Run a test* y espere a que aparezcan los resultados de la ejecución de las pruebas.
 
  ![image](https://user-images.githubusercontent.com/99267339/204155762-846ef3b0-86c0-49b5-827e-3cd3296b3654.png)
 
