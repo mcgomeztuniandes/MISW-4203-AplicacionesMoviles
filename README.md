@@ -112,9 +112,16 @@ C:\Users\SU_USUARIO\AppData\Local\Android\Sdk\platform-tools\
 ```
 adb install app-vynils-final-grupo15.apk
 ```
-4. Abra la aplicación y desde la configuración propia de su dispositivo *fije* la aplicación. Llene el formulario del login e ingrese para que el monkey ejecute las pruebas desde la pantalla principal (Home)
+4. Abra la aplicación y desde la configuración propia de su dispositivo *fije* la aplicación. 
 
-5. Desde una terminal ejecute la prueba del monkey con el comando
+![image](https://user-images.githubusercontent.com/99267339/204154646-c6117374-17b9-42bd-8d99-ebc5a9407391.png)
+
+5. Llene el formulario del login e ingrese para que el monkey ejecute las pruebas desde la pantalla principal (Home)
+
+![image](https://user-images.githubusercontent.com/99267339/204154587-e2dbbee2-d977-46d6-b501-4ee9d5017467.png)
+
+
+6. Desde una terminal ejecute la prueba del monkey con el comando
 
 ```
 adb shell monkey -p com.example.vinilosgrupo15 -s 3 --pct-syskeys 0 --throttle 100 --pct-majornav 10 -v -v 2000
