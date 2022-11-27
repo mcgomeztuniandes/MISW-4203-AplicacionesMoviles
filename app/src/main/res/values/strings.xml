@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Vinilos Grupo 15</string>
+    <string name="app_name">Vynils Group 15</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="btnPerformersText">Performers</string>
     <string name="btnAlbumsText">Albums</string>
@@ -9,7 +9,7 @@
     <string name="password">Password</string>
     <string name="vinils_app">Vynils App</string>
     <string name="singup">Continue</string>
-    <string name="campoobligatorio">campo obligatorio</string>
+    <string name="campoobligatorio">Obligatory field</string>
     <string name="telephone">Telephone:</string>
     <string name="email">Email:</string>
     <string name="favorite_performers">Favorite Performers</string>
@@ -28,6 +28,16 @@
     <string name="labelAlbumRecord">Record label</string>
     <string name="labelAlbumDescription">Description</string>
     <string name="labelBtnCreateAlbum">Create</string>
+    <string name="brithdateMusician">Brithdate: aaaa/mm/dd</string>
+    <string name="premiationsMusician">Premiations Date:</string>
+    <string name="labelComments">Comments</string>
+    <string name="hintAgregarComentario">Add Comment</string>
+    <string name="btnAgregarComentario">Add Comment</string>
+    <string name="musicians">Musicians</string>
+    <string name="bands">Bands</string>
+    <string name="creationBand">Creation: aaaa/mm/dd</string>
+    <string name="info">Info</string>
+    <string name="btnAgregarComentarioDescripcion">Button to add a comment into an album</string>
     <string-array name="AlbumGenres">
         <item>Select genre</item>
         <item>Classical</item>
