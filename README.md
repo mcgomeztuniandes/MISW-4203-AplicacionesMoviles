@@ -112,7 +112,17 @@ C:\Users\SU_USUARIO\AppData\Local\Android\Sdk\platform-tools\
 ```
 adb install app-vynils-final-grupo15.apk
 ```
-    
+4. Abra la aplicación y desde la configuración propia de su dispositivo *fije* la aplicación. Llene el formulario del login e ingrese para que el monkey ejecute las pruebas desde la pantalla principal (Home)
+
+5. Desde una terminal ejecute la prueba del monkey con el comando
+
+```
+adb shell monkey -p com.example.vinilosgrupo15 -s 3 --pct-syskeys 0 --throttle 100 --pct-majornav 10 -v -v 2000
+```
+Este comando genera 2000 eventos igualmente distribuidos. Preste atención a la pantalla de su dispositivo, ya que los eventos generan interacciones reales en el mismo que usted podrá observar.
+
+Adicionalmente, en la terminal usted podrá ver que se muestran los resultados de la prueba
+
 ### Ejecutar pruebas de reconocimiento con Firebase Testlab
 
 
