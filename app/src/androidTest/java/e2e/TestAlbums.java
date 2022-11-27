@@ -44,7 +44,7 @@ public class TestAlbums {
 
     @Test
     public void testNavegarListaAlbums() throws InterruptedException {
-        onView(withText("Vinilos Grupo 15")).check(matches(isDisplayed()));
+        onView(withText("Vynils Group 15")).check(matches(isDisplayed()));
 
         /* Autenticar usuario guest */
         onView(withId(R.id.editTextTextPersonName)).perform(clearText(), typeText("Invitado"), closeSoftKeyboard());
@@ -71,7 +71,7 @@ public class TestAlbums {
 
     @Test
     public void testNavegarAlbumsInformacion() throws InterruptedException {
-        onView(withText("Vinilos Grupo 15")).check(matches(isDisplayed()));
+        onView(withText("Vynils Group 15")).check(matches(isDisplayed()));
 
         /* Autenticar usuario guest */
         onView(withId(R.id.editTextTextPersonName)).perform(clearText(), typeText("Invitado"), closeSoftKeyboard());
@@ -138,7 +138,7 @@ public class TestAlbums {
 
     @Test
     public void testAlbumsCreacion () throws InterruptedException {
-        onView(withText("Vinilos Grupo 15")).check(matches(isDisplayed()));
+        onView(withText("Vynils Group 15")).check(matches(isDisplayed()));
 
         /* Autenticar usuario guest */
         onView(withId(R.id.editTextTextPersonName)).perform(clearText(), typeText("Invitado"), closeSoftKeyboard());
@@ -199,7 +199,7 @@ public class TestAlbums {
 
     @Test
     public void testAlbumsComentarioCreacion () throws InterruptedException {
-        onView(withText("Vinilos Grupo 15")).check(matches(isDisplayed()));
+        onView(withText("Vynils Group 15")).check(matches(isDisplayed()));
 
         /* Autenticar usuario guest */
         onView(withId(R.id.editTextTextPersonName)).perform(clearText(), typeText("Invitado"), closeSoftKeyboard());

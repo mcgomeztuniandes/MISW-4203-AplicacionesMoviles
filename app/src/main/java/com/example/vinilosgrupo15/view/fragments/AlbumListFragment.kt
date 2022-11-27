@@ -76,7 +76,6 @@ class AlbumListFragment: Fragment(), ClickAlbumListener {
             ?.replace(R.id.container, AlbumDetailInfoFragment())
             ?.addToBackStack(null)
             ?.commit()
-
     }
     companion object {
         fun newInstance() = AlbumListFragment()

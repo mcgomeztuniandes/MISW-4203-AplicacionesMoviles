@@ -49,7 +49,7 @@ public class TestCollectors {
 
     @Test
     public void testNavegarListaColeccionistas() throws InterruptedException {
-        onView(withText("Vinilos Grupo 15")).check(matches(isDisplayed()));
+        onView(withText("Vynils Group 15")).check(matches(isDisplayed()));
 
         /* Autenticar usuario collector */
         onView(withId(R.id.editTextTextPersonName)).perform(clearText(), typeText("Collector"), closeSoftKeyboard());
@@ -77,7 +77,7 @@ public class TestCollectors {
 
     @Test
     public void testNavegarDetalleColeccionistas() throws InterruptedException {
-        onView(withText("Vinilos Grupo 15")).check(matches(isDisplayed()));
+        onView(withText("Vynils Group 15")).check(matches(isDisplayed()));
 
         /* Autenticar usuario guest */
         onView(withId(R.id.editTextTextPersonName)).perform(clearText(), typeText("Invitado"), closeSoftKeyboard());
