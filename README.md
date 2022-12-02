@@ -1,6 +1,11 @@
 # MISW-4203-AplicacionesMoviles
 
 Este proyecto fue generado con la versión 1.7.10 de Kotlin y la versión 2021.3.1 de Android Studio
+## Internacionalización
+
+Para esta entrega se habilitó la internacionalización para los idiomas inglés y español. Para probarlo en el dispositivo, se debe instalar el [APK](https://github.com/mcgomeztuniandes/MISW-4203-AplicacionesMoviles/tree/main/app/Sprint_3) y cambiar la configuración de idioma del celular de inglés a español y viceversa.
+
+* <b>Para tener en cuenta</b>: Al ejecutar las pruebas E2E se debe tener configurado el dispositivo en el idioma inglés, ya que es el idioma por defecto de la aplicación.
 
 ## Servidor de Desarrollo
 
